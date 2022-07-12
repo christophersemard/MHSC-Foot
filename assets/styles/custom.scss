@@ -50,7 +50,7 @@ header{
     .nav-link{
         font-weight: bold;
         color: $primary;
-        &:hover{
+        &:hover, &:focus{
             color : $secondary;
         }
     }
@@ -61,11 +61,27 @@ header{
     .fa-circle-user{
         font-size: 2em;
         color: $primary;
-        &:hover{
+        &:hover, &:focus{
             color : $secondary;
         }
-        &:active{
-            color : $secondary;
+    }
+}
+
+body{
+    >nav{
+        .nav-link{
+            color: $tertiary;
+            font-weight: bold;
+            &:hover, &:focus{
+                color: $tertiary-light;
+            }
+        }
+        .submenu{
+            border-bottom: 1px rgba($color: #fff, $alpha: .3) solid;
+        }
+        .fa-brands{
+            color: $secondary;
+            font-size: 1.8em;
         }
     }
 }
