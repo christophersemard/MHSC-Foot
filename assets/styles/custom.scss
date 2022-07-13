@@ -24,7 +24,7 @@ $theme-colors: (
 
 // Import fonts
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 // Import bootstrap
 @import "node_modules/bootstrap/scss/bootstrap";
 
@@ -37,18 +37,21 @@ $theme-colors: (
     font-family: var(--text-font) ;
 }
 
+// Design général des titres
 h1,h2,h3,h4,h5{
     font-family: var(--headers-font);
     font-weight: bold;
     text-transform: uppercase;
 }
 
+
+// Header
 header{
     height:100px; 
     img{
     height:80px;}
     .nav-link{
-        font-weight: bold;
+        font-weight: 500;
         color: $primary;
         &:hover, &:focus{
             color : $secondary;
@@ -56,7 +59,7 @@ header{
     }
     .menu{
         margin-right: 1em;
-        font-weight: bolder;
+        font-weight: 700;
     }
     .fa-circle-user{
         font-size: 2em;
@@ -67,7 +70,55 @@ header{
     }
 }
 
+// Footer
+footer{
+    border-bottom: 0.5em rgba($color: $secondary, $alpha: 1) solid;
+    background: $primary;
+    background: linear-gradient(180deg, $primary 0%,  $primary-dark 100%);
+    .footer-partners{
+        background-color: $tertiary-light;
+    }
+    .nav-link{
+        font-weight: 500;
+        color: white !important;
+        &:hover, &:focus{
+            color : $secondary;
+        }
+    }
+    .fa-brands{
+        color: $secondary;
+    }
+    .site{
+        border-bottom: 3px rgba($color: $secondary, $alpha: 1) solid;
+
+    }
+    .title{
+        margin: 0.5em 0;
+        color: white;
+        font-weight: bold;
+        p{
+            font-family: var(--headers-font);
+            margin-bottom: 0;
+        }
+    }
+    .logo{
+        max-height: 80px;
+        max-width: 80px;
+
+        @media screen and (min-width: 768px) {
+            max-height: 100px;
+            max-width: 100px;
+        }
+        @media screen and (min-width: 1024px) {
+            max-height: 150px;
+            max-width: 150px;
+        }
+    }
+}
+
+// Menu
 body{
+    height: 100%;
     >nav{
         .nav-link{
             color: $tertiary;
@@ -84,4 +135,8 @@ body{
             font-size: 1.8em;
         }
     }
+}
+
+main{
+    min-height: 100%;
 }
