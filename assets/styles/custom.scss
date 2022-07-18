@@ -20,6 +20,13 @@ $theme-colors: (
     "tertiary": $tertiary,
     "tertiary-dark": $tertiary-dark,
     "tertiary-light": $tertiary-light,
+
+    "success": #28a745,
+    "info": #17a2b8,
+    "warning": #ffc107,
+    "danger": #dc3545,
+    "light": #f5f5f5,
+    "dark": #343a40,
 );
 
 // Import fonts
@@ -40,8 +47,35 @@ $theme-colors: (
 // Design général des titres
 h1,h2,h3,h4,h5{
     font-family: var(--headers-font);
-    font-weight: bold;
+    font-weight: 600 !important;
     text-transform: uppercase;
+}
+
+h1{
+    font-style: italic !important;
+    font-weight: 600 !important;
+    text-shadow:
+       5px -4px 0px $tertiary,
+       4px -5px 0px rgba($color: $secondary, $alpha: 0.5),
+       6px -5px 0px rgba($color: $secondary, $alpha: 0.5),
+       4px -3px 0px rgba($color: $secondary, $alpha: 0.5),
+       6px -3px 0px rgba($color: $secondary, $alpha: 0.5);
+}
+
+// Design général des boutons
+.btn{
+    border-radius: 0 !important;
+    border: none !important;
+}
+.btn-primary{
+    border-left: 0.4em $secondary solid !important;
+}
+.btn-secondary{
+    border-left: 0.4em $tertiary solid !important;
+}
+.btn-tertiary{
+    border-left: 0.4em $primary solid !important;
+    color: $primary !important;
 }
 
 
@@ -139,4 +173,15 @@ body{
 
 main{
     min-height: 100%;
+}
+
+input{
+    background-color: $tertiary-light !important;
+    border : none  !important;
+    border-left: $primary 3px solid  !important; 
+    border-radius : 0 !important;
+}
+input[type=checkbox]{
+    border-left: $primary 0px solid  !important; 
+    background-color: $primary !important;
 }
