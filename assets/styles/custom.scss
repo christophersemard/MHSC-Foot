@@ -53,13 +53,31 @@ h1,h2,h3,h4,h5{
 
 h1{
     font-style: italic !important;
-    font-weight: 600 !important;
+    color : $primary;
     text-shadow:
-       5px -4px 0px $tertiary,
-       4px -5px 0px rgba($color: $secondary, $alpha: 0.5),
-       6px -5px 0px rgba($color: $secondary, $alpha: 0.5),
-       4px -3px 0px rgba($color: $secondary, $alpha: 0.5),
-       6px -3px 0px rgba($color: $secondary, $alpha: 0.5);
+        5px -4px 0px $tertiary,
+        4px -5px 0px rgba($color: $secondary, $alpha: 0.5),
+        6px -5px 0px rgba($color: $secondary, $alpha: 0.5),
+        4px -3px 0px rgba($color: $secondary, $alpha: 0.5),
+        6px -3px 0px rgba($color: $secondary, $alpha: 0.5);
+}
+.title-primary{
+    color: $tertiary;
+    text-shadow:
+        5px -4px 0px $primary,
+        4px -5px 0px rgba($color: $secondary, $alpha: 0.5),
+        6px -5px 0px rgba($color: $secondary, $alpha: 0.5),
+        4px -3px 0px rgba($color: $secondary, $alpha: 0.5),
+        6px -3px 0px rgba($color: $secondary, $alpha: 0.5);
+}
+.title-secondary{
+    color: $tertiary;
+    text-shadow:
+        5px -4px 0px $secondary,
+        4px -5px 0px rgba($color: $tertiary, $alpha: 0.5),
+        6px -5px 0px rgba($color: $tertiary, $alpha: 0.5),
+        4px -3px 0px rgba($color: $tertiary, $alpha: 0.5),
+        6px -3px 0px rgba($color: $tertiary, $alpha: 0.5);
 }
 
 // Design général des boutons

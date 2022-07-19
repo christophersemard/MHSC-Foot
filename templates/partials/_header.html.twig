@@ -29,11 +29,15 @@
 				<i class="fa-solid fa-circle-user text-primary"></i>
 			</a>
 			<div class="dropdown-menu  dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" href="/connexion">Connexion</a>
-				<a class="dropdown-item" href="/inscription">Inscription</a>
-				<a class="dropdown-item" href="/profil">Mon profil</a>
-				<a class="dropdown-item" href="/administration">Administration</a>
-				<a class="dropdown-item text-danger" href="/deconnexion">Deconnexion</a>
+
+				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+					<a class="dropdown-item" href="/profil">Mon profil</a>
+					<a class="dropdown-item" href="/administration">Administration</a>
+					<a class="dropdown-item text-danger" href="/deconnexion">Deconnexion</a>
+				{% else %}
+					<a class="dropdown-item" href="/connexion">Connexion</a>
+					<a class="dropdown-item" href="/inscription">Inscription</a>
+				{% endif %}
 
 			</div>
 		</div>
