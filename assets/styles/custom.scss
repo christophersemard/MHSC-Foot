@@ -193,7 +193,7 @@ main{
     min-height: 100%;
 }
 
-input{
+input, textarea, select{
     background-color: $tertiary-light !important;
     border : none  !important;
     border-left: $primary 3px solid  !important; 
@@ -203,3 +203,10 @@ input[type=checkbox]{
     border-left: $primary 0px solid  !important; 
     background-color: $primary !important;
 }
+
+
+// Dropzone
+// #gallery_post_imagePosts{
+//     height: 500px;
+//     background-color: $primary;
+// }

@@ -1,4 +1,17 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_errors(form) }}
+
+{{ form_row(form.title) }}
+{{ form_row(form.thumbnail) }}
+{{ form_row(form.content) }}
+{{ form_row(form.imagePosts.vars.prototype) }}
+{{ form_row(form.category) }}
+{# The Prototype to use for generating items of the Folder.documents collection #}
+{# <div id="filesProto" data-prototype="{{ form_row(form.imagePosts.vars.prototype) }}"></div> #}
+
+{# An empty (fro now) div which will later hold the generated document fields #}
+{# <div class="row">
+	<div class="col col-xs-12" id="filesBox"></div>
+</div> #}
+	<button class="btn btn-primary"> {{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
