@@ -15,6 +15,8 @@ class ImagePostType extends AbstractType
     {
         $builder
             ->add('imageUrl', FileType::class, [
+                'mapped' => false,
+
                 'multiple' => true,
                 'label'     => 'Photos',
                 'required'     => true,

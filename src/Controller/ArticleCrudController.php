@@ -29,6 +29,8 @@ class ArticleCrudController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $post->setType('article');
             $postRepository->add($post, true);
 
             return $this->redirectToRoute('app_article_crud_index', [], Response::HTTP_SEE_OTHER);

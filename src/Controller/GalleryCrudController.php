@@ -3,12 +3,16 @@
 namespace App\Controller;
 
 use App\Entity\Post;
+use App\Entity\ImagePost;
 use App\Form\GalleryPostType;
 use App\Repository\PostRepository;
+use App\Repository\ImagePostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Doctrine\ORM\EntityManagerInterface;
 
 #[Route('/administration/gallerie')]
 class GalleryCrudController extends AbstractController
@@ -16,20 +20,51 @@ class GalleryCrudController extends AbstractController
     #[Route('/', name: 'app_gallery_crud_index', methods: ['GET'])]
     public function index(PostRepository $postRepository): Response
     {
+        $posts =  $postRepository->findAll();
         return $this->render('gallery_crud/index.html.twig', [
-            'posts' => $postRepository->findAll(),
+            'posts' => $posts,
         ]);
     }
 
     #[Route('/new', name: 'app_gallery_crud_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, PostRepository $postRepository): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
         $post = new Post();
         $form = $this->createForm(GalleryPostType::class, $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $postRepository->add($post, true);
+
+            $images = $form->get('imagePosts')->getData();
+            foreach ($images as $image) {
+
+                $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = './uploads/gallery/' . $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
+
+                $image->move(
+                    $this->getParameter('gallery_directory'),
+                    $newFilename
+                );
+                $img = new ImagePost();
+                $img->setImageUrl($newFilename);
+
+                $post->addImagePost($img);
+            }
+
+            $thumbnail = $form->get('thumbnail')->getData();
+            $originalFilename = pathinfo($thumbnail->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFilename = $slugger->slug($originalFilename);
+            $newFilename = './uploads/thumbnails/' . $safeFilename . '-' . uniqid() . '.' . $thumbnail->guessExtension();
+            $thumbnail->move(
+                $this->getParameter('thumbnails_directory'),
+                $newFilename
+            );
+            $post->setThumbnail($newFilename);
+
+            $post->setType('gallery');
+            $entityManager->persist($post);
+            $entityManager->flush();
 
             return $this->redirectToRoute('app_gallery_crud_index', [], Response::HTTP_SEE_OTHER);
         }

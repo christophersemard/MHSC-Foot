@@ -31,12 +31,13 @@ class Post
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $thumbnail = null;
 
-    #[ORM\OneToMany(mappedBy: 'post', targetEntity: ImagePost::class)]
+    #[ORM\OneToMany(mappedBy: 'post', targetEntity: ImagePost::class, cascade: ['persist', 'remove'])]
     private Collection $imagePosts;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(inversedBy: 'posts')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
+
 
 
     public function __construct()
@@ -97,17 +98,6 @@ class Post
         return $this;
     }
 
-    public function getCategory(): ?Category
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?Category $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
 
     public function getThumbnail(): string
     {
@@ -147,6 +137,18 @@ class Post
                 $imagePost->setPost(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

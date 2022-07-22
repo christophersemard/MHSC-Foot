@@ -14,8 +14,8 @@ class ImagePost
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'imagePosts')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?post $post = null;
+    #[ORM\JoinColumn(nullable: true)]
+    private ?Post $post = null;
 
     #[ORM\Column(length: 255)]
     private ?string $ImageUrl = null;
@@ -25,12 +25,12 @@ class ImagePost
         return $this->id;
     }
 
-    public function getPost(): ?post
+    public function getPost(): ?Post
     {
         return $this->post;
     }
 
-    public function setPost(?post $post): self
+    public function setPost(?Post $post): self
     {
         $this->post = $post;
 
