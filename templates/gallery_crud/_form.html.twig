@@ -3,11 +3,21 @@
 
 {{ form_row(form.title) }}
 {{ form_row(form.thumbnail) }}
+{{ form_row(form.category) }}
 {{ form_row(form.content) }}
 {{ form_row(form.imagePosts) }}
-{{ form_row(form.category) }}
 
 
-<button class="btn btn-primary">
-	{{ button_label|default('Save') }}</button>
+{% if app.request.attributes.get('_route') == 'app_gallery_crud_edit'  %}
+	<h2>Images</h2>
+	<div class="edit-image-list">
+		{% for image in post.imagePosts %}
+			<div>
+				<img src="{{ asset( image.imageUrl)}}" alt=" Image">
+				<a href="{{path('app_gallery_crud_delete_image', {'id':image.id})}}" data-delete data-token="{{csrf_token('delete' ~ image.id)}}">Supprimer</a>
+			</div>
+		{% endfor %}
+	</div>
+{% endif %}
+<button class="btn btn-primary">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 #[Route('/administration/gallerie')]
 class GalleryCrudController extends AbstractController
@@ -20,7 +21,7 @@ class GalleryCrudController extends AbstractController
     #[Route('/', name: 'app_gallery_crud_index', methods: ['GET'])]
     public function index(PostRepository $postRepository): Response
     {
-        $posts =  $postRepository->findAll();
+        $posts =  $postRepository->findAllGallery();
         return $this->render('gallery_crud/index.html.twig', [
             'posts' => $posts,
         ]);
@@ -84,12 +85,47 @@ class GalleryCrudController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_gallery_crud_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Post $post, PostRepository $postRepository): Response
+    public function edit(Request $request, Post $post, PostRepository $postRepository, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(GalleryPostType::class, $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $images = $form->get('imagePosts')->getData();
+            if ($images) {
+                foreach ($images as $image) {
+
+                    $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+                    $safeFilename = $slugger->slug($originalFilename);
+                    $newFilename = './uploads/gallery/' . $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
+
+                    $image->move(
+                        $this->getParameter('gallery_directory'),
+                        $newFilename
+                    );
+                    $img = new ImagePost();
+                    $img->setImageUrl($newFilename);
+
+                    $post->addImagePost($img);
+                }
+            }
+
+
+            $thumbnail = $form->get('thumbnail')->getData();
+            if ($thumbnail) {
+                $originalFilename = pathinfo($thumbnail->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = './uploads/thumbnails/' . $safeFilename . '-' . uniqid() . '.' . $thumbnail->guessExtension();
+                $thumbnail->move(
+                    $this->getParameter('thumbnails_directory'),
+                    $newFilename
+                );
+                $post->setThumbnail($newFilename);
+            }
+
+
             $postRepository->add($post, true);
 
             return $this->redirectToRoute('app_gallery_crud_index', [], Response::HTTP_SEE_OTHER);
@@ -109,5 +145,25 @@ class GalleryCrudController extends AbstractController
         }
 
         return $this->redirectToRoute('app_gallery_crud_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+
+    #[Route('/supprime/image/{id}', name: 'app_gallery_crud_delete_image', methods: ['DELETE'])]
+    public function deleteImage(EntityManagerInterface $entityManager, Request $request, ImagePost $imagePost)
+    {
+        $token = $request->request->get('_token');
+
+
+        if ($this->isCsrfTokenValid('delete' . $imagePost->getId(), $token)) {
+
+            $nom = $imagePost->getImageUrl();
+            unlink($nom);
+
+            $entityManager->remove($imagePost);
+            $entityManager->flush();
+            return new JsonResponse(['success' => 1]);
+        } else {
+            return new JsonResponse(['error' => 'Token Invalid'], 400);
+        }
     }
 }

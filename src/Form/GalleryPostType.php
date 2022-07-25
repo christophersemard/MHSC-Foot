@@ -6,10 +6,9 @@ use App\Entity\Post;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
-use Symfony\Component\Validator\Constraints\All;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class GalleryPostType extends AbstractType
 {
@@ -17,11 +16,11 @@ class GalleryPostType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('content')
+            ->add('content', CKEditorType::class)
             ->add('imagePosts', FileType::class, [
                 'mapped' => false,
                 'multiple' => true,
-                'label'     => 'Photos',
+                'label'     => 'Ajouter des photos',
                 'required'     => true,
                 // 'constraints' => [
                 //     new All([
@@ -44,6 +43,7 @@ class GalleryPostType extends AbstractType
             ])
             ->add('thumbnail', FileType::class, [
                 'mapped' => false,
+                'required' => is_null($builder->getData()->getId()),
                 'constraints' => [
                     new File([
                         'maxSize' => '2048k',

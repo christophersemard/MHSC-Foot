@@ -18,6 +18,8 @@ class ArticlePostType extends AbstractType
             ->add('title')
             ->add('content', CKEditorType::class)
             ->add('thumbnail', FileType::class, [
+                'mapped' => false,
+                'required' => is_null($builder->getData()->getId()),
                 'constraints' => [
                     new File([
                         'maxSize' => '2048k',

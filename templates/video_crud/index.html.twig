@@ -1,20 +1,20 @@
 {% extends 'admin_base.html.twig' %}
 
-{% block title %}Galleries photos
+{% block title %}Vidéos
 {% endblock %}
 
 {% block body %}
 	<main class="p-5 w-100">
-		<h1>Galleries photos</h1>
+		<h1>Post index</h1>
 
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Titre</th>
-					<th>Texte</th>
-					<th>Image de présentation</th>
-					<th>Catégorie</th>
-					<th>Actions</th>
+					<th>Title</th>
+					<th>Content</th>
+					<th>Video</th>
+					<th>Thumbnail</th>
+					<th>actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -22,11 +22,11 @@
 					<tr>
 						<td>{{ post.title }}</td>
 						<td>{{ post.content }}</td>
+						<td>{{ post.video }}</td>
 						<td>{{ post.thumbnail }}</td>
-						<td>{{ post.category }}</td>
 						<td>
-							<a href="{{ path('app_gallery_crud_show', {'id': post.id}) }}">show</a>
-							<a href="{{ path('app_gallery_crud_edit', {'id': post.id}) }}">edit</a>
+							<a href="{{ path('app_video_crud_show', {'id': post.id}) }}">show</a>
+							<a href="{{ path('app_video_crud_edit', {'id': post.id}) }}">edit</a>
 						</td>
 					</tr>
 				{% else %}
@@ -37,6 +37,6 @@
 			</tbody>
 		</table>
 
-		<a href="{{ path('app_gallery_crud_new') }}">Create new</a>
+		<a href="{{ path('app_video_crud_new') }}">Create new</a>
 	</main>
 {% endblock %}

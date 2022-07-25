@@ -204,9 +204,28 @@ input[type=checkbox]{
     background-color: $primary !important;
 }
 
+.edit-image-list{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+    margin: 2em 0;
+    div{
+        background-color: $tertiary-light;
+        padding: 1em;
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        img{
+        max-height: 100px;
+        max-width: 150px;
+        }
+    }
+}
 
-// Dropzone
-// #gallery_post_imagePosts{
-//     height: 500px;
-//     background-color: $primary;
-// }
+.thumbnail-admin{
+    max-height: 100px;
+    max-width: 150px;
+    }

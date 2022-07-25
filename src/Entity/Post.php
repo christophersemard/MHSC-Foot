@@ -38,11 +38,15 @@ class Post
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
 
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $publish_date = null;
+
 
 
     public function __construct()
     {
         $this->imagePosts = new ArrayCollection();
+        $this->publish_date = new \DateTime('now');
     }
 
     public function getId(): ?int
@@ -149,6 +153,18 @@ class Post
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getPublishDate(): ?\DateTimeInterface
+    {
+        return $this->publish_date;
+    }
+
+    public function setPublishDate(\DateTimeInterface $publish_date): self
+    {
+        $this->publish_date = $publish_date;
 
         return $this;
     }
