@@ -18,27 +18,27 @@
 					<td>{{ post.type }}</td>
 				</tr>
 				<tr>
-					<th>Title</th>
+					<th>Image de présentation</th>
+					<td>{{ post.thumbnail }}</td>
+				</tr>
+				<tr>
+					<th>Titre</th>
 					<td>{{ post.title }}</td>
 				</tr>
 				<tr>
-					<th>Content</th>
+					<th>Contenu</th>
 					<td>{{ post.content }}</td>
 				</tr>
 				<tr>
 					<th>Video</th>
 					<td>{{ post.video }}</td>
 				</tr>
-				<tr>
-					<th>Thumbnail</th>
-					<td>{{ post.thumbnail }}</td>
-				</tr>
 			</tbody>
 		</table>
 
-		<a href="{{ path('app_video_crud_index') }}">back to list</a>
+		<a href="{{ path('app_video_crud_index') }}">Retour à la liste</a>
 
-		<a href="{{ path('app_video_crud_edit', {'id': post.id}) }}">edit</a>
+		<a href="{{ path('app_video_crud_edit', {'id': post.id}) }}">Modifier</a>
 
 		{{ include('video_crud/_delete_form.html.twig') }}
 	</main>

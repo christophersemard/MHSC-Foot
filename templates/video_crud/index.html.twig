@@ -5,16 +5,16 @@
 
 {% block body %}
 	<main class="p-5 w-100">
-		<h1>Post index</h1>
+		<h1>Vidéos</h1>
 
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Title</th>
-					<th>Content</th>
+					<th>Titre</th>
+					<th>Contenu</th>
 					<th>Video</th>
-					<th>Thumbnail</th>
-					<th>actions</th>
+					<th>Image de présentation</th>
+					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -23,20 +23,27 @@
 						<td>{{ post.title }}</td>
 						<td>{{ post.content }}</td>
 						<td>{{ post.video }}</td>
-						<td>{{ post.thumbnail }}</td>
+						<td><img class="thumbnail-admin" src="{{ asset(post.thumbnail) }}" alt="Miniature"></td>
 						<td>
-							<a href="{{ path('app_video_crud_show', {'id': post.id}) }}">show</a>
-							<a href="{{ path('app_video_crud_edit', {'id': post.id}) }}">edit</a>
+							<div class="dropdown">
+								<a class=" btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa-solid fa-pen"></i>
+								</a>
+								<div class="dropdown-menu  dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+
+									<a class="dropdown-item" href="{{ path('app_video_crud_show', {'id': post.id}) }}">Voir</a>
+									<a class="dropdown-item text-warning" href="{{ path('app_video_crud_edit', {'id': post.id}) }}">Modifier</a>
+									{{ include('video_crud/_delete_form.html.twig') }}
+								</div>
+							</div>
 						</td>
 					</tr>
-				{% else %}
-					<tr>
-						<td colspan="7">no records found</td>
-					</tr>
-				{% endfor %}
+				</div>
 			</tbody>
-		</table>
-
-		<a href="{{ path('app_video_crud_new') }}">Create new</a>
-	</main>
-{% endblock %}
+		</td>
+	</tr>
+{% else %}
+	<tr>
+		<td colspan="7">Aucun article trouvé</td>
+	</tr>
+{% endfor %}</tbody></table><a class="btn btn-primary" href="{{ path('app_video_crud_new') }}">Nouvel article</a></main>{% endblock %}

@@ -1,15 +1,15 @@
 {% extends 'admin_base.html.twig' %}
 
-{% block title %}Edit Post
+{% block title %}Modifier galerie photos
 {% endblock %}
 
 {% block body %}
 	<main class="p-5 w-100">
-		<h1>Edit Post</h1>
+		<h1>Modifier galerie photos</h1>
 
-		{{ include('gallery_crud/_form.html.twig', {'button_label': 'Update'}) }}
+		{{ include('gallery_crud/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-		<a href="{{ path('app_gallery_crud_index') }}">back to list</a>
+		<a class="btn btn-secondary mb-2" href="{{ path('app_gallery_crud_index') }}">Retour à la liste</a>
 
 		{{ include('gallery_crud/_delete_form.html.twig') }}
 	</main>

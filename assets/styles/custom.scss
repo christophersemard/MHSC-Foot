@@ -89,7 +89,8 @@ h1{
     border-left: 0.4em $secondary solid !important;
 }
 .btn-secondary{
-    border-left: 0.4em $tertiary solid !important;
+    border-left: 0.4em $primary solid !important;
+    color:white !important;
 }
 .btn-tertiary{
     border-left: 0.4em $primary solid !important;

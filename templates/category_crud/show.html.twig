@@ -1,0 +1,29 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Catégorie
+{% endblock %}
+
+{% block body %}
+	<main class="p-5 w-100">
+		<h1>Catégorie</h1>
+
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ category.id }}</td>
+				</tr>
+				<tr>
+					<th>Nom</th>
+					<td>{{ category.name }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a href="{{ path('app_category_crud_index') }}">Retour à la liste</a>
+
+		<a href="{{ path('app_category_crud_edit', {'id': category.id}) }}">Modifier</a>
+
+		{{ include('category_crud/_delete_form.html.twig') }}
+	</main>
+{% endblock %}
