@@ -152,6 +152,7 @@ class GalleryCrudController extends AbstractController
     public function deleteImage(EntityManagerInterface $entityManager, Request $request, ImagePost $imagePost)
     {
         $token = $request->request->get('_token');
+
         if ($this->isCsrfTokenValid('delete' . $imagePost->getId(), $token)) {
             $nom = $imagePost->getImageUrl();
             unlink($nom);

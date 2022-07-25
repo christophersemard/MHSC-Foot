@@ -9,12 +9,15 @@
 
 
 {% if app.request.attributes.get('_route') == 'app_gallery_crud_edit'  %}
-	<h2>Images</h2>
 	<div class="edit-image-list">
+		<h2>Images</h2>
 		{% for image in post.imagePosts %}
+			<pre>
+			{{ dump(image) }}
+		</pre>
 			<div>
 				<img src="{{ asset( image.imageUrl)}}" alt=" Image">
-				<a href="{{path('app_gallery_crud_delete_image', {'id':image.id})}}" data-delete data-token="{{csrf_token('delete' ~ image.id)}}">Supprimer</a>
+				<a class="text-danger nav-link" href="{{path('app_gallery_crud_delete_image', {'id':image.id})}}" data-delete data-token="{{csrf_token('delete' ~ image.id)}}">Supprimer</a>
 			</div>
 		{% endfor %}
 	</div>
