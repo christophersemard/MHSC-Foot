@@ -32,7 +32,9 @@
 
 				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 					<a class="dropdown-item" href="/profil">Mon profil</a>
-					<a class="dropdown-item" href="/administration">Administration</a>
+					{% if is_granted('ROLE_ADMIN') %}
+						<a class="dropdown-item" href="/administration">Administration</a>
+					{% endif %}
 					<a class="dropdown-item text-danger" href="/deconnexion">Deconnexion</a>
 				{% else %}
 					<a class="dropdown-item" href="/connexion">Connexion</a>

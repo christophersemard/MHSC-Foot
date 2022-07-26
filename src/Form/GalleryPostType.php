@@ -26,7 +26,7 @@ class GalleryPostType extends AbstractType
                 'mapped' => false,
                 'multiple' => true,
                 'label'     => 'Ajouter des photos',
-                'required'     => true,
+                'required'     => is_null($builder->getData()->getId()),
                 // 'constraints' => [
                 //     new All([
                 //         'constraints' => [

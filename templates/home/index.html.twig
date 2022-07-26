@@ -4,37 +4,92 @@
 {% endblock %}
 
 {% block body %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
+	<main class=" pb-5">
 
-	<main class="example-wrapper">
-		<h1 class="heading">Hello
-			{{ controller_name }}! ✅</h1>
+		<section class="home-article">
+			<img class="home-article__image" src="{{asset(mainPost.thumbnail)}}" alt="Image de présentation de l'article">
+			<div class="home-article__gradient"></div>
+			<div class="home-article__infos d-flex flex-column justify-content-end">
+				<h1 class="title-secondary">{{mainPost.title}}</h1>
+				<div class="home-article__infos__details d-flex justify-content-end ">
+					<p>Publié le
+						{{mainPost.getPublishDate()|date("d/m/Y")}}</p>
+					<p class="category">{{mainPost.category}}</p>
+				</div>
+			</div>
+		</section>
 
-		This friendly message is coming from:
-		<ul>
-			<li>Your controller at
-				<code>
-					<a href="{{ 'Z:/Documents/FORMATION DEV WEB/SYMFONY/MHSC-Foot/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a>
-				</code>
-			</li>
-			<li>Your template at
-				<code>
-					<a href="{{ 'Z:/Documents/FORMATION DEV WEB/SYMFONY/MHSC-Foot/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a>
-				</code>
-			</li>
-		</ul>
+		<section class="home-articles d-flex container ">
+			<div class="home-articles__container m-auto d-flex flex-column flex-lg-row w-100 gap-4">
+				<div class="home-articles__column1 ">
+					<article class="home-articles__article-1 ">
+						<img src="{{asset(mainPost.thumbnail)}}" alt="">
+
+						<div class="home-articles__article-1__infos">
+							<h4 class="">{{mainPost.title}}</h4>
+							<div class="">
+								<p>{{mainPost.content|striptags|u.truncate(100,'...')|raw}}</p>
+							</div>
+							<p class="category category-mini">{{mainPost.category}}</p>
+						</div>
+					</article>
+					<article class="home-articles__article-2">
+						<img src="{{asset(mainPost.thumbnail)}}" alt="">
+
+						<div class="home-articles__article-2__infos">
+							<h4 class="">{{mainPost.title}}</h4>
+							<div class="">
+								<p>{{mainPost.content|striptags|u.truncate(120,'...')|raw}}</p>
+							</div>
+						</div>
+						<p class="category category-mini">{{mainPost.category}}</p>
+					</article>
+				</div>
+				<div class="home-articles__column2 ">
+					<article class="home-articles__article-3">
+						<img src="{{asset(mainPost.thumbnail)}}" alt="">
+						<div class="home-articles__article-3__gradient"></div>
+						<h4 class="">{{mainPost.title}}</h4>
+						<p class="category category-mini">{{mainPost.category}}</p>
+					</article>
+					<article class="home-articles__article-2">
+						<img src="{{asset(mainPost.thumbnail)}}" alt="">
+
+						<div class="home-articles__article-2__infos">
+							<h4 class="">{{mainPost.title}}</h4>
+							<div class="">
+								<p>{{mainPost.content|striptags|u.truncate(170,'...')|raw}}</p>
+							</div>
+						</div>
+						<p class="category category-mini">{{mainPost.category}}</p>
+					</article>
+					<article class="home-articles__article-4">
+
+						<div class="">
+							<img src="{{asset(mainPost.thumbnail)}}" alt="">
+							<p>{{mainPost.content|striptags|u.truncate(190,'...')|raw}}</p>
+						</div>
+						<h4 class="">{{mainPost.title}}</h4>
+						<p class="category category-mini">{{mainPost.category}}</p>
+					</article>
+				</div>
+				<aside class="p-3 d-flex flex-column justify-content-between">
+					<h4 class="text-center text-primary">Fil actus</h4>
+					<div class="last-news-list">
+
+						{% for new in news %}
+							<div class="last-news-item d-flex justify-content-between flex-wrap">
+
+								<h5 class="">{{new.title}}</h5>
+								<p class="category category-mini ">{{new.category}}</p>
+								<p class="new-content w-100">{{new.content|striptags|u.truncate(50,'...')|raw}}</p>
+							</div>
+						{% endfor %}
+					</div>
+					<a class="link link-secondary text-center d-block" href="">Toutes les infos</a>
+				</aside>
+			</div>
+		</section>
+
 	</main>
-
-
 {% endblock %}
