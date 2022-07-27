@@ -8,6 +8,7 @@ $secondary-light: #FF5E00;
 $tertiary: #FFFFFF;
 $tertiary-dark: #000000;
 $tertiary-light: #f5f5f5;
+$light : #f5f5f5;
 
 // Boostrap colors
 $theme-colors: (
@@ -25,7 +26,7 @@ $theme-colors: (
     "info": #17a2b8,
     "warning": #ffc107,
     "danger": #dc3545,
-    "light": #f5f5f5,
+    "light": $light,
     "dark": #343a40,
 );
 
@@ -180,7 +181,7 @@ footer{
             max-height: 100px;
             max-width: 100px;
         }
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 992px) {
             max-height: 150px;
             max-width: 150px;
         }
@@ -314,12 +315,12 @@ input[type=checkbox]{
 .home-articles{
     padding: 2em 0.5em;
     gap: 1em;
-    @media (min-width: 1024px) { 
+    @media (min-width: 992px) { 
         height: 100vh;
         padding: 2em;
      }
     &__container{
-        @media (min-width: 1024px) { 
+        @media (min-width: 992px) { 
             max-height: 80vh;
          }
     }
@@ -338,7 +339,7 @@ input[type=checkbox]{
         flex-direction: column;
         justify-content: space-between;
         gap: 2em;
-        @media (min-width: 1024px) { 
+        @media (min-width: 992px) { 
             width: 35%;
         }
         >a{
@@ -352,7 +353,7 @@ input[type=checkbox]{
         flex-direction: column;
         justify-content: space-between;
         gap: 2em;
-        @media (min-width: 1024px) { 
+        @media (min-width: 992px) { 
             width: 35%;
         }
         >a{
@@ -365,7 +366,7 @@ input[type=checkbox]{
     &__link-1{
         min-height:300px;
         position: relative;
-        @media (min-width: 1024px) { 
+        @media (min-width: 992px) { 
             height: calc(61% + 2em);
         }
         background-color: $primary;
@@ -401,7 +402,8 @@ input[type=checkbox]{
         }
     }
     &__link-2{
-        @media (min-width: 1024px) { 
+        min-height: 150px;
+        @media (min-width: 992px) { 
             height: 30%;
         }
         background-color: $secondary;
@@ -411,6 +413,7 @@ input[type=checkbox]{
             display: flex;
             height: 100%;
             width: 100%;
+            min-height: 150px;
             img{
                 display: block;
                 position: absolute;
@@ -449,7 +452,7 @@ input[type=checkbox]{
         }
     }
     &__link-3{
-        @media (min-width: 1024px) { 
+        @media (min-width: 992px) { 
             height: 30%;
         }
         position: relative;
@@ -495,7 +498,7 @@ input[type=checkbox]{
         }
     }
     &__link-4{
-        @media (min-width: 1024px) { 
+        @media (min-width: 992px) { 
             height: 30%;
         }
         background-color: $primary;
@@ -521,19 +524,19 @@ input[type=checkbox]{
                 display: flex;
                 justify-content: space-between;
                 flex-direction: column;
-                @media (min-width: 1024px) { 
+                @media (min-width: 992px) { 
                     flex-direction: row;
                  }
                 img{
                     // width: 50%;
-                    @media (min-width: 1024px) { 
+                    @media (min-width: 992px) { 
                         width: 50%;
                      }
                 }
                 p{
                     padding: 0.5em 1em;
                     font-size: 0.8em;
-                    @media (min-width: 1024px) { 
+                    @media (min-width: 992px) { 
                         width: 50%;
                      }
                 }
@@ -553,7 +556,7 @@ input[type=checkbox]{
    
     aside{
         background-color: $tertiary-light;
-        @media (min-width: 1024px) { 
+        @media (min-width: 992px) { 
             width: 30%;
          }
          
@@ -601,3 +604,15 @@ input[type=checkbox]{
 
 .link-secondary{margin-top: 0.5em;}
 
+// BLOCKQUOTE STYLE 
+blockquote{
+    width:100%;
+    margin-top: 2em !important;
+    color: #555555;
+    padding:1em 5%;
+    border-left:8px solid $secondary ;
+    line-height:1.4;
+    background:$tertiary-light;
+  }
+  
+  
