@@ -4,35 +4,39 @@
 {% endblock %}
 
 {% block body %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
+	<main class="p-2 p-lg-5 w-100 container-md">
 
-	<div class="example-wrapper">
-		<h1>Hello
-			{{ controller_name }}! ✅</h1>
+		<div class="news-page d-flex flex-wrap flex-lg-nowrap justify-content-center justify-content-lg-between gap-3">
+			<section class="news-page__list py-4 px-2 px-md-3">
 
-		This friendly message is coming from:
-		<ul>
-			<li>Your controller at
-				<code>
-					<a href="{{ 'C:/Users/master/Documents/SYMFONY/MHSC-Foot/src/Controller/PostController.php'|file_link(0) }}">src/Controller/PostController.php</a>
-				</code>
-			</li>
-			<li>Your template at
-				<code>
-					<a href="{{ 'C:/Users/master/Documents/SYMFONY/MHSC-Foot/templates/post/index.html.twig'|file_link(0) }}">templates/post/index.html.twig</a>
-				</code>
-			</li>
-		</ul>
+				<h1>Actualités</h1>
+
+				<div class="news-page__list__news">
+					{% for news in allNews %}
+						<div type="button" href="{{ path('app_news_display', {'id': news.id}) }}" class="news-page__list__news__new d-flex justify-content-between gap-3">
+							<div class="news-page__list__news__new__image w-25">
+								<img class="news-page__item__image" src="{{asset(news.thumbnail)}}" alt="miniature">
+							</div>
+							<div class="news-page__list__news__new__infos w-75">
+								<div class="news-page__list__news__new__infos__details d-flex justify-content-between align-items-center">
+									<p class="category-transparent m-0">{{news.category}}</p>
+									<p class="m-0 fw-bold text-primary">{{news.getPublishDate|date('d/m/Y')}}</p>
+								</div>
+								<h4 class="m-0">{{news.title}}</h4>
+								<p>{{news.content|striptags|u.truncate(130,'...')|raw}}</p>
+							</div>
+
+						</div>
+					{% endfor %}
+
+				</div>
+
+				<div class="navigation d-flex justify-content-center mt-3">
+					{{ knp_pagination_render(allNews) }}
+				</div>
+			</section>
+			<aside class="p-3 d-flex flex-column justify-content-between bg-light align-self-start" style="min-width: 360px;">
+				{% include "./news/_news_feed.html.twig" %}</aside>
+		</div>
 	</div>
-{% endblock %}
+</main>{% endblock %}
