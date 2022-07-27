@@ -7,87 +7,92 @@
 	<main class=" pb-5">
 
 		<section class="home-article">
-			<img class="home-article__image" src="{{asset(mainPost.thumbnail)}}" alt="Image de présentation de l'article">
-			<div class="home-article__gradient"></div>
-			<div class="home-article__infos d-flex flex-column justify-content-end">
-				<h1 class="title-secondary">{{mainPost.title}}</h1>
-				<div class="home-article__infos__details d-flex justify-content-end ">
-					<p>Publié le
-						{{mainPost.getPublishDate()|date("d/m/Y")}}</p>
-					<p class="category">{{mainPost.category}}</p>
+			<a class="home-article__link" href="{{ path('app_news_display', {'id': news[0].id}) }}">
+
+				<img class="home-article__image" src="{{asset(news[0].thumbnail)}}" alt="Image de présentation de l'article">
+				<div class="home-article__gradient"></div>
+				<div class="home-article__infos d-flex flex-column justify-content-end">
+					<h1 class="title-secondary">{{news[0].title}}</h1>
+					<div class="home-article__infos__details d-flex justify-content-end ">
+						<p>Publié le
+							{{news[0].getPublishDate()|date("d/m/Y")}}</p>
+						<p class="category">{{news[0].category}}</p>
+					</div>
 				</div>
-			</div>
+			</a>
 		</section>
 
 		<section class="home-articles d-flex container ">
 			<div class="home-articles__container m-auto d-flex flex-column flex-lg-row w-100 gap-4">
 				<div class="home-articles__column1 ">
-					<article class="home-articles__article-1 ">
-						<img src="{{asset(mainPost.thumbnail)}}" alt="">
 
-						<div class="home-articles__article-1__infos">
-							<h4 class="">{{mainPost.title}}</h4>
-							<div class="">
-								<p>{{mainPost.content|striptags|u.truncate(100,'...')|raw}}</p>
-							</div>
-							<p class="category category-mini">{{mainPost.category}}</p>
-						</div>
-					</article>
-					<article class="home-articles__article-2">
-						<img src="{{asset(mainPost.thumbnail)}}" alt="">
+					<a class="home-articles__link-1" href="{{ path('app_news_display', {'id': news[1].id}) }}">
 
-						<div class="home-articles__article-2__infos">
-							<h4 class="">{{mainPost.title}}</h4>
-							<div class="">
-								<p>{{mainPost.content|striptags|u.truncate(120,'...')|raw}}</p>
+						<article class="home-articles__link-1__article">
+							<img src="{{asset(news[1].thumbnail)}}" alt="">
+
+							<div class="home-articles__link-1__article__infos">
+								<h4>{{news[1].title}}</h4>
+								<div>
+									<p>{{news[1].content|striptags|u.truncate(100,'...')|raw}}</p>
+								</div>
+								<p class="category category-mini">{{news[1].category}}</p>
 							</div>
-						</div>
-						<p class="category category-mini">{{mainPost.category}}</p>
-					</article>
+						</article>
+					</a>
+					<a class="home-articles__link-2" href="{{ path('app_news_display', {'id': news[2].id}) }}">
+
+						<article class="home-articles__link-2__article">
+							<img src="{{asset(news[2].thumbnail)}}" alt="">
+
+							<div class="home-articles__link-2__article__infos">
+								<h4>{{news[2].title}}</h4>
+								<div>
+									<p>{{news[2].content|striptags|u.truncate(120,'...')|raw}}</p>
+								</div>
+							</div>
+							<p class="category category-mini">{{news[2].category}}</p>
+						</article>
+					</a>
 				</div>
 				<div class="home-articles__column2 ">
-					<article class="home-articles__article-3">
-						<img src="{{asset(mainPost.thumbnail)}}" alt="">
-						<div class="home-articles__article-3__gradient"></div>
-						<h4 class="">{{mainPost.title}}</h4>
-						<p class="category category-mini">{{mainPost.category}}</p>
-					</article>
-					<article class="home-articles__article-2">
-						<img src="{{asset(mainPost.thumbnail)}}" alt="">
+					<a class="home-articles__link-3" href="{{ path('app_news_display', {'id': news[3].id}) }}">
 
-						<div class="home-articles__article-2__infos">
-							<h4 class="">{{mainPost.title}}</h4>
-							<div class="">
-								<p>{{mainPost.content|striptags|u.truncate(170,'...')|raw}}</p>
+						<article class="home-articles__link-3__article">
+							<img src="{{asset(news[3].thumbnail)}}" alt="">
+							<div class="home-articles__link-3__article__gradient"></div>
+							<h4>{{news[3].title}}</h4>
+							<p class="category category-mini">{{news[3].category}}</p>
+						</article>
+					</a>
+					<a class="home-articles__link-2" href="{{ path('app_news_display', {'id': news[4].id}) }}">
+
+						<article class="home-articles__link-2__article">
+							<img src="{{asset(news[4].thumbnail)}}" alt="">
+
+							<div class="home-articles__link-2__article__infos">
+								<h4>{{news[4].title}}</h4>
+								<div>
+									<p>{{news[4].content|striptags|u.truncate(150,'...')|raw}}</p>
+								</div>
 							</div>
-						</div>
-						<p class="category category-mini">{{mainPost.category}}</p>
-					</article>
-					<article class="home-articles__article-4">
+							<p class="category category-mini">{{news[4].category}}</p>
+						</article>
+					</a>
+					<a class="home-articles__link-4" href="{{ path('app_news_display', {'id': news[5].id}) }}">
+						<article class="home-articles__link-4__article">
 
-						<div class="">
-							<img src="{{asset(mainPost.thumbnail)}}" alt="">
-							<p>{{mainPost.content|striptags|u.truncate(190,'...')|raw}}</p>
-						</div>
-						<h4 class="">{{mainPost.title}}</h4>
-						<p class="category category-mini">{{mainPost.category}}</p>
-					</article>
+							<div>
+								<img src="{{asset(news[5].thumbnail)}}" alt="">
+								<p>{{news[5].content|striptags|u.truncate(150,'...')|raw}}</p>
+							</div>
+							<h4>{{news[5].title}}</h4>
+							<p class="category category-mini">{{news[5].category}}</p>
+						</article>
+					</a>
 				</div>
 				<aside class="p-3 d-flex flex-column justify-content-between">
-					<h4 class="text-center text-primary">Fil actus</h4>
-					<div class="last-news-list">
-
-						{% for new in news %}
-							<div class="last-news-item d-flex justify-content-between flex-wrap">
-
-								<h5 class="">{{new.title}}</h5>
-								<p class="category category-mini ">{{new.category}}</p>
-								<p class="new-content w-100">{{new.content|striptags|u.truncate(50,'...')|raw}}</p>
-							</div>
-						{% endfor %}
-					</div>
-					<a class="link link-secondary text-center d-block" href="">Toutes les infos</a>
-				</aside>
+					{% include "./news/_news_feed.html.twig" %}</aside>
 			</div>
 		</section>
 

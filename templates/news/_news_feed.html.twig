@@ -1,0 +1,14 @@
+<h4 class="text-center text-primary">Fil actus</h4>
+<div class="last-news-list">
+
+	{% for new in news %}
+		<a href="{{ path('app_news_display', {'id': new.id}) }}">
+			<div class="last-news-item d-flex justify-content-between flex-wrap">
+
+				<h5>{{new.title}}</h5>
+				<p class="category category-mini ">{{new.category}}</p>
+			</div>
+		</a>
+	{% endfor %}
+</div>
+<a class="link link-secondary text-center d-block" href="/actualites">Toutes les infos</a>

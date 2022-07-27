@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{post.title}}
+{% endblock %}
+{% block body %}
+	<main class="p-2 p-lg-5 w-100 container-md">
+		<div class="article-page d-flex flex-wrap flex-lg-nowrap justify-content-between gap-3">
+			<article class="article-page__article py-4 px-2 px-md-3">
+
+				<div class="article-page__article__header">
+					<h1>{{post.title}}</h1>
+					<div class="article-page__article__header__infos d-flex align-items-center gap-3 justify-content-between">
+						<p class="">Publié le :
+							{{post.getPublishDate()|date('d/m/Y')}}</p>
+						<p class="category">{{post.category}}</p>
+					</div>
+				</div>
+				<img class="w-100 my-3 my-lg-4" src="{{asset(post.thumbnail)}}" alt="">
+				<div class="article-page__article__content">
+					{{post.content | raw}}
+
+					{% if post.video %}
+						<iframe class="youtube-video mt-4" height="489" width="870" src="{{post.video|replace({'watch?v=': "embed/"}) }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					{% endif %}
+
+
+					{% if post.imagePosts %}
+
+						<div id="carouselExampleIndicators" class="carousel slide mt-4" data-bs-ride="carousel">
+							<div class="carousel-indicators">
+								<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+								<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+								<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+							</div>
+							<div class="carousel-inner">
+								{% for image in post.imagePosts %}
+									{% if loop.index == 1 %}
+										<div class="carousel-item active">
+											<img src="{{image.imageUrl}}" class="d-block w-100" alt="...">
+										</div>
+									{% else %}
+										<div class="carousel-item">
+											<img src="{{image.imageUrl}}" class="d-block w-100" alt="...">
+										</div>
+									{% endif %}
+								{% endfor %}
+
+							</div>
+							<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Previous</span>
+							</button>
+							<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Next</span>
+							</button>
+						</div>
+
+					{% endif %}
+
+				</div>
+			</article>
+			<aside class="p-3 d-flex flex-column justify-content-between bg-light align-self-start" style="min-width: 360px;">
+				{% include "./news/_news_feed.html.twig" %}</aside>
+		</div>
+	</main>
+{% endblock %}

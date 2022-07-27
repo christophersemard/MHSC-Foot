@@ -14,6 +14,7 @@
 					<th>Texte</th>
 					<th>Image de présentation</th>
 					<th>Catégorie</th>
+					<th>Date de publication</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -21,11 +22,13 @@
 				{% for post in posts %}
 					<tr>
 						<td>{{ post.title }}</td>
+
 						<td>
-							{{post.content}}
+							<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="{{ post.content }}">Afficher le contenu</button>
 						</td>
 						<td><img class="thumbnail-admin" src="{{ asset(post.thumbnail) }}" alt="Miniature"></td>
 						<td>{{ post.category }}</td>
+						<td>{{ post.getPublishDate|date('d/m/Y') }}</td>
 						<td>
 							<div class="dropdown">
 								<a class=" btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +52,33 @@
 
 
 		<a class="btn btn-primary" href="{{ path('app_gallery_crud_new') }}">Nouvel article</a>
-
-
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-xl">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Contenu article</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body"></div>
+				</div>
+			</div>
+		</div>
 	</main>
+	<script>
+		var exampleModal = document.getElementById('exampleModal')
+exampleModal.addEventListener('show.bs.modal', function (event) { // Button that triggered the modal
+var button = event.relatedTarget
+// Extract info from data-bs-* attributes
+var recipient = button.getAttribute('data-bs-whatever')
+// If necessary, you could initiate an AJAX request here
+// and then do the updating in a callback.
+//
+// Update the modal's content.
+var modalTitle = exampleModal.querySelector('.modal-title')
+var modalBody = exampleModal.querySelector('.modal-body')
+
+// modalTitle.textContent = 'New message to ' + recipient
+modalBody.textContent = recipient
+})
+	</script>
 {% endblock %}

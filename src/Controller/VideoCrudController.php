@@ -65,12 +65,24 @@ class VideoCrudController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_video_crud_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Post $post, PostRepository $postRepository): Response
+    public function edit(Request $request, Post $post, PostRepository $postRepository, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(VideoPostType::class, $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $thumbnail = $form->get('thumbnail')->getData();
+            if ($thumbnail) {
+                $originalFilename = pathinfo($thumbnail->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = '../uploads/thumbnails/' . $safeFilename . '-' . uniqid() . '.' . $thumbnail->guessExtension();
+                $thumbnail->move(
+                    $this->getParameter('thumbnails_directory'),
+                    $newFilename
+                );
+                $post->setThumbnail($newFilename);
+            }
+
             $postRepository->add($post, true);
 
             return $this->redirectToRoute('app_video_crud_index', [], Response::HTTP_SEE_OTHER);

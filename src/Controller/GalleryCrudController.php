@@ -41,7 +41,7 @@ class GalleryCrudController extends AbstractController
 
                 $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = './uploads/gallery/' . $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
+                $newFilename = '../uploads/gallery/' . $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
 
                 $image->move(
                     $this->getParameter('gallery_directory'),
@@ -56,7 +56,7 @@ class GalleryCrudController extends AbstractController
             $thumbnail = $form->get('thumbnail')->getData();
             $originalFilename = pathinfo($thumbnail->getClientOriginalName(), PATHINFO_FILENAME);
             $safeFilename = $slugger->slug($originalFilename);
-            $newFilename = './uploads/thumbnails/' . $safeFilename . '-' . uniqid() . '.' . $thumbnail->guessExtension();
+            $newFilename = '../uploads/thumbnails/' . $safeFilename . '-' . uniqid() . '.' . $thumbnail->guessExtension();
             $thumbnail->move(
                 $this->getParameter('thumbnails_directory'),
                 $newFilename
@@ -99,7 +99,7 @@ class GalleryCrudController extends AbstractController
 
                     $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
                     $safeFilename = $slugger->slug($originalFilename);
-                    $newFilename = './uploads/gallery/' . $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
+                    $newFilename = '../uploads/gallery/' . $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
 
                     $image->move(
                         $this->getParameter('gallery_directory'),
@@ -117,7 +117,7 @@ class GalleryCrudController extends AbstractController
             if ($thumbnail) {
                 $originalFilename = pathinfo($thumbnail->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = './uploads/thumbnails/' . $safeFilename . '-' . uniqid() . '.' . $thumbnail->guessExtension();
+                $newFilename = '../uploads/thumbnails/' . $safeFilename . '-' . uniqid() . '.' . $thumbnail->guessExtension();
                 $thumbnail->move(
                     $this->getParameter('thumbnails_directory'),
                     $newFilename
