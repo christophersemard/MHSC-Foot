@@ -89,6 +89,9 @@ h1{
 }
 
 // Design général des liens
+a{
+    text-decoration: none !important;
+}
 .link{
     text-transform: uppercase;
     color: $primary;
@@ -97,6 +100,7 @@ h1{
 }
 .link-secondary{
     color: $secondary;
+    margin-top: 0.5em;
 }
 
 // Design général des boutons
@@ -111,9 +115,14 @@ h1{
     border-left: 0.4em $primary solid !important;
     color:white !important;
 }
-.btn-tertiary{
+.btn-tertiary, .btn-tertiary-light{
     border-left: 0.4em $primary solid !important;
     color: $primary !important;
+    
+}
+.btn-mini{
+    font-size : 0.75em !important;
+    padding: 0.25em 0.5em !important;
 }
 
 
@@ -312,9 +321,26 @@ input[type=checkbox]{
     font-weight: 500;
 }
 
-.category-mini{
+.category-disabled{
+    
     padding: 0.2em 0.4em;
     font-size: 0.7em;
+    background-color: $light;
+    text-transform: uppercase;
+        color: $primary;
+        font-weight: 500;
+        text-align: center;
+}
+
+.category-mini{
+    background-color: $secondary;
+    color: white;
+    padding: 0.2em 0.4em;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    &:hover{
+        color: white;
+    }
 }
 
 .home-articles{
@@ -583,9 +609,7 @@ input[type=checkbox]{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    >a{
-       text-decoration: none;
-   }
+
    .last-news-item{
        padding: 0.5em 0;
        border-top: rgba($color: black, $alpha: 0.1) 1px solid;
@@ -608,8 +632,6 @@ input[type=checkbox]{
    }
 }
 
-.link-secondary{margin-top: 0.5em;}
-
 // BLOCKQUOTE STYLE 
 blockquote{
     width:100%;
@@ -626,9 +648,28 @@ blockquote{
 }
 .news-page__list__news__new{
     
-    padding: 0.5em 0;
+    padding: 1em 0;
     border-top: rgba($color: black, $alpha: 0.1) 1px solid;
-    
+    &__infos{
+        width: 100%;
+        h4{
+            font-size: 1.25em;
+        }
+        >p{
+            font-size: 0.75em;
+        }
+    }
+    &__image{
+        border-bottom: $secondary 0.5em solid;
+        @media (min-width: 768px) { 
+            max-width: 35%;
+            border-left: $secondary 0.5em solid;
+            border-bottom: none;
+         }
+        @media (min-width: 992px) { 
+            max-width: 25%;
+         }
+    }
 }
 
 .news-page__item__image{

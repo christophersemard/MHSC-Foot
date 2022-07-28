@@ -4,29 +4,51 @@
 {% endblock %}
 
 {% block body %}
-	<main class="p-2 p-lg-5 w-100 container-md">
+	<main class="px-2 py-4 p-lg-5 w-100 container-md">
 
-		<div class="news-page d-flex flex-wrap flex-lg-nowrap justify-content-center justify-content-lg-between gap-3">
-			<section class="news-page__list py-4 px-2 px-md-3">
+		<div class="news-page d-flex flex-wrap flex-xl-nowrap justify-content-center justify-content-xl-between gap-3">
+			<section class="news-page__list px-2 px-md-3">
 
 				<h1>Actualités</h1>
 
+				<div class="filters my-3 d-flex flex-wrap gap-1 align-items-center">
+					<span>Catégories :
+					</span>
+					{% if currentCategory == "all" %}
+						<a class="category-mini" href="/actualites">TOUS</a>
+					{% else %}
+						<a class="category-disabled" href="/actualites">TOUS</a>
+					{% endif %}
+
+					{% for category in categories %}
+						{% if currentCategory == 'all' or category.id != currentCategory.id|number_format  %}
+							<a class="category-disabled" href="{{ path('app_news_category_display', {'id': category.id} ) }}">{{category.name}}</a>
+						{% else %}
+							<a class="category-mini" href="{{ path('app_news_category_display', {'id': category.id} ) }}">{{category.name}}</a>
+						{% endif %}
+
+					{% endfor %}
+				</div>
+
 				<div class="news-page__list__news">
 					{% for news in allNews %}
-						<div type="button" href="{{ path('app_news_display', {'id': news.id}) }}" class="news-page__list__news__new d-flex justify-content-between gap-3">
-							<div class="news-page__list__news__new__image w-25">
+						<article class="news-page__list__news__new d-md-flex justify-content-between gap-3">
+							<div class="news-page__list__news__new__image mb-2 mb-md-0">
 								<img class="news-page__item__image" src="{{asset(news.thumbnail)}}" alt="miniature">
 							</div>
-							<div class="news-page__list__news__new__infos w-75">
+							<div class="news-page__list__news__new__infos">
 								<div class="news-page__list__news__new__infos__details d-flex justify-content-between align-items-center">
 									<p class="category-transparent m-0">{{news.category}}</p>
 									<p class="m-0 fw-bold text-primary">{{news.getPublishDate|date('d/m/Y')}}</p>
 								</div>
 								<h4 class="m-0">{{news.title}}</h4>
 								<p>{{news.content|striptags|u.truncate(130,'...')|raw}}</p>
+								<div class="news-page__list__news__new__infos__link d-flex justify-content-end align-items-center">
+									<a class="btn btn-tertiary-light btn-mini" href=" {{ path('app_news_display', {'id': news.id} ) }}">Lire la suite</a>
+								</div>
 							</div>
 
-						</div>
+						</article>
 					{% endfor %}
 
 				</div>
