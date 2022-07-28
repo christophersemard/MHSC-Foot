@@ -660,6 +660,7 @@ blockquote{
         }
     }
     &__image{
+        position: relative;
         border-bottom: $secondary 0.5em solid;
         @media (min-width: 768px) { 
             max-width: 35%;
@@ -678,4 +679,15 @@ blockquote{
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+.news-page__item__type{
+    padding: 0.2em 0.4em;
+    color: white;
+    background-color: $primary;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.75em;
 }

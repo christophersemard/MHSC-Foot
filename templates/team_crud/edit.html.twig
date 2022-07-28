@@ -1,0 +1,14 @@
+{% extends 'admin_base.html.twig' %}
+{% block title %}Modifier équipe
+{% endblock %}
+
+{% block body %}
+	<main class="p-5 w-100">
+		<h1>Modifier équipe</h1>
+
+		{{ include('team_crud/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+		<a class="btn btn-secondary mb-2" href="{{ path('app_team_crud_index') }}">Retour à la liste</a>
+
+	</main>
+{% endblock %}

@@ -35,6 +35,19 @@
 						<article class="news-page__list__news__new d-md-flex justify-content-between gap-3">
 							<div class="news-page__list__news__new__image mb-2 mb-md-0">
 								<img class="news-page__item__image" src="{{asset(news.thumbnail)}}" alt="miniature">
+								{% if news.type == "video" %}
+									<div class="news-page__item__type">
+										<i class="fa-solid fa-video"></i>
+									</div>
+								{% elseif news.type == "gallery" %}
+									<div class="news-page__item__type">
+										<i class="fa-solid fa-camera"></i>
+									</div>
+								{% elseif news.type == "article" %}
+									<div class="news-page__item__type">
+										<i class="fa-solid fa-newspaper"></i>
+									</div>
+								{% endif %}
 							</div>
 							<div class="news-page__list__news__new__infos">
 								<div class="news-page__list__news__new__infos__details d-flex justify-content-between align-items-center">
