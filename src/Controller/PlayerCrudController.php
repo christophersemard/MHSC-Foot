@@ -5,10 +5,11 @@ namespace App\Controller;
 use App\Entity\Player;
 use App\Form\PlayerType;
 use App\Repository\PlayerRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/administration/joueurs')]
 class PlayerCrudController extends AbstractController
@@ -22,13 +23,24 @@ class PlayerCrudController extends AbstractController
     }
 
     #[Route('/new', name: 'app_player_crud_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, PlayerRepository $playerRepository): Response
+    public function new(Request $request, PlayerRepository $playerRepository, SluggerInterface $slugger): Response
     {
         $player = new Player();
         $form = $this->createForm(PlayerType::class, $player);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $photo = $form->get('photo')->getData();
+            $originalFilename = pathinfo($photo->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFilename = $slugger->slug($originalFilename);
+            $newFilename = '../uploads/photos/' . $safeFilename . '-' . uniqid() . '.' . $photo->guessExtension();
+            $photo->move(
+                $this->getParameter('photos_directory'),
+                $newFilename
+            );
+            $player->setPhoto($newFilename);
+
             $playerRepository->add($player, true);
 
             return $this->redirectToRoute('app_player_crud_index', [], Response::HTTP_SEE_OTHER);
@@ -49,12 +61,25 @@ class PlayerCrudController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_player_crud_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Player $player, PlayerRepository $playerRepository): Response
+    public function edit(Request $request, Player $player, PlayerRepository $playerRepository, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(PlayerType::class, $player);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $photo = $form->get('photo')->getData();
+            if ($photo) {
+                $originalFilename = pathinfo($photo->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = '../uploads/photos/' . $safeFilename . '-' . uniqid() . '.' . $photo->guessExtension();
+                $photo->move(
+                    $this->getParameter('photos_directory'),
+                    $newFilename
+                );
+                $player->setPhoto($newFilename);
+            }
+
             $playerRepository->add($player, true);
 
             return $this->redirectToRoute('app_player_crud_index', [], Response::HTTP_SEE_OTHER);

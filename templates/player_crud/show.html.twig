@@ -14,8 +14,36 @@
 					<td>{{ player.id }}</td>
 				</tr>
 				<tr>
+					<th>Prénom</th>
+					<td>{{ player.firstname }}</td>
+				</tr>
+				<tr>
 					<th>Nom</th>
-					<td>{{ player.name }}</td>
+					<td>{{ player.lastname }}</td>
+				</tr>
+				<tr>
+					<th>Date de naissance</th>
+					<td>
+						{{ player.birthdate|date('d/m/Y') }}
+					</td>
+				</tr>
+				<tr>
+					<th>Numéro</th>
+					<td>
+						{{ player.number }}
+					</td>
+				</tr>
+				<tr>
+					<th>Role</th>
+					<td>
+						{{ player.role }}
+					</td>
+				</tr>
+				<tr>
+					<th>Equipe</th>
+					<td>
+						{{ player.team }}
+					</td>
 				</tr>
 			</tbody>
 		</table>

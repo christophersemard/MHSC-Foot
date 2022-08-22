@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 
 class PlayerType extends AbstractType
 {
@@ -27,6 +28,8 @@ class PlayerType extends AbstractType
             ])
             ->add('birthdate', DateType::class, [
                 'label'     => 'Date de naissance',
+                'widget' => 'single_text',
+                'input'  => 'datetime_immutable'
             ])
             ->add('photo', FileType::class, [
                 'label'     => 'Photo du joueur',
@@ -46,17 +49,22 @@ class PlayerType extends AbstractType
                     ])
                 ],
             ])
+            ->add('nation', CountryType::class, [
+                'label'     => 'Nationalité',
+                'choices' => [
+                    'France' => 'fr',
+                ],
+                'preferred_choices' => ['fr'],
+            ])
+            ->add('cityOfBirth')
             ->add('number', NumberType::class, [
                 'label'     => 'Numéro de maillot',
             ])
+            ->add('role')
             ->add('team', EntityType::class, [
                 "class" => Team::class,
                 'label'     => 'Equipe',
             ]);
-        // ->add('role', EntityType::class, [
-        //     "class" => RolePlayer::class,
-        //     'label'     => 'Equipe',
-        // ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

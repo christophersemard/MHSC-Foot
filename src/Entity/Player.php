@@ -32,6 +32,16 @@ class Player
     #[ORM\ManyToOne(inversedBy: 'players')]
     private ?Team $team = null;
 
+    #[ORM\ManyToOne(inversedBy: 'players')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?RolePlayer $role = null;
+
+    #[ORM\Column(length: 3)]
+    private ?string $nation = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $city_of_birth = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +115,42 @@ class Player
     public function setTeam(?Team $team): self
     {
         $this->team = $team;
+
+        return $this;
+    }
+
+    public function getRole(): ?RolePlayer
+    {
+        return $this->role;
+    }
+
+    public function setRole(?RolePlayer $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    public function getNation(): ?string
+    {
+        return $this->nation;
+    }
+
+    public function setNation(string $nation): self
+    {
+        $this->nation = $nation;
+
+        return $this;
+    }
+
+    public function getCityOfBirth(): ?string
+    {
+        return $this->city_of_birth;
+    }
+
+    public function setCityOfBirth(string $city_of_birth): self
+    {
+        $this->city_of_birth = $city_of_birth;
 
         return $this;
     }

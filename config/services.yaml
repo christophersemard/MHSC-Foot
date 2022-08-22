@@ -6,6 +6,7 @@
 parameters:
     gallery_directory: "%kernel.project_dir%/public/uploads/gallery"
     thumbnails_directory: "%kernel.project_dir%/public/uploads/thumbnails"
+    photos_directory: "%kernel.project_dir%/public/uploads/photos"
 
 services:
     # default configuration for services in *this* file

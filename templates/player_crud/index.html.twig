@@ -11,13 +11,38 @@
 		<table class=" table">
 			<thead>
 				<tr>
+					<th>Photo</th>
+					<th>Prénom</th>
 					<th>Nom</th>
+					<th>Date de naissance</th>
+					<th>Numéro</th>
+					<th>Role</th>
+					<th>Equipe</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
 				{% for player in players %}
-					<tr>
-						<td>{{ player.name }}</td>
+					<tr class="align-middle">
+						<td><img class="photo-admin" src="{{ asset(player.photo) }}" alt="Photo"></td>
+						<td>
+							<p class="m-0">{{ player.firstname }}</p>
+						</td>
+						<td>
+							<p class="m-0">{{ player.lastname }}</p>
+						</td>
+						<td>
+							<p class="m-0">{{ player.birthdate|date('d/m/Y') }}</p>
+						</td>
+						<td>
+							<p class="m-0">{{ player.number }}</p>
+						</td>
+						<td>
+							<p class="m-0">{{ player.role }}</p>
+						</td>
+						<td>
+							<p class="m-0">{{ player.team }}</p>
+						</td>
 						<td>
 							<div class="dropdown">
 								<a class=" btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
