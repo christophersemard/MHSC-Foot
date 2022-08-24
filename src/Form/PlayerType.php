@@ -51,10 +51,7 @@ class PlayerType extends AbstractType
             ])
             ->add('nation', CountryType::class, [
                 'label'     => 'Nationalité',
-                'choices' => [
-                    'France' => 'fr',
-                ],
-                'preferred_choices' => ['fr'],
+                'preferred_choices' => ['FR', 'DE', 'AR', 'BR'],
             ])
             ->add('cityOfBirth')
             ->add('number', NumberType::class, [

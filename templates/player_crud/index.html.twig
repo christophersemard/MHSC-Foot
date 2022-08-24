@@ -15,6 +15,8 @@
 					<th>Prénom</th>
 					<th>Nom</th>
 					<th>Date de naissance</th>
+					<th>Ville de naissance</th>
+					<th>Nationalité</th>
 					<th>Numéro</th>
 					<th>Role</th>
 					<th>Equipe</th>
@@ -33,6 +35,12 @@
 						</td>
 						<td>
 							<p class="m-0">{{ player.birthdate|date('d/m/Y') }}</p>
+						</td>
+						<td>
+							<p class="m-0">{{ player.cityOfBirth }}</p>
+						</td>
+						<td>
+							<p class="m-0">{{ player.nation }}</p>
 						</td>
 						<td>
 							<p class="m-0">{{ player.number }}</p>
