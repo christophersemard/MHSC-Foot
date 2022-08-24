@@ -2,17 +2,24 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Team;
+use App\Repository\TeamRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/equipe')]
 class TeamController extends AbstractController
 {
-    #[Route('/pro/effectif', name: 'app_team')]
-    public function index(): Response
+
+    #[Route('/{team}/effectif', name: 'app_team')]
+    public function squad($team): Response
     {
-        return $this->render('team/index.html.twig', [
+        dd($team);
+        // TODO : GET TEAM BY SLUG
+        // TODO : GET PLAYERS BY TEAM
+
+        return $this->render('team/squad.html.twig', [
             'controller_name' => 'TeamController',
         ]);
     }

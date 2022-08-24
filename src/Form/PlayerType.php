@@ -53,7 +53,9 @@ class PlayerType extends AbstractType
                 'label'     => 'Nationalité',
                 'preferred_choices' => ['FR', 'DE', 'AR', 'BR'],
             ])
-            ->add('cityOfBirth')
+            ->add('cityOfBirth', TextType::class, [
+                'label'     => 'Ville de naissance',
+            ])
             ->add('number', NumberType::class, [
                 'label'     => 'Numéro de maillot',
             ])
