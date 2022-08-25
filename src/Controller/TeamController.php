@@ -61,10 +61,12 @@ class TeamController extends AbstractController
     }
 
 
-    #[Route('/{team}/calendrier-et-resultats', name: 'app_team/results')]
-    public function results($team): Response
+    #[Route('/{slug}/calendrier-et-resultats', name: 'app_team/results')]
+    public function results($slug, TeamRepository $teamRepository): Response
     {
-        return $this->render('team/squad.html.twig', [
+        // TODO : GET TEAM BY SLUG
+        $team =  $teamRepository->findBySlug($slug);
+        return $this->render('team/results.html.twig', [
             'controller_name' => 'TeamController',
         ]);
     }
