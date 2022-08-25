@@ -31,12 +31,14 @@ class Staff
     #[ORM\Column(length: 100)]
     private ?string $city_of_birth = null;
 
-    #[ORM\Column(length: 100)]
-    private ?string $role = null;
 
     #[ORM\ManyToOne(inversedBy: 'staff')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Team $team = null;
+
+    #[ORM\ManyToOne(inversedBy: 'staff')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?RoleStaff $role = null;
 
     public function getId(): ?int
     {
@@ -115,18 +117,6 @@ class Staff
         return $this;
     }
 
-    public function getRole(): ?string
-    {
-        return $this->role;
-    }
-
-    public function setRole(string $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
     public function getTeam(): ?Team
     {
         return $this->team;
@@ -135,6 +125,18 @@ class Staff
     public function setTeam(?Team $team): self
     {
         $this->team = $team;
+
+        return $this;
+    }
+
+    public function getRole(): ?RoleStaff
+    {
+        return $this->role;
+    }
+
+    public function setRole(?RoleStaff $role): self
+    {
+        $this->role = $role;
 
         return $this;
     }

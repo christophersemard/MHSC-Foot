@@ -773,8 +773,10 @@ blockquote{
     &__photo{
         position: absolute;
         bottom: 20%;
-        left: -7%;
+        left: 0%;
         height: 70%;   
+        max-width: 95%;
+        object-fit: cover;
     }
     &__player-name{     
         position: absolute;

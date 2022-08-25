@@ -1,36 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Effectif
+{% block title %}Staff -
+	{{team[0].name}}
 {% endblock %}
 
 {% block body %}
 
 	<main class="w-100">
 		<div class="mt-5 w-100 container-md">
-			<h1>Effectif -
+			<h1>Staff -
 				{{team[0].name}}</h1>
 		</div>
 
-		<div class="goalkeepers py-5 bg-white">
+		<div class="trainers py-5 bg-white">
 			<div class="container-md">
-				<h2 class="squad-title">Gardiens</h2>
+				<h2 class="squad-title">Entraineur</h2>
 				<div class="cards-container d-flex flex-wrap justify-content-center justify-content-md-start gap-4">
-					{% for player in goalkeepers %}
+					{% for staff in trainers %}
 						<div class="player-card player-card-blue">
 							<img class="player-card__background" src="/assets/images/player-card-blue.png" alt="">
-							<img class="player-card__photo" src="{{ asset(player.photo) }}" alt="Photo {{player.lastname}}">
+							<img class="player-card__photo" src="{{ asset(staff.photo) }}" alt="Photo {{staff.lastname}}">
 
 							<div class="player-card__infos text-white fw-bold d-flex flex-column align-items-center">
-								<p class="player-card__infos__number h1 title-primary">{{player.number ? player.number : '-'}}</p>
-								{# <p>{{date('now').diff((player.getDateOfBirth )).format('%y ans')}}</p> #}
-								<p class="mb-1">{{ date().diff(date(player.getBirthdate)).y}}
+								<p class="player-card__infos__number h1 title-primary">E</p>
+								{# <p>{{date('now').diff((staff.getDateOfBirth )).format('%y ans')}}</p> #}
+								<p class="mb-1">{{ date().diff(date(staff.getBirthdate)).y}}
 									ans</p>
-								<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/{{player.nation}}.svg" alt="Drapeau">
+								<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/{{staff.nation}}.svg" alt="Drapeau">
 							</div>
 							<div class="player-card__player-name bg-primary-dark  py-2 px-3">
-								<h5 class="text-white m-0">{{player.firstname}}</h5>
+								<h5 class="text-white m-0">{{staff.firstname}}</h5>
 								<h4 class="player-card__player-name__name h1 title-mini-primary m-0">
-									{{player.lastname}}</h4>
+									{{staff.lastname}}</h4>
 							</div>
 
 						</div>
@@ -38,26 +39,26 @@
 				</div>
 			</div>
 		</div>
-		<div class="defenders py-5 bg-light">
+		<div class="technicians py-5 bg-light">
 			<div class="container-md">
-				<h2 class="squad-title">Défenseurs</h2>
+				<h2 class="squad-title">Staff technique</h2>
 				<div class="cards-container d-flex flex-wrap justify-content-center justify-content-md-start gap-4">
-					{% for player in defenders %}
+					{% for staff in technicians %}
 						<div class="player-card">
 							<img class="player-card__background" src="/assets/images/player-card-white.png" alt="">
-							<img class="player-card__photo" src="{{ asset(player.photo) }}" alt="Photo {{player.lastname}}">
+							<img class="player-card__photo" src="{{ asset(staff.photo) }}" alt="Photo {{staff.lastname}}">
 
 							<div class="player-card__infos text-secondary fw-bold d-flex flex-column align-items-center">
-								<p class="player-card__infos__number h1 title-tertiary">{{player.number}}</p>
-								{# <p>{{ player.getBirthdate|date('d/m/Y')}}</p> #}
-								<p class="mb-1">{{ date().diff(date(player.getBirthdate)).y}}
+								<p class="player-card__infos__number h1 title-tertiary">ST</p>
+								{# <p>{{ staff.getBirthdate|date('d/m/Y')}}</p> #}
+								<p class="mb-1">{{ date().diff(date(staff.getBirthdate)).y}}
 									ans</p>
-								<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/{{player.nation}}.svg" alt="Drapeau">
+								<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/{{staff.nation}}.svg" alt="Drapeau">
 							</div>
 							<div class="player-card__player-name bg-white  py-2 px-3">
-								<h5 class="text-primary m-0">{{player.firstname}}</h5>
+								<h5 class="text-primary m-0">{{staff.firstname}}</h5>
 								<h4 class="player-card__player-name__name h1 title-mini-tertiary m-0">
-									{{player.lastname}}</h4>
+									{{staff.lastname}}</h4>
 							</div>
 
 						</div>
@@ -65,26 +66,26 @@
 				</div>
 			</div>
 		</div>
-		<div class="midfielders py-5 bg-white">
+		<div class="medicals py-5 bg-white">
 			<div class="container-md">
-				<h2 class="squad-title">Milieux</h2>
+				<h2 class="squad-title">Staff médical</h2>
 				<div class="cards-container d-flex flex-wrap justify-content-center justify-content-md-start gap-4">
-					{% for player in midfielders %}
+					{% for staff in medicals %}
 						<div class="player-card player-card-blue">
 							<img class="player-card__background" src="/assets/images/player-card-blue.png" alt="">
-							<img class="player-card__photo" src="{{ asset(player.photo) }}" alt="Photo {{player.lastname}}">
+							<img class="player-card__photo" src="{{ asset(staff.photo) }}" alt="Photo {{staff.lastname}}">
 
 							<div class="player-card__infos text-white fw-bold d-flex flex-column align-items-center">
-								<p class="player-card__infos__number h1 title-primary">{{player.number}}</p>
-								{# <p>{{date('now').diff((player.getDateOfBirth )).format('%y ans')}}</p> #}
-								<p class="mb-1">{{ date().diff(date(player.getBirthdate)).y}}
+								<p class="player-card__infos__number h1 title-primary">SM</p>
+								{# <p>{{date('now').diff((staff.getDateOfBirth )).format('%y ans')}}</p> #}
+								<p class="mb-1">{{ date().diff(date(staff.getBirthdate)).y}}
 									ans</p>
-								<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/{{player.nation}}.svg" alt="Drapeau">
+								<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/{{staff.nation}}.svg" alt="Drapeau">
 							</div>
 							<div class="player-card__player-name bg-primary-dark  py-2 px-3">
-								<h5 class="text-white m-0">{{player.firstname}}</h5>
+								<h5 class="text-white m-0">{{staff.firstname}}</h5>
 								<h4 class="player-card__player-name__name h1 title-mini-primary m-0">
-									{{player.lastname}}</h4>
+									{{staff.lastname}}</h4>
 							</div>
 
 						</div>
@@ -93,26 +94,26 @@
 			</div>
 		</div>
 
-		<div class="forwards py-5 bg-light">
+		<div class="others-staff py-5 bg-light">
 			<div class="container-md">
-				<h2 class="squad-title">Attaquants</h2>
+				<h2 class="squad-title">Autres staffs</h2>
 				<div class="cards-container d-flex flex-wrap justify-content-center justify-content-md-start gap-4">
-					{% for player in forwards %}
+					{% for staff in others %}
 						<div class="player-card">
 							<img class="player-card__background" src="/assets/images/player-card-white.png" alt="">
-							<img class="player-card__photo" src="{{ asset(player.photo) }}" alt="Photo {{player.lastname}}">
+							<img class="player-card__photo" src="{{ asset(staff.photo) }}" alt="Photo {{staff.lastname}}">
 
 							<div class="player-card__infos text-secondary fw-bold d-flex flex-column align-items-center">
-								<p class="player-card__infos__number h1 title-tertiary">{{player.number}}</p>
-								{# <p>{{ player.getBirthdate|date('d/m/Y')}}</p> #}
-								<p class="mb-1">{{ date().diff(date(player.getBirthdate)).y}}
+								<p class="player-card__infos__number h1 title-tertiary">A</p>
+								{# <p>{{ staff.getBirthdate|date('d/m/Y')}}</p> #}
+								<p class="mb-1">{{ date().diff(date(staff.getBirthdate)).y}}
 									ans</p>
-								<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/{{player.nation}}.svg" alt="Drapeau">
+								<img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/{{staff.nation}}.svg" alt="Drapeau">
 							</div>
 							<div class="player-card__player-name bg-white  py-2 px-3">
-								<h5 class="text-primary m-0">{{player.firstname}}</h5>
+								<h5 class="text-primary m-0">{{staff.firstname}}</h5>
 								<h4 class="player-card__player-name__name h1 title-mini-tertiary m-0">
-									{{player.lastname}}</h4>
+									{{staff.lastname}}</h4>
 							</div>
 
 						</div>

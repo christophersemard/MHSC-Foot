@@ -1,0 +1,63 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Staff
+{% endblock %}
+
+{% block body %}
+	<main class="p-5 w-100">
+		<h1>Staff</h1>
+
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ staff.id }}</td>
+				</tr>
+				<tr>
+					<th>Prénom</th>
+					<td>{{ staff.firstname }}</td>
+				</tr>
+				<tr>
+					<th>Nom</th>
+					<td>{{ staff.lastname }}</td>
+				</tr>
+				<tr>
+					<th>Date de naissance</th>
+					<td>
+						{{ staff.birthdate|date('d/m/Y') }}
+					</td>
+				</tr>
+				<tr>
+					<th>Ville de naissance</th>
+					<td>
+						{{ staff.cityOfBirth }}
+					</td>
+				</tr>
+				<tr>
+					<th>Nationalité</th>
+					<td>
+						{{ staff.nation }}
+					</td>
+				</tr>
+				<tr>
+					<th>Role</th>
+					<td>
+						{{ staff.role }}
+					</td>
+				</tr>
+				<tr>
+					<th>Equipe</th>
+					<td>
+						{{ staff.team }}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a href="{{ path('app_staff_crud_index') }}">Retour à la liste</a>
+
+		<a href="{{ path('app_staff_crud_edit', {'id': staff.id}) }}">Modifier</a>
+
+		{{ include('staff_crud/_delete_form.html.twig') }}
+	</main>
+{% endblock %}

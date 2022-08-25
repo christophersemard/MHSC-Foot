@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Team;
 use App\Repository\TeamRepository;
+use App\Repository\StaffRepository;
 use App\Repository\PlayerRepository;
+use App\Repository\RoleStaffRepository;
 use App\Repository\RolePlayerRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -37,18 +39,24 @@ class TeamController extends AbstractController
     }
 
     #[Route('/{slug}/staff', name: 'app_team/staff')]
-    public function staff($slug, TeamRepository $teamRepository, StaffRepository $staffRepository, RolePlayerRepository $rolePlayerRepository): Response
+    public function staff($slug, TeamRepository $teamRepository, StaffRepository $staffRepository, RoleStaffRepository $roleStaffRepository): Response
     {
         // TODO : GET TEAM BY SLUG
         $team =  $teamRepository->findBySlug($slug);
-        // TODO : GET PLAYERS BY TEAM
-        $staffs =  $staffRepository->findByTeamAndRole($team, $rolePlayerRepository->findOneBy(array('name' => 'Gardien'), array('name' => 'ASC')));
+        // TODO : GET STAFFS BY TEAM
+        $trainers =  $staffRepository->findByTeamAndRole($team, $roleStaffRepository->findOneBy(array('name' => 'Entraineur'), array('name' => 'ASC')));
+        $technicians =  $staffRepository->findByTeamAndRole($team, $roleStaffRepository->findOneBy(array('name' => 'Staff technique'), array('name' => 'ASC')));
+        $medicals =  $staffRepository->findByTeamAndRole($team, $roleStaffRepository->findOneBy(array('name' => 'Staff médical'), array('name' => 'ASC')));
+        $others =  $staffRepository->findByTeamAndRole($team, $roleStaffRepository->findOneBy(array('name' => 'Autres'), array('name' => 'ASC')));
         // dd($goalkeepers);
 
-        return $this->render('team/squad.html.twig', [
+        return $this->render('team/staff.html.twig', [
             'controller_name' => 'TeamController',
             'team' => $team,
-            'staffs' => $staffs,
+            'trainers' => $trainers,
+            'technicians' => $technicians,
+            'medicals' => $medicals,
+            'others' => $others,
         ]);
     }
 
