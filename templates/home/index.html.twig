@@ -96,5 +96,34 @@
 			</div>
 		</section>
 
-	</main>
-{% endblock %}
+		<section class="home-results d-flex ">
+			<img class="home-results__background" src="/assets/images/background-orange.png" alt="Image de présentation de l'article">
+			<div class="home-results__content py-5">
+				<h1 class="title-secondary text-center">Matchs</h1>
+				<div class="home-results__content__widgets mt-5 d-flex flex-wrap px-2 px-lg-5 gap-2 gap-md-3 gap-lg-5 flex-column flex-xl-row justify-content-lg-around align-items-lg-center">
+					<div class="home-results__content__widgets__last-fixtures rounded bg-light p-2 p-lg-4">
+						<h4 class="text-center">Derniers résultats</h3>
+					</div>
+					<div class="home-results__content__widgets__next-fixture rounded bg-light p-2 p-lg-4">
+						<h4 class="text-center">Prochain match</h3>
+					</div>
+					<div class="home-results__content__widgets__standing rounded bg-light p-2 p-lg-4">
+						<h4 class="text-center">Classement</h3>
+
+
+						<table class=" table">
+							<thead>
+								<tr>
+									<th>POS</th>
+									<th>EQUIPE</th>
+									<th>PTS</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+
+			</section>
+		</main>
+	{% endblock %}
