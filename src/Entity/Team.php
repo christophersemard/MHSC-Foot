@@ -21,9 +21,16 @@ class Team
     #[ORM\OneToMany(mappedBy: 'team', targetEntity: Player::class)]
     private Collection $people;
 
+    #[ORM\Column(length: 100)]
+    private ?string $slug = null;
+
+    #[ORM\OneToMany(mappedBy: 'team', targetEntity: Staff::class)]
+    private Collection $staff;
+
     public function __construct()
     {
         $this->people = new ArrayCollection();
+        $this->staff = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -72,6 +79,48 @@ class Team
             // set the owning side to null (unless already changed)
             if ($player->getTeam() === $this) {
                 $player->setTeam(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Staff>
+     */
+    public function getStaff(): Collection
+    {
+        return $this->staff;
+    }
+
+    public function addStaff(Staff $staff): self
+    {
+        if (!$this->staff->contains($staff)) {
+            $this->staff[] = $staff;
+            $staff->setTeam($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStaff(Staff $staff): self
+    {
+        if ($this->staff->removeElement($staff)) {
+            // set the owning side to null (unless already changed)
+            if ($staff->getTeam() === $this) {
+                $staff->setTeam(null);
             }
         }
 

@@ -42,17 +42,18 @@ class PlayerRepository extends ServiceEntityRepository
     //    /**
     //     * @return Player[] Returns an array of Player objects
     //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('p')
-    //            ->andWhere('p.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('p.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+    public function findByTeamAndRole($team, $role): array
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.team = :val')
+            ->setParameter('val', $team)
+            ->andWhere('p.role = :role')
+            ->setParameter('role',  $role)
+            ->orderBy('p.id', 'ASC')
+            ->setMaxResults(20)
+            ->getQuery()
+            ->getResult();
+    }
 
     //    public function findOneBySomeField($value): ?Player
     //    {

@@ -13,7 +13,7 @@ class TeamType extends AbstractType
     {
         $builder
             ->add('name')
-        ;
+            ->add('slug');
     }
 
     public function configureOptions(OptionsResolver $resolver): void
