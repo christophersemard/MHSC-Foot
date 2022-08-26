@@ -70,10 +70,43 @@ class HomeController extends AbstractController
         // $nextFixtures = json_decode($responseFixtures->getContent(), true);
         // dd($nextFixtures);
 
+
+        $responseTeam = file_get_contents('../_JSON-requests/team-league.json');
+        $team = json_decode($responseTeam, true);
+
+        $responseStandings = file_get_contents('../_JSON-requests/standings.json');
+        $standings = json_decode($responseStandings, true);
+        $standingsRanks = $standings['response'][0]['league']['standings'][0];
+        $teamStandings = [];
+        foreach ($standingsRanks as $key => $team) {
+            $teamStandings[] = $team['team'];
+        }
+        $indexStandings = array_search("93", array_column($teamStandings, 'id'));
+        $sevenStandings = [];
+        if ($indexStandings < 3) {
+            $sevenStandings = array_slice($standingsRanks, 0, 7);
+        } elseif ($indexStandings > (count($standingsRanks) - 4)) {
+            $sevenStandings = array_slice($standingsRanks, (count($standingsRanks) - 7));
+        } else {
+            $sevenStandings = array_slice($standingsRanks, $indexStandings - 3,  7);
+        }
+
+        $responseFixtures = file_get_contents('../_JSON-requests/last-fixtures.json');
+        $lastFixtures = json_decode($responseFixtures, true);
+
+        $responseFixtures = file_get_contents('../_JSON-requests/next-fixtures.json');
+        $nextFixtures = json_decode($responseFixtures, true);
+
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'mainPost' => $postRepository->findLast()[0],
             'news' => $postRepository->findLast10(),
+            'team' => $team,
+            'standings' => $sevenStandings,
+            'league' => $standings['response'][0]['league']['name'],
+            'lastFixtures' => $lastFixtures['response'],
+            'nextFixtures' => $nextFixtures['response'],
+
 
         ]);
     }

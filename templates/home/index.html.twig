@@ -101,14 +101,132 @@
 			<div class="home-results__content py-5">
 				<h1 class="title-secondary text-center">Matchs</h1>
 				<div class="home-results__content__widgets mt-5 d-flex flex-wrap px-2 px-lg-5 gap-2 gap-md-3 gap-lg-5 flex-column flex-xl-row justify-content-lg-around align-items-lg-center">
-					<div class="home-results__content__widgets__last-fixtures rounded bg-light p-2 p-lg-4">
+					<div class="home-results__content__widgets__last-fixtures rounded bg-light p-2 p-lg-3">
 						<h4 class="text-center">Derniers résultats</h3>
+
+
+						<div class="score-table">
+
+							{% for fixture in lastFixtures|reverse %}
+								<div class="score-row d-flex justify-content-space-between flex-nowrap align-items-center gap-2 my-1 bg-white p-2 rounded">
+									<div class="comp rounded bg-light d-flex flex-column align-items-center justify-content-between gap-1 p-1">
+										<img class="comp-icon" src="{{fixture.league.logo}}" alt="Logo {{fixture.league.name}}">
+										<div class="date text-center">{{fixture.fixture.date|date('d/m')}}</div>
+									</div>
+									<img class="logo-icon" src="{{fixture.teams.home.logo}}" alt="Logo {{fixture.teams.home.name}}">
+									<div class="team">
+										{{fixture.teams.home.name}}
+									</div>
+									<div class="score-box">
+										<div class="score px-1 rounded">{{fixture.goals.home ~ ' - ' ~ fixture.goals.away}}</div>
+									</div>
+									<div class="team text-end">
+										{{fixture.teams.away.name}}
+									</div>
+									<img class="logo-icon" src="{{fixture.teams.away.logo}}" alt="Logo {{fixture.teams.away.name}}">
+								</div>
+							{% endfor %}
+
+						</div>
+						<div class="score-table-2">
+
+							{% for fixture in lastFixtures|reverse %}
+
+								<div class="score-row d-flex justify-content-space-between flex-nowrap align-items-center gap-2 my-1 bg-white p-2 rounded">
+									<div class="comp rounded bg-light d-flex flex-column align-items-center justify-content-between gap-1 p-1">
+										<img class="comp-icon" src="{{fixture.league.logo}}" alt="Logo {{fixture.league.name}}">
+										<div class="date text-center">{{fixture.fixture.date|date('d/m')}}</div>
+									</div>
+
+									<div class="team-box d-flex flex-column gap-1">
+										<div>
+
+											<p class="team"><img class="logo-icon" src="{{fixture.teams.home.logo}}" alt="Logo {{fixture.teams.home.name}}">
+												{{fixture.teams.home.name}}
+											</p>
+										</div>
+										<div>
+
+
+											<p class="team"><img class="logo-icon" src="{{fixture.teams.away.logo}}" alt="Logo {{fixture.teams.away.name}}">
+												{{fixture.teams.away.name}}
+											</p>
+										</div>
+									</div>
+
+									<div class="score-box d-flex flex-column gap-1">
+										<div class="score px-1 rounded">{{fixture.goals.home}}</div>
+										<div class="score px-1 rounded">{{fixture.goals.away}}</div>
+									</div>
+								</div>
+							{% endfor %}
+
+						</div>
+
 					</div>
 					<div class="home-results__content__widgets__next-fixture rounded bg-light p-2 p-lg-4">
-						<h4 class="text-center">Prochain match</h3>
+						<h4 class="text-center">Prochains matchs</h3>
+						<div
+							class="CSSgal">
+
+							<!-- Don't wrap targets in parent -->
+							<s id="s1"></s>
+							<s id="s2"></s>
+							<s id="s3"></s>
+							<s id="s4"></s>
+							<s id="s5"></s>
+
+							<div class="slider">
+								<div style="background:#5b8;">
+									<h2>PURE
+										<b>CSS</b>
+										SLIDESHOW</h2>
+									<p>Responsive Slideshow Gallery created using CSS only<br>by Roko</p>
+								</div>
+								<div style="background:#85b;">
+									<h2>Slide 2</h2>
+								</div>
+								<div style="background:#e95;">
+									<h2>Slide 3</h2>
+								</div>
+								<div style="background:#e59;">
+									<h2>Slide 4</h2>
+								</div>
+								<div style="background:#e59;">
+									<h2>Slide 5</h2>
+								</div>
+							</div>
+
+							<div class="prevNext">
+								<div>
+									<a href="#s5"></a>
+									<a href="#s2"></a>
+								</div>
+								<div>
+									<a href="#s1"></a>
+									<a href="#s3"></a>
+								</div>
+								<div>
+									<a href="#s2"></a>
+									<a href="#s4"></a>
+								</div>
+								<div>
+									<a href="#s3"></a>
+									<a href="#s5"></a>
+								</div>
+								<div>
+									<a href="#s4"></a>
+									<a href="#s1"></a>
+								</div>
+							</div>
+
+
+						</div>
+
 					</div>
-					<div class="home-results__content__widgets__standing rounded bg-light p-2 p-lg-4">
-						<h4 class="text-center">Classement</h3>
+					<div class="home-results__content__widgets__standing rounded bg-light p-2 p-lg-3">
+						<h4 class="text-center">Classement
+							{{ league }}</h3>
 
 
 						<table class=" table">
@@ -119,7 +237,20 @@
 									<th>PTS</th>
 								</tr>
 							</thead>
-							<tbody></tbody>
+							<tbody>
+
+								{% for team in standings %}
+
+									<tr>
+										<td>{{team.rank}}</td>
+										<td><img class="logo-icon" src="{{team.team.logo}}" alt="Logo {{team.team.name}}">
+											{{team.team.name}}</td>
+										<td>{{team.points}}</td>
+									</tr>
+
+								{% endfor %}
+
+							</tbody>
 						</table>
 					</div>
 				</div>
