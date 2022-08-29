@@ -99,8 +99,8 @@
 			<img class="home-results__background" src="/assets/images/background-orange.png" alt="Image de présentation de l'article">
 			<div class="home-results__content py-5">
 				<h1 class="title-secondary text-center">Matchs</h1>
-				<div class="home-results__content__widgets mt-5 d-flex flex-wrap px-2 px-x-2 gap-4 gap-xxl-1 flex-column flex-md-row justify-content-between justify-content-xxl-around align-items-lg-center container-fluid container-md container-xxl-fluid">
-					<div class="home-results__content__widgets__last-fixtures rounded bg-white py-4 px-2">
+				<div class="home-results__content__widgets mt-5 d-flex flex-wrap px-3 gap-4 gap-xxl-1 flex-column flex-md-row justify-content-between justify-content-xxl-around align-items-lg-center container-fluid container-md">
+					<div class="home-results__content__widgets__last-fixtures rounded bg-white shadow-sm py-4 px-2">
 						<h4 class="text-center">Derniers résultats</h3>
 
 
@@ -126,10 +126,11 @@
 								</div>
 							{% endfor %}
 
+							<a class="link link-primary text-center d-block" href="/equipe/pro/calendrier-et-resultats">Résultats complets</a>
 						</div>
 
 					</div>
-					<div class="home-results__content__widgets__next-fixture rounded bg-white py-4 px-2 px-lg-3 border-bottom border-primary border-5">
+					<div class="home-results__content__widgets__next-fixture rounded bg-white shadow-sm py-4 px-2 px-lg-3 border-bottom border-primary border-5">
 
 						<h4 class="text-center">Prochains matchs</h3>
 						<div
@@ -249,7 +250,7 @@
 						</div>
 
 					</div>
-					<div class="home-results__content__widgets__standing rounded bg-white py-4 px-2">
+					<div class="home-results__content__widgets__standing rounded bg-white shadow-sm py-4 px-2">
 						<h4 class="text-center">Classement
 							{{ league }}</h3>
 

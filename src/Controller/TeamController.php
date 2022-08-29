@@ -65,11 +65,20 @@ class TeamController extends AbstractController
     #[Route('/{slug}/calendrier-et-resultats', name: 'app_team/results')]
     public function results($slug, TeamRepository $teamRepository): Response
     {
-        // TODO : GET TEAM BY SLUG
-        $team =  $teamRepository->findBySlug($slug);
-        return $this->render('team/results.html.twig', [
-            'controller_name' => 'TeamController',
-        ]);
+
+        if ($slug == 'pro' || $slug == 'feminines') {
+            $responseTeam = file_get_contents('../_JSON-requests/team-league.json');
+            $mainTeam = json_decode($responseTeam, true);
+
+            // TODO : GET TEAM BY SLUG
+            $team =  $teamRepository->findBySlug($slug);
+            return $this->render('team/results.html.twig', [
+                'controller_name' => 'TeamController',
+                'team' => $team,
+            ]);
+        } else {
+            return new RedirectResponse('/');
+        }
     }
     #[Route('/{slug}/classement', name: 'app_team/standings')]
     public function standings($slug, TeamRepository $teamRepository): Response
