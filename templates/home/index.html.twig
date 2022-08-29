@@ -95,13 +95,12 @@
 					{% include "./news/_news_feed.html.twig" %}</aside>
 			</div>
 		</section>
-
-		<section class="home-results d-flex ">
+		<section class="home-results d-flex">
 			<img class="home-results__background" src="/assets/images/background-orange.png" alt="Image de présentation de l'article">
 			<div class="home-results__content py-5">
 				<h1 class="title-secondary text-center">Matchs</h1>
-				<div class="home-results__content__widgets mt-5 d-flex flex-wrap px-2 px-lg-5 gap-2 gap-md-3 gap-lg-5 flex-column flex-xl-row justify-content-lg-around align-items-lg-center">
-					<div class="home-results__content__widgets__last-fixtures rounded bg-light p-2 p-lg-3">
+				<div class="home-results__content__widgets mt-5 d-flex flex-wrap px-2 px-x-2 gap-4 gap-xxl-1 flex-column flex-md-row justify-content-between justify-content-xxl-around align-items-lg-center container-fluid container-md container-xxl-fluid">
+					<div class="home-results__content__widgets__last-fixtures rounded bg-white py-4 px-2">
 						<h4 class="text-center">Derniers résultats</h3>
 
 
@@ -128,43 +127,10 @@
 							{% endfor %}
 
 						</div>
-						<div class="score-table-2">
-
-							{% for fixture in lastFixtures|reverse %}
-
-								<div class="score-row d-flex justify-content-space-between flex-nowrap align-items-center gap-2 my-1 bg-white p-2 rounded">
-									<div class="comp rounded bg-light d-flex flex-column align-items-center justify-content-between gap-1 p-1">
-										<img class="comp-icon" src="{{fixture.league.logo}}" alt="Logo {{fixture.league.name}}">
-										<div class="date text-center">{{fixture.fixture.date|date('d/m')}}</div>
-									</div>
-
-									<div class="team-box d-flex flex-column gap-1">
-										<div>
-
-											<p class="team"><img class="logo-icon" src="{{fixture.teams.home.logo}}" alt="Logo {{fixture.teams.home.name}}">
-												{{fixture.teams.home.name}}
-											</p>
-										</div>
-										<div>
-
-
-											<p class="team"><img class="logo-icon" src="{{fixture.teams.away.logo}}" alt="Logo {{fixture.teams.away.name}}">
-												{{fixture.teams.away.name}}
-											</p>
-										</div>
-									</div>
-
-									<div class="score-box d-flex flex-column gap-1">
-										<div class="score px-1 rounded">{{fixture.goals.home}}</div>
-										<div class="score px-1 rounded">{{fixture.goals.away}}</div>
-									</div>
-								</div>
-							{% endfor %}
-
-						</div>
 
 					</div>
-					<div class="home-results__content__widgets__next-fixture rounded bg-light p-2 p-lg-4">
+					<div class="home-results__content__widgets__next-fixture rounded bg-white py-4 px-2 px-lg-3 border-bottom border-primary border-5">
+
 						<h4 class="text-center">Prochains matchs</h3>
 						<div
 							class="CSSgal">
@@ -177,46 +143,105 @@
 							<s id="s5"></s>
 
 							<div class="slider">
-								<div style="background:#5b8;">
-									<h2>PURE
-										<b>CSS</b>
-										SLIDESHOW</h2>
-									<p>Responsive Slideshow Gallery created using CSS only<br>by Roko</p>
-								</div>
-								<div style="background:#85b;">
-									<h2>Slide 2</h2>
-								</div>
-								<div style="background:#e95;">
-									<h2>Slide 3</h2>
-								</div>
-								<div style="background:#e59;">
-									<h2>Slide 4</h2>
-								</div>
-								<div style="background:#e59;">
-									<h2>Slide 5</h2>
-								</div>
+
+								{% for fixture in nextFixtures %}
+									<div class="next-fixture-box">
+
+										<div class="next-fixture-box__infos">
+											<div class="next-fixture-box__infos_competition d-flex gap-2 justify-content-center align-items-center my-2">
+
+												<p class=" mb-0">
+													<img class="comp-icon" src="{{fixture.league.logo}}" alt="Logo {{fixture.league.name}}">
+													{{fixture.league.name}}
+													|
+													{{fixture.league.round|replace({"Regular Season - ": "J"})}}
+													|
+													{{fixture.fixture.date|format_datetime('full', 'short', locale='fr')}}</p>
+
+											</div>
+											<div class="next-fixture-box__infos_stadium my-2">
+												<p>{{ fixture.fixture.venue.name }}</p>
+
+											</div>
+										</div>
+										<div class="next-fixture-box__fixture d-flex my-4 justify-content-around px-1 px-xl-5">
+
+											<div class="next-fixture-box__fixture__team-box py-3 d-flex flex-column justify-content-between align-items-center">
+												<img class="logo-fixture mb-4" src="{{fixture.teams.home.logo}}" alt="Logo {{fixture.teams.home.name}}">
+												<div class="next-fixture-box__fixture__team-box__team h5">
+													{{fixture.teams.home.name}}
+												</div>
+											</div>
+
+											<div class="next-fixture-box__fixture__separator d-flex flex-column justify-content-center">
+												<p class="h2 display-5 display-xl-2">
+													VS
+												</p>
+											</div>
+
+											<div class="next-fixture-box__fixture__team-box py-3 d-flex flex-column justify-content-between align-items-center">
+
+												<img class="logo-fixture mb-4" src="{{fixture.teams.away.logo}}" alt="Logo {{fixture.teams.away.name}}">
+
+												<div class="next-fixture-box__fixture__team-box__team h5">
+													{{fixture.teams.away.name}}
+												</div>
+											</div>
+										</div>
+										<div class="next-fixture-box__fixture_buttons d-flex mt-4 justify-content-end">
+
+											{% if fixture.teams.home.id == mainTeam.parameters.team %}
+												<a class="btn btn-secondary" href="{{ path('app_player_crud_new') }}">Billetterie</a>
+											{% endif %}
+
+
+											<a class="btn btn-primary" href="{{ path('app_player_crud_new') }}">Calendrier</a>
+										</div>
+									</div>
+								{% endfor %}
+
 							</div>
 
 							<div class="prevNext">
 								<div>
-									<a href="#s5"></a>
-									<a href="#s2"></a>
+									<a href="#s5">
+										<i class="fa-solid fa-arrow-left-long"></i>
+									</a>
+									<a href="#s2">
+										<i class="fa-solid fa-arrow-right-long"></i>
+									</a>
 								</div>
 								<div>
-									<a href="#s1"></a>
-									<a href="#s3"></a>
+									<a href="#s1">
+										<i class="fa-solid fa-arrow-left-long"></i>
+									</a>
+									<a href="#s3">
+										<i class="fa-solid fa-arrow-right-long"></i>
+									</a>
 								</div>
 								<div>
-									<a href="#s2"></a>
-									<a href="#s4"></a>
+									<a href="#s2">
+										<i class="fa-solid fa-arrow-left-long"></i>
+									</a>
+									<a href="#s4">
+										<i class="fa-solid fa-arrow-right-long"></i>
+									</a>
 								</div>
 								<div>
-									<a href="#s3"></a>
-									<a href="#s5"></a>
+									<a href="#s3">
+										<i class="fa-solid fa-arrow-left-long"></i>
+									</a>
+									<a href="#s5">
+										<i class="fa-solid fa-arrow-right-long"></i>
+									</a>
 								</div>
 								<div>
-									<a href="#s4"></a>
-									<a href="#s1"></a>
+									<a href="#s4">
+										<i class="fa-solid fa-arrow-left-long"></i>
+									</a>
+									<a href="#s1">
+										<i class="fa-solid fa-arrow-right-long"></i>
+									</a>
 								</div>
 							</div>
 
@@ -224,7 +249,7 @@
 						</div>
 
 					</div>
-					<div class="home-results__content__widgets__standing rounded bg-light p-2 p-lg-3">
+					<div class="home-results__content__widgets__standing rounded bg-white py-4 px-2">
 						<h4 class="text-center">Classement
 							{{ league }}</h3>
 
@@ -234,6 +259,7 @@
 								<tr>
 									<th>POS</th>
 									<th>EQUIPE</th>
+									<th>J</th>
 									<th>PTS</th>
 								</tr>
 							</thead>
@@ -241,11 +267,12 @@
 
 								{% for team in standings %}
 
-									<tr>
+									<tr class="{{team.team.id == mainTeam.parameters.team ? 'bg-secondary text-white' : '' }}">
 										<td>{{team.rank}}</td>
 										<td><img class="logo-icon" src="{{team.team.logo}}" alt="Logo {{team.team.name}}">
 											{{team.team.name}}</td>
-										<td>{{team.points}}</td>
+										<td>{{team.all.played}}</td>
+										<td class="fw-bold">{{team.points}}</td>
 									</tr>
 
 								{% endfor %}

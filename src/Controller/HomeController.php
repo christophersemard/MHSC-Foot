@@ -72,7 +72,7 @@ class HomeController extends AbstractController
 
 
         $responseTeam = file_get_contents('../_JSON-requests/team-league.json');
-        $team = json_decode($responseTeam, true);
+        $mainTeam = json_decode($responseTeam, true);
 
         $responseStandings = file_get_contents('../_JSON-requests/standings.json');
         $standings = json_decode($responseStandings, true);
@@ -81,7 +81,7 @@ class HomeController extends AbstractController
         foreach ($standingsRanks as $key => $team) {
             $teamStandings[] = $team['team'];
         }
-        $indexStandings = array_search("93", array_column($teamStandings, 'id'));
+        $indexStandings = array_search("82", array_column($teamStandings, 'id'));
         $sevenStandings = [];
         if ($indexStandings < 3) {
             $sevenStandings = array_slice($standingsRanks, 0, 7);
@@ -101,7 +101,7 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
             'mainPost' => $postRepository->findLast()[0],
             'news' => $postRepository->findLast10(),
-            'team' => $team,
+            'mainTeam' => $mainTeam,
             'standings' => $sevenStandings,
             'league' => $standings['response'][0]['league']['name'],
             'lastFixtures' => $lastFixtures['response'],
