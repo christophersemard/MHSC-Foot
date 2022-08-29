@@ -255,30 +255,27 @@
 
 
 						<table class=" table">
-							<thead>
+							<thead class="text-primary border-primary">
 								<tr>
 									<th>POS</th>
 									<th>EQUIPE</th>
 									<th>J</th>
-									<th>PTS</th>
+									<th class="text-center">PTS</th>
 								</tr>
 							</thead>
 							<tbody>
-
 								{% for team in standings %}
-
 									<tr class="{{team.team.id == mainTeam.parameters.team ? 'bg-secondary text-white' : '' }}">
 										<td>{{team.rank}}</td>
 										<td><img class="logo-icon" src="{{team.team.logo}}" alt="Logo {{team.team.name}}">
 											{{team.team.name}}</td>
 										<td>{{team.all.played}}</td>
-										<td class="fw-bold">{{team.points}}</td>
+										<td class="fw-bold text-center">{{team.points}}</td>
 									</tr>
-
 								{% endfor %}
-
 							</tbody>
 						</table>
+						<a class="link link-primary text-center d-block" href="/equipe/pro/classement">Classement complet</a>
 					</div>
 				</div>
 

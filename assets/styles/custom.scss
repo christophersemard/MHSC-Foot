@@ -926,6 +926,13 @@ blockquote{
 }
 
 
+.standings-logo-icon{
+    max-height: 25px;
+    max-width: 20px;
+    object-fit: cover;
+}
+
+
 // SLIDER MATCHS 
 
 .CSSgal {
@@ -1067,3 +1074,9 @@ s{
 	text-decoration: none;
 }
 
+
+.result{
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+}

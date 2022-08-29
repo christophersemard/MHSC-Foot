@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Classement -
+	{{team[0].name}}
+{% endblock %}
+
+{% block body %}
+
+	<main class="w-100 pb-5">
+		<div class="mt-5 mb-4 w-100 container-md">
+			<h1>Classement -
+				{{team[0].name}}</h1>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-10 col-md-8">
+				<table class="table">
+					<thead class="text-white bg-primary">
+						<tr>
+							<th>Place</th>
+							<th>Equipe</th>
+							<th>J</th>
+							<th class=" d-none d-md-table-cell">G</th>
+							<th class=" d-none d-md-table-cell">N</th>
+							<th class=" d-none d-md-table-cell">D</th>
+							<th class=" d-none d-md-table-cell">BP</th>
+							<th class=" d-none d-md-table-cell">BC</th>
+							<th>Diff</th>
+							<th class="text-center">PTS</th>
+							<th class="text-center d-none d-md-table-cell">Forme</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for team in standings %}
+
+
+							{% if team.team.id == mainTeam.parameters.team %}
+								<tr class="bg-secondary text-white">
+
+
+								{% elseif team.description == 'Promotion - Champions League (Group Stage)' %}
+									<tr class="table-success">
+									{% elseif team.description == 'Promotion - Champions League (Qualification)' %}
+										<tr class="table-success">
+										{% elseif team.description == 'Promotion - Europa League (Group Stage)' %}
+											<tr class="table-primary">
+											{% elseif team.description == 'Promotion - Europa Conference League (Qualification)' %}
+												<tr class="table-info">
+												{% elseif team.description == 'Relegation - Ligue 2' %}
+													<tr class="table-danger">
+
+													{% else %}
+														<tr>
+
+
+														{% endif %}
+
+														<td>{{team.rank}}</td>
+														<td>
+															<div class="d-flex justify-content-center justify-content-sm-start align-items-center gap-2">
+																<img class="standings-logo-icon" src="{{team.team.logo}}" alt="Logo {{team.team.name}}">
+																<span class="d-none d-sm-inline">{{team.team.name}}</span>
+															</div>
+														</td>
+														<td>{{team.all.played}}</td>
+														<td class=" d-none d-md-table-cell">{{team.all.win}}</td>
+														<td class=" d-none d-md-table-cell">{{team.all.draw}}</td>
+														<td class=" d-none d-md-table-cell">{{team.all.lose}}</td>
+														<td class=" d-none d-md-table-cell">{{team.all.goals.for}}</td>
+														<td class=" d-none d-md-table-cell">{{team.all.goals.against}}</td>
+														<td>{{team.goalsDiff}}</td>
+														<td class="fw-bold text-center">{{team.points}}</td>
+														<td class=" d-none d-md-table-cell">
+															<div class="d-flex gap-1 justify-content-center align-items-center">
+																{% for item in team.form|split('') %}
+																	<div class="py-0 px-1 text-white  result result-{{ item == 'W' ? " win bg-success" : item == 'L' ? " lose bg-danger" : " draw bg-warning" }}"></div>
+																{% endfor %}
+															</div>
+														</td>
+													</tr>
+												{% endfor %}
+											</tr>
+										</tr>
+									</tbody>
+								</tr>
+							</tbody>
+						</tbody>
+					</tbody>
+				</tr>
+			</tbody>
+		</tbody>
+	</tbody>
+</table></div></tbody></div></main>{% endblock %}
