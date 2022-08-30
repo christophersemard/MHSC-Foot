@@ -1083,3 +1083,43 @@ s{
     width: 13px;
     border-radius: 50%;
 }
+
+
+.result-score-row{
+    .comp{
+        width: 10%;
+        height: 100%;
+    }
+    .result-comp-icon{
+        max-height: 60px;
+        max-width: 80px;
+        object-fit: contain;
+    }
+    .result-logo-icon{
+        max-height: 50px;
+        max-width: 50px;
+        object-fit: contain;
+        @media (min-width: 768px) { 
+            max-height: 100px;
+            max-width: 100px;
+        }
+    }
+    .score-box{
+        width: 70%;
+
+        border-bottom: rgba($color: black, $alpha: 0.1) 1px solid;
+        &__score{
+            .score{
+                width: 100%;
+                @media (min-width: 768px) { 
+                    width: 20%;
+                }
+            }
+            .team{
+                width: 35%;
+            }
+        }
+    }
+
+
+}

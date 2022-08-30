@@ -1,0 +1,1715 @@
+{
+    "get": "fixtures",
+    "parameters": {
+        "last": "25",
+        "team": "82"
+    },
+    "errors": [],
+    "results": 25,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "fixture": {
+                "id": 871507,
+                "referee": "Marc Bollengier, France",
+                "timezone": "UTC",
+                "date": "2022-08-28T13:00:00+00:00",
+                "timestamp": 1661691600,
+                "periods": {
+                    "first": 1661691600,
+                    "second": 1661695200
+                },
+                "venue": {
+                    "id": 641,
+                    "name": "Stade Francis-Le Blé",
+                    "city": "Brest"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 4"
+            },
+            "teams": {
+                "home": {
+                    "id": 106,
+                    "name": "Stade Brestois 29",
+                    "logo": "https://media.api-sports.io/football/teams/106.png",
+                    "winner": false
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": true
+                }
+            },
+            "goals": {
+                "home": 0,
+                "away": 7
+            },
+            "score": {
+                "halftime": {
+                    "home": 0,
+                    "away": 5
+                },
+                "fulltime": {
+                    "home": 0,
+                    "away": 7
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871494,
+                "referee": "Mathieu Vernice, France",
+                "timezone": "UTC",
+                "date": "2022-08-21T13:00:00+00:00",
+                "timestamp": 1661086800,
+                "periods": {
+                    "first": 1661086800,
+                    "second": 1661090400
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 3"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                },
+                "away": {
+                    "id": 108,
+                    "name": "Auxerre",
+                    "logo": "https://media.api-sports.io/football/teams/108.png",
+                    "winner": true
+                }
+            },
+            "goals": {
+                "home": 1,
+                "away": 2
+            },
+            "score": {
+                "halftime": {
+                    "home": 1,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 1,
+                    "away": 2
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871486,
+                "referee": "Willy Delajod, France",
+                "timezone": "UTC",
+                "date": "2022-08-13T19:00:00+00:00",
+                "timestamp": 1660417200,
+                "periods": {
+                    "first": 1660417200,
+                    "second": 1660420800
+                },
+                "venue": {
+                    "id": 671,
+                    "name": "Parc des Princes",
+                    "city": "Paris"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 2"
+            },
+            "teams": {
+                "home": {
+                    "id": 85,
+                    "name": "Paris Saint Germain",
+                    "logo": "https://media.api-sports.io/football/teams/85.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 5,
+                "away": 2
+            },
+            "score": {
+                "halftime": {
+                    "home": 2,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 5,
+                    "away": 2
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871477,
+                "referee": "Pierre Gaillouste, France",
+                "timezone": "UTC",
+                "date": "2022-08-07T13:00:00+00:00",
+                "timestamp": 1659877200,
+                "periods": {
+                    "first": 1659877200,
+                    "second": 1659880800
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 1"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 110,
+                    "name": "Estac Troyes",
+                    "logo": "https://media.api-sports.io/football/teams/110.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 3,
+                "away": 2
+            },
+            "score": {
+                "halftime": {
+                    "home": 2,
+                    "away": 2
+                },
+                "fulltime": {
+                    "home": 3,
+                    "away": 2
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 891045,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-07-30T14:00:00+00:00",
+                "timestamp": 1659189600,
+                "periods": {
+                    "first": 1659189600,
+                    "second": 1659193200
+                },
+                "venue": {
+                    "id": 525,
+                    "name": "Selhurst Park",
+                    "city": "London"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 667,
+                "name": "Friendlies Clubs",
+                "country": "World",
+                "logo": "https://media.api-sports.io/football/leagues/667.png",
+                "flag": null,
+                "season": 2022,
+                "round": "Club Friendlies 3"
+            },
+            "teams": {
+                "home": {
+                    "id": 52,
+                    "name": "Crystal Palace",
+                    "logo": "https://media.api-sports.io/football/teams/52.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 4,
+                "away": 2
+            },
+            "score": {
+                "halftime": {
+                    "home": 3,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 4,
+                    "away": 2
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 890977,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-07-23T17:00:00+00:00",
+                "timestamp": 1658595600,
+                "periods": {
+                    "first": 1658595600,
+                    "second": 1658599200
+                },
+                "venue": {
+                    "id": 6409,
+                    "name": "Stade Louis Sanguin",
+                    "city": "Agde"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 667,
+                "name": "Friendlies Clubs",
+                "country": "World",
+                "logo": "https://media.api-sports.io/football/leagues/667.png",
+                "flag": null,
+                "season": 2022,
+                "round": "Club Friendlies 3"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                },
+                "away": {
+                    "id": 96,
+                    "name": "Toulouse",
+                    "logo": "https://media.api-sports.io/football/teams/96.png",
+                    "winner": true
+                }
+            },
+            "goals": {
+                "home": 4,
+                "away": 5
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": 4,
+                    "away": 5
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 890891,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-07-20T17:00:00+00:00",
+                "timestamp": 1658336400,
+                "periods": {
+                    "first": 1658336400,
+                    "second": 1658340000
+                },
+                "venue": {
+                    "id": null,
+                    "name": "Terrain Alex Katona",
+                    "city": "Millau"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 667,
+                "name": "Friendlies Clubs",
+                "country": "World",
+                "logo": "https://media.api-sports.io/football/leagues/667.png",
+                "flag": null,
+                "season": 2022,
+                "round": "Club Friendlies 3"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                },
+                "away": {
+                    "id": 99,
+                    "name": "Clermont Foot",
+                    "logo": "https://media.api-sports.io/football/teams/99.png",
+                    "winner": true
+                }
+            },
+            "goals": {
+                "home": 0,
+                "away": 2
+            },
+            "score": {
+                "halftime": {
+                    "home": 0,
+                    "away": 2
+                },
+                "fulltime": {
+                    "home": 0,
+                    "away": 2
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 922305,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-07-16T16:30:00+00:00",
+                "timestamp": 1657989000,
+                "periods": {
+                    "first": 1657989000,
+                    "second": 1657992600
+                },
+                "venue": {
+                    "id": null,
+                    "name": "Ciutat Esportiva Dani Jarque",
+                    "city": "San Adrián de Besós"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 667,
+                "name": "Friendlies Clubs",
+                "country": "World",
+                "logo": "https://media.api-sports.io/football/leagues/667.png",
+                "flag": null,
+                "season": 2022,
+                "round": "Club Friendlies 3"
+            },
+            "teams": {
+                "home": {
+                    "id": 540,
+                    "name": "Espanyol",
+                    "logo": "https://media.api-sports.io/football/teams/540.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 2,
+                "away": 0
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": 2,
+                    "away": 0
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 890777,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-07-16T16:30:00+00:00",
+                "timestamp": 1657989000,
+                "periods": {
+                    "first": 1657989000,
+                    "second": 1657992600
+                },
+                "venue": {
+                    "id": null,
+                    "name": "Ciutat Esportiva Dani Jarque",
+                    "city": "San Adrián de Besós"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 667,
+                "name": "Friendlies Clubs",
+                "country": "World",
+                "logo": "https://media.api-sports.io/football/leagues/667.png",
+                "flag": null,
+                "season": 2022,
+                "round": "Club Friendlies 3"
+            },
+            "teams": {
+                "home": {
+                    "id": 540,
+                    "name": "Espanyol",
+                    "logo": "https://media.api-sports.io/football/teams/540.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 2,
+                "away": 0
+            },
+            "score": {
+                "halftime": {
+                    "home": 1,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 2,
+                    "away": 0
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 890484,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-07-09T17:00:00+00:00",
+                "timestamp": 1657386000,
+                "periods": {
+                    "first": 1657386000,
+                    "second": 1657389600
+                },
+                "venue": {
+                    "id": null,
+                    "name": "Stade Bernard Gasset Terrain n°2",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 667,
+                "name": "Friendlies Clubs",
+                "country": "World",
+                "logo": "https://media.api-sports.io/football/leagues/667.png",
+                "flag": null,
+                "season": 2022,
+                "round": "Club Friendlies 3"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                },
+                "away": {
+                    "id": 1301,
+                    "name": "Rodez",
+                    "logo": "https://media.api-sports.io/football/teams/1301.png",
+                    "winner": true
+                }
+            },
+            "goals": {
+                "home": 0,
+                "away": 1
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": 0,
+                    "away": 1
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718721,
+                "referee": "R. Lissorgue",
+                "timezone": "UTC",
+                "date": "2022-05-21T19:00:00+00:00",
+                "timestamp": 1653159600,
+                "periods": {
+                    "first": 1653159600,
+                    "second": 1653163200
+                },
+                "venue": {
+                    "id": 634,
+                    "name": "Stade Raymond-Kopa",
+                    "city": "Angers"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 38"
+            },
+            "teams": {
+                "home": {
+                    "id": 77,
+                    "name": "Angers",
+                    "logo": "https://media.api-sports.io/football/teams/77.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 2,
+                "away": 0
+            },
+            "score": {
+                "halftime": {
+                    "home": 1,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 2,
+                    "away": 0
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718715,
+                "referee": "J. Stinat",
+                "timezone": "UTC",
+                "date": "2022-05-14T19:00:00+00:00",
+                "timestamp": 1652554800,
+                "periods": {
+                    "first": 1652554800,
+                    "second": 1652558400
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 37"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                },
+                "away": {
+                    "id": 85,
+                    "name": "Paris Saint Germain",
+                    "logo": "https://media.api-sports.io/football/teams/85.png",
+                    "winner": true
+                }
+            },
+            "goals": {
+                "home": 0,
+                "away": 4
+            },
+            "score": {
+                "halftime": {
+                    "home": 0,
+                    "away": 3
+                },
+                "fulltime": {
+                    "home": 0,
+                    "away": 4
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718703,
+                "referee": "B. Bastien",
+                "timezone": "UTC",
+                "date": "2022-05-08T13:00:00+00:00",
+                "timestamp": 1652014800,
+                "periods": {
+                    "first": 1652014800,
+                    "second": 1652018400
+                },
+                "venue": {
+                    "id": 644,
+                    "name": "Stade Gabriel Montpied",
+                    "city": "Clermont-Ferrand"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 36"
+            },
+            "teams": {
+                "home": {
+                    "id": 99,
+                    "name": "Clermont Foot",
+                    "logo": "https://media.api-sports.io/football/teams/99.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 2,
+                "away": 1
+            },
+            "score": {
+                "halftime": {
+                    "home": 1,
+                    "away": 1
+                },
+                "fulltime": {
+                    "home": 2,
+                    "away": 1
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718697,
+                "referee": "C. Turpin",
+                "timezone": "UTC",
+                "date": "2022-05-01T13:00:00+00:00",
+                "timestamp": 1651410000,
+                "periods": {
+                    "first": 1651410000,
+                    "second": 1651413600
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 35"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 112,
+                    "name": "Metz",
+                    "logo": "https://media.api-sports.io/football/teams/112.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": 2,
+                "away": 2
+            },
+            "score": {
+                "halftime": {
+                    "home": 0,
+                    "away": 1
+                },
+                "fulltime": {
+                    "home": 2,
+                    "away": 2
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718683,
+                "referee": "F. Letexier",
+                "timezone": "UTC",
+                "date": "2022-04-23T15:00:00+00:00",
+                "timestamp": 1650726000,
+                "periods": {
+                    "first": 1650726000,
+                    "second": 1650729600
+                },
+                "venue": {
+                    "id": 666,
+                    "name": "Groupama Stadium",
+                    "city": "Décines-Charpieu"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 34"
+            },
+            "teams": {
+                "home": {
+                    "id": 80,
+                    "name": "Lyon",
+                    "logo": "https://media.api-sports.io/football/teams/80.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 5,
+                "away": 2
+            },
+            "score": {
+                "halftime": {
+                    "home": 2,
+                    "away": 2
+                },
+                "fulltime": {
+                    "home": 5,
+                    "away": 2
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718674,
+                "referee": "R. Lissorgue",
+                "timezone": "UTC",
+                "date": "2022-04-20T19:00:00+00:00",
+                "timestamp": 1650481200,
+                "periods": {
+                    "first": 1650481200,
+                    "second": 1650484800
+                },
+                "venue": {
+                    "id": 654,
+                    "name": "Stade Bollaert-Delelis",
+                    "city": "Lens"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 33"
+            },
+            "teams": {
+                "home": {
+                    "id": 116,
+                    "name": "Lens",
+                    "logo": "https://media.api-sports.io/football/teams/116.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 2,
+                "away": 0
+            },
+            "score": {
+                "halftime": {
+                    "home": 1,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 2,
+                    "away": 0
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718664,
+                "referee": "A. Gautier",
+                "timezone": "UTC",
+                "date": "2022-04-17T13:00:00+00:00",
+                "timestamp": 1650200400,
+                "periods": {
+                    "first": 1650200400,
+                    "second": 1650204000
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 32"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 93,
+                    "name": "Reims",
+                    "logo": "https://media.api-sports.io/football/teams/93.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": 0,
+                "away": 0
+            },
+            "score": {
+                "halftime": {
+                    "home": 0,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 0,
+                    "away": 0
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718657,
+                "referee": "J. Stinat",
+                "timezone": "UTC",
+                "date": "2022-04-10T19:00:00+00:00",
+                "timestamp": 1649617200,
+                "periods": {
+                    "first": 1649617200,
+                    "second": 1649620800
+                },
+                "venue": {
+                    "id": 12678,
+                    "name": "Stade Orange Vélodrome",
+                    "city": "Marseille"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 31"
+            },
+            "teams": {
+                "home": {
+                    "id": 81,
+                    "name": "Marseille",
+                    "logo": "https://media.api-sports.io/football/teams/81.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 2,
+                "away": 0
+            },
+            "score": {
+                "halftime": {
+                    "home": 2,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 2,
+                    "away": 0
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718645,
+                "referee": "F. Batta",
+                "timezone": "UTC",
+                "date": "2022-04-03T13:00:00+00:00",
+                "timestamp": 1648990800,
+                "periods": {
+                    "first": 1648990800,
+                    "second": 1648994400
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 30"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                },
+                "away": {
+                    "id": 106,
+                    "name": "Stade Brestois 29",
+                    "logo": "https://media.api-sports.io/football/teams/106.png",
+                    "winner": true
+                }
+            },
+            "goals": {
+                "home": 1,
+                "away": 2
+            },
+            "score": {
+                "halftime": {
+                    "home": 0,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 1,
+                    "away": 2
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718632,
+                "referee": "T. Léonard",
+                "timezone": "UTC",
+                "date": "2022-03-20T14:00:00+00:00",
+                "timestamp": 1647784800,
+                "periods": {
+                    "first": 1647784800,
+                    "second": 1647788400
+                },
+                "venue": {
+                    "id": 638,
+                    "name": "Stade Matmut-Atlantique",
+                    "city": "Bordeaux"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 29"
+            },
+            "teams": {
+                "home": {
+                    "id": 78,
+                    "name": "Bordeaux",
+                    "logo": "https://media.api-sports.io/football/teams/78.png",
+                    "winner": false
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": true
+                }
+            },
+            "goals": {
+                "home": 0,
+                "away": 2
+            },
+            "score": {
+                "halftime": {
+                    "home": 0,
+                    "away": 2
+                },
+                "fulltime": {
+                    "home": 0,
+                    "away": 2
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718627,
+                "referee": "C. Turpin",
+                "timezone": "UTC",
+                "date": "2022-03-12T16:00:00+00:00",
+                "timestamp": 1647100800,
+                "periods": {
+                    "first": 1647100800,
+                    "second": 1647104400
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 28"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 84,
+                    "name": "Nice",
+                    "logo": "https://media.api-sports.io/football/teams/84.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": 0,
+                "away": 0
+            },
+            "score": {
+                "halftime": {
+                    "home": 0,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 0,
+                    "away": 0
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718616,
+                "referee": "H. Ben El Hadj",
+                "timezone": "UTC",
+                "date": "2022-03-06T14:00:00+00:00",
+                "timestamp": 1646575200,
+                "periods": {
+                    "first": 1646575200,
+                    "second": 1646578800
+                },
+                "venue": {
+                    "id": 662,
+                    "name": "Stade de la Beaujoire - Louis Fonteneau",
+                    "city": "Nantes"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 27"
+            },
+            "teams": {
+                "home": {
+                    "id": 83,
+                    "name": "Nantes",
+                    "logo": "https://media.api-sports.io/football/teams/83.png",
+                    "winner": true
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                }
+            },
+            "goals": {
+                "home": 2,
+                "away": 0
+            },
+            "score": {
+                "halftime": {
+                    "home": 0,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 2,
+                    "away": 0
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718607,
+                "referee": "A. Delerue",
+                "timezone": "UTC",
+                "date": "2022-02-25T20:00:00+00:00",
+                "timestamp": 1645819200,
+                "periods": {
+                    "first": 1645819200,
+                    "second": 1645822800
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 26"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                },
+                "away": {
+                    "id": 94,
+                    "name": "Rennes",
+                    "logo": "https://media.api-sports.io/football/teams/94.png",
+                    "winner": true
+                }
+            },
+            "goals": {
+                "home": 2,
+                "away": 4
+            },
+            "score": {
+                "halftime": {
+                    "home": 2,
+                    "away": 2
+                },
+                "fulltime": {
+                    "home": 2,
+                    "away": 4
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718594,
+                "referee": "J. Stinat",
+                "timezone": "UTC",
+                "date": "2022-02-20T14:00:00+00:00",
+                "timestamp": 1645365600,
+                "periods": {
+                    "first": 1645365600,
+                    "second": 1645369200
+                },
+                "venue": {
+                    "id": 656,
+                    "name": "Stade Yves Allainmat - Le Moustoir",
+                    "city": "Lorient"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 25"
+            },
+            "teams": {
+                "home": {
+                    "id": 97,
+                    "name": "Lorient",
+                    "logo": "https://media.api-sports.io/football/teams/97.png",
+                    "winner": false
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": true
+                }
+            },
+            "goals": {
+                "home": 0,
+                "away": 1
+            },
+            "score": {
+                "halftime": {
+                    "home": 0,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 0,
+                    "away": 1
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 718588,
+                "referee": "S. Frappart",
+                "timezone": "UTC",
+                "date": "2022-02-12T16:00:00+00:00",
+                "timestamp": 1644681600,
+                "periods": {
+                    "first": 1644681600,
+                    "second": 1644685200
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Match Finished",
+                    "short": "FT",
+                    "elapsed": 90
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2021,
+                "round": "Regular Season - 24"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": false
+                },
+                "away": {
+                    "id": 79,
+                    "name": "Lille",
+                    "logo": "https://media.api-sports.io/football/teams/79.png",
+                    "winner": true
+                }
+            },
+            "goals": {
+                "home": 0,
+                "away": 1
+            },
+            "score": {
+                "halftime": {
+                    "home": 0,
+                    "away": 0
+                },
+                "fulltime": {
+                    "home": 0,
+                    "away": 1
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        }
+    ]
+}

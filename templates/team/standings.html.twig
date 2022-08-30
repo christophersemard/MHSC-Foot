@@ -35,8 +35,6 @@
 
 							{% if team.team.id == mainTeam.parameters.team %}
 								<tr class="bg-secondary text-white">
-
-
 								{% elseif team.description == 'Promotion - Champions League (Group Stage)' %}
 									<tr class="table-success">
 									{% elseif team.description == 'Promotion - Champions League (Qualification)' %}
@@ -47,11 +45,8 @@
 												<tr class="table-info">
 												{% elseif team.description == 'Relegation - Ligue 2' %}
 													<tr class="table-danger">
-
 													{% else %}
 														<tr>
-
-
 														{% endif %}
 
 														<td>{{team.rank}}</td>
@@ -78,15 +73,9 @@
 														</td>
 													</tr>
 												{% endfor %}
-											</tr>
-										</tr>
-									</tbody>
-								</tr>
-							</tbody>
-						</tbody>
-					</tbody>
-				</tr>
-			</tbody>
-		</tbody>
-	</tbody>
-</table></div></tbody></div></main>{% endblock %}
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</main>
+						{% endblock %}

@@ -8,6 +8,8 @@ use App\Repository\StaffRepository;
 use App\Repository\PlayerRepository;
 use App\Repository\RoleStaffRepository;
 use App\Repository\RolePlayerRepository;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -63,18 +65,61 @@ class TeamController extends AbstractController
 
 
     #[Route('/{slug}/calendrier-et-resultats', name: 'app_team/results')]
-    public function results($slug, TeamRepository $teamRepository): Response
+    public function results($slug, TeamRepository $teamRepository, PaginatorInterface $paginator, Request $request): Response
     {
 
         if ($slug == 'pro' || $slug == 'feminines') {
-            $responseTeam = file_get_contents('../_JSON-requests/team-league.json');
-            $mainTeam = json_decode($responseTeam, true);
 
-            // TODO : GET TEAM BY SLUG
+            // $responseFixtures = $client->request(
+            //     'GET',
+            //     'https://api-football-v1.p.rapidapi.com/v3/fixtures',
+            //     [
+            //         'query' => ['team' => 82, 'last' => 25],
+            //         'headers' => [
+            //             'x-rapidapi-host' => 'api-football-v1.p.rapidapi.com',
+            //             'x-rapidapi-key' => '1f02f9ca6amshccfc632c7c05802p1a48cbjsnb7f356338428'
+            //         ]
+            //     ]
+            // );
+            // $lastFixtures = json_decode($responseFixtures->getContent(), true);
+            // dd($lastFixtures);
+
+            // $responseFixtures = $client->request(
+            //     'GET',
+            //     'https://api-football-v1.p.rapidapi.com/v3/fixtures',
+            //     [
+            //         'query' => ['team' => 82, 'next' => 25],
+            //         'headers' => [
+            //             'x-rapidapi-host' => 'api-football-v1.p.rapidapi.com',
+            //             'x-rapidapi-key' => '1f02f9ca6amshccfc632c7c05802p1a48cbjsnb7f356338428'
+            //         ]
+            //     ]
+            // );
+            // $nextFixtures = json_decode($responseFixtures->getContent(), true);
+            // dd($nextFixtures);
+
+            $responseFixtures = file_get_contents('../_JSON-requests/last-fixtures-25.json');
+            $lastFixtures = json_decode($responseFixtures, true);
+
+            $responseFixtures = file_get_contents('../_JSON-requests/next-fixtures-25.json');
+            $nextFixtures = json_decode($responseFixtures, true);
+
+            $mergedFixtures = array_merge(array_reverse($lastFixtures['response']), $nextFixtures['response']);
+
+            $fixtures = $paginator->paginate(
+                $mergedFixtures, /* query NOT result */
+                $request->query->getInt('page', 3), /*page number*/
+                10 /*limit per page*/
+            );
+
+
+            // GET TEAM BY SLUG
             $team =  $teamRepository->findBySlug($slug);
+
             return $this->render('team/results.html.twig', [
                 'controller_name' => 'TeamController',
                 'team' => $team,
+                'fixtures' => $fixtures,
             ]);
         } else {
             return new RedirectResponse('/');

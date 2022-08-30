@@ -1,0 +1,1715 @@
+{
+    "get": "fixtures",
+    "parameters": {
+        "next": "25",
+        "team": "82"
+    },
+    "errors": [],
+    "results": 25,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "fixture": {
+                "id": 871513,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-08-31T17:00:00+00:00",
+                "timestamp": 1661965200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 5"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 98,
+                    "name": "Ajaccio",
+                    "logo": "https://media.api-sports.io/football/teams/98.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871524,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-09-04T11:00:00+00:00",
+                "timestamp": 1662289200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 6"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 79,
+                    "name": "Lille",
+                    "logo": "https://media.api-sports.io/football/teams/79.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871532,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-09-11T13:00:00+00:00",
+                "timestamp": 1662901200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 634,
+                    "name": "Stade Raymond-Kopa",
+                    "city": "Angers"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 7"
+            },
+            "teams": {
+                "home": {
+                    "id": 77,
+                    "name": "Angers",
+                    "logo": "https://media.api-sports.io/football/teams/77.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871544,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-09-18T00:00:00+00:00",
+                "timestamp": 1663459200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 8"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 95,
+                    "name": "Strasbourg",
+                    "logo": "https://media.api-sports.io/football/teams/95.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871558,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-10-02T00:00:00+00:00",
+                "timestamp": 1664668800,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 682,
+                    "name": "Stadium de Toulouse",
+                    "city": "Toulouse"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 9"
+            },
+            "teams": {
+                "home": {
+                    "id": 96,
+                    "name": "Toulouse",
+                    "logo": "https://media.api-sports.io/football/teams/96.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871563,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-10-09T00:00:00+00:00",
+                "timestamp": 1665273600,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 10"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 91,
+                    "name": "Monaco",
+                    "logo": "https://media.api-sports.io/football/teams/91.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871575,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-10-16T00:00:00+00:00",
+                "timestamp": 1665878400,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 654,
+                    "name": "Stade Bollaert-Delelis",
+                    "city": "Lens"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 11"
+            },
+            "teams": {
+                "home": {
+                    "id": 116,
+                    "name": "Lens",
+                    "logo": "https://media.api-sports.io/football/teams/116.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871584,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-10-23T00:00:00+00:00",
+                "timestamp": 1666483200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 12"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 80,
+                    "name": "Lyon",
+                    "logo": "https://media.api-sports.io/football/teams/80.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871599,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-10-30T00:00:00+00:00",
+                "timestamp": 1667088000,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 680,
+                    "name": "Roazhon Park",
+                    "city": "Rennes"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 13"
+            },
+            "teams": {
+                "home": {
+                    "id": 94,
+                    "name": "Rennes",
+                    "logo": "https://media.api-sports.io/football/teams/94.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871602,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-11-06T00:00:00+00:00",
+                "timestamp": 1667692800,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 644,
+                    "name": "Stade Gabriel Montpied",
+                    "city": "Clermont-Ferrand"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 14"
+            },
+            "teams": {
+                "home": {
+                    "id": 99,
+                    "name": "Clermont Foot",
+                    "logo": "https://media.api-sports.io/football/teams/99.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871613,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-11-13T00:00:00+00:00",
+                "timestamp": 1668297600,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 15"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 93,
+                    "name": "Reims",
+                    "logo": "https://media.api-sports.io/football/teams/93.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871623,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2022-12-28T00:00:00+00:00",
+                "timestamp": 1672185600,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 656,
+                    "name": "Stade Yves Allainmat - Le Moustoir",
+                    "city": "Lorient"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 16"
+            },
+            "teams": {
+                "home": {
+                    "id": 97,
+                    "name": "Lorient",
+                    "logo": "https://media.api-sports.io/football/teams/97.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871638,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-01-01T00:00:00+00:00",
+                "timestamp": 1672531200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 17"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 81,
+                    "name": "Marseille",
+                    "logo": "https://media.api-sports.io/football/teams/81.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871645,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-01-11T00:00:00+00:00",
+                "timestamp": 1673395200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 663,
+                    "name": "Allianz Riviera",
+                    "city": "Nice"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 18"
+            },
+            "teams": {
+                "home": {
+                    "id": 84,
+                    "name": "Nice",
+                    "logo": "https://media.api-sports.io/football/teams/84.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871653,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-01-15T00:00:00+00:00",
+                "timestamp": 1673740800,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 19"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 83,
+                    "name": "Nantes",
+                    "logo": "https://media.api-sports.io/football/teams/83.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871661,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-01-29T00:00:00+00:00",
+                "timestamp": 1674950400,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 636,
+                    "name": "Stade de l'Abbé Deschamps",
+                    "city": "Auxerre"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 20"
+            },
+            "teams": {
+                "home": {
+                    "id": 108,
+                    "name": "Auxerre",
+                    "logo": "https://media.api-sports.io/football/teams/108.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871676,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-02-01T00:00:00+00:00",
+                "timestamp": 1675209600,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 21"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 85,
+                    "name": "Paris Saint Germain",
+                    "logo": "https://media.api-sports.io/football/teams/85.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871686,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-02-05T00:00:00+00:00",
+                "timestamp": 1675555200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 681,
+                    "name": "Stade de la Meinau",
+                    "city": "Strasbourg"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 22"
+            },
+            "teams": {
+                "home": {
+                    "id": 95,
+                    "name": "Strasbourg",
+                    "logo": "https://media.api-sports.io/football/teams/95.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871695,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-02-12T00:00:00+00:00",
+                "timestamp": 1676160000,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 23"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 106,
+                    "name": "Stade Brestois 29",
+                    "logo": "https://media.api-sports.io/football/teams/106.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871709,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-02-19T00:00:00+00:00",
+                "timestamp": 1676764800,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 684,
+                    "name": "Stade de l'Aube",
+                    "city": "Troyes"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 24"
+            },
+            "teams": {
+                "home": {
+                    "id": 110,
+                    "name": "Estac Troyes",
+                    "logo": "https://media.api-sports.io/football/teams/110.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871717,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-02-26T00:00:00+00:00",
+                "timestamp": 1677369600,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 25"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 116,
+                    "name": "Lens",
+                    "logo": "https://media.api-sports.io/football/teams/116.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871720,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-03-05T00:00:00+00:00",
+                "timestamp": 1677974400,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 26"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 77,
+                    "name": "Angers",
+                    "logo": "https://media.api-sports.io/football/teams/77.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871730,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-03-12T00:00:00+00:00",
+                "timestamp": 1678579200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 632,
+                    "name": "Stade François Coty",
+                    "city": "Ajaccio"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 27"
+            },
+            "teams": {
+                "home": {
+                    "id": 98,
+                    "name": "Ajaccio",
+                    "logo": "https://media.api-sports.io/football/teams/98.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871741,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-03-19T00:00:00+00:00",
+                "timestamp": 1679184000,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 660,
+                    "name": "Stade de la Mosson",
+                    "city": "Montpellier"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 28"
+            },
+            "teams": {
+                "home": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 99,
+                    "name": "Clermont Foot",
+                    "logo": "https://media.api-sports.io/football/teams/99.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 871756,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2023-04-02T00:00:00+00:00",
+                "timestamp": 1680393600,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 12678,
+                    "name": "Stade Orange Vélodrome",
+                    "city": "Marseille"
+                },
+                "status": {
+                    "long": "Time to be defined",
+                    "short": "TBD",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 61,
+                "name": "Ligue 1",
+                "country": "France",
+                "logo": "https://media.api-sports.io/football/leagues/61.png",
+                "flag": "https://media.api-sports.io/flags/fr.svg",
+                "season": 2022,
+                "round": "Regular Season - 29"
+            },
+            "teams": {
+                "home": {
+                    "id": 81,
+                    "name": "Marseille",
+                    "logo": "https://media.api-sports.io/football/teams/81.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 82,
+                    "name": "Montpellier",
+                    "logo": "https://media.api-sports.io/football/teams/82.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        }
+    ]
+}
