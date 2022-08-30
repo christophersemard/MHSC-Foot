@@ -1,0 +1,71 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Pages
+{% endblock %}
+
+{% block body %}
+
+	<main class="p-5 w-100">
+		<h1>Pages</h1>
+
+		<table class=" table">
+			<thead>
+				<tr>
+					<th>Titre</th>
+					<th>Texte</th>
+					<th>Catégorie</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for page in singlePages %}
+
+					<tr>
+						<td>{{ page.title }}</td>
+						<td>
+							<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="{{ page.content }}">Afficher le contenu</button>
+						</td>
+						<td>{{ page.category }}</td>
+						<td>
+							<div class="dropdown">
+								<a class=" btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa-solid fa-pen"></i>
+								</a>
+								<div class="dropdown-menu  dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+
+									<a class="dropdown-item" href="{{ path('app_single_page_crud_show', {'id': page.id}) }}">Voir</a>
+									<a class="dropdown-item text-warning" href="{{ path('app_single_page_crud_edit', {'id': page.id}) }}">Modifier</a>
+									{{ include('single_page_crud/_delete_form.html.twig') }}</div>
+							</div>
+						</td>
+					</tr>
+				</div>
+			</tbody>
+		</td>
+	</tr>
+{% else %}
+	<tr>
+		<td colspan="7">Aucune page trouvée</td>
+	</tr>
+{% endfor %}</tbody></table><a class="btn btn-primary" href="{{ path('app_single_page_crud_new') }}">Nouvelle page</a><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-lg modal-xl">
+<div class="modal-content">
+	<div class="modal-header">
+		<h5 class="modal-title" id="exampleModalLabel">Contenu page</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	</div>
+	<div class="modal-body"></div>
+</div></div></div></main><script>var exampleModal = document.getElementById('exampleModal')
+exampleModal.addEventListener('show.bs.modal', function (event) { // Button that triggered the modal
+var button = event.relatedTarget
+// Extract info from data-bs-* attributes
+var recipient = button.getAttribute('data-bs-whatever')
+// If necessary, you could initiate an AJAX request here
+// and then do the updating in a callback.
+//
+// Update the modal's content.
+var modalTitle = exampleModal.querySelector('.modal-title')
+var modalBody = exampleModal.querySelector('.modal-body')
+
+// modalTitle.textContent = 'New message to ' + recipient
+modalBody.textContent = recipient
+})</script>{% endblock %}

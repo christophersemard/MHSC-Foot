@@ -25,9 +25,16 @@
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 	</head>
-	<body class="d-flex flex-column min-vh-100">
+	<body
+		class="d-flex flex-column min-vh-100">
 
-		{% include "./partials/_header.html.twig" %}
+		{# {% include "./partials/_header.html.twig" %} #}
+
+		{{ render(controller(
+        'App\\Controller\\MenuController::pages'
+    )) }}
+
+
 		{% block body %}{% endblock %}
 		{% include "./partials/_footer.html.twig" %}
 	</body>

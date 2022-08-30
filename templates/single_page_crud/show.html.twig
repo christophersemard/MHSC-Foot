@@ -1,0 +1,37 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Page
+{% endblock %}
+
+{% block body %}
+	<main class="p-5 w-100">
+		<h1>Page</h1>
+
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ singlePage.id }}</td>
+				</tr>
+				<tr>
+					<th>Catégorie</th>
+					<td>{{ singlePage.category }}</td>
+				</tr>
+				<tr>
+					<th>Titre</th>
+					<td>{{ singlePage.title }}</td>
+				</tr>
+				<tr>
+					<th>Contenu</th>
+					<td>{{ singlePage.content }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a href="{{ path('app_single_page_crud_index') }}">Retour à la liste</a>
+
+		<a href="{{ path('app_single_page_crud_edit', {'id': singlePage.id}) }}">Modifier</a>
+
+		{{ include('single_page_crud/_delete_form.html.twig') }}
+	</main>
+{% endblock %}

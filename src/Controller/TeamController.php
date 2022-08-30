@@ -12,6 +12,7 @@ use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -74,7 +75,7 @@ class TeamController extends AbstractController
             //     'GET',
             //     'https://api-football-v1.p.rapidapi.com/v3/fixtures',
             //     [
-            //         'query' => ['team' => 82, 'last' => 25],
+            //         'query' => ['team' => $slug == 'pro' ? '61' : '64', 'last' => 25],
             //         'headers' => [
             //             'x-rapidapi-host' => 'api-football-v1.p.rapidapi.com',
             //             'x-rapidapi-key' => '1f02f9ca6amshccfc632c7c05802p1a48cbjsnb7f356338428'
@@ -88,7 +89,7 @@ class TeamController extends AbstractController
             //     'GET',
             //     'https://api-football-v1.p.rapidapi.com/v3/fixtures',
             //     [
-            //         'query' => ['team' => 82, 'next' => 25],
+            //         'query' => ['team' => $slug == 'pro' ? '61' : '64', 'next' => 25],
             //         'headers' => [
             //             'x-rapidapi-host' => 'api-football-v1.p.rapidapi.com',
             //             'x-rapidapi-key' => '1f02f9ca6amshccfc632c7c05802p1a48cbjsnb7f356338428'
@@ -126,7 +127,7 @@ class TeamController extends AbstractController
         }
     }
     #[Route('/{slug}/classement', name: 'app_team/standings')]
-    public function standings($slug, TeamRepository $teamRepository): Response
+    public function standings($slug, TeamRepository $teamRepository, HttpClientInterface $client): Response
     {
         if ($slug == 'pro' || $slug == 'feminines') {
             $responseTeam = file_get_contents('../_JSON-requests/team-league.json');
@@ -143,11 +144,15 @@ class TeamController extends AbstractController
             //         ]
             //     ]
             // );
+
+
             // $standings = json_decode($responseStandings->getContent(), true);
             // dd($standings);
 
             $responseStandings = file_get_contents('../_JSON-requests/standings.json');
             $standings = json_decode($responseStandings, true);
+
+
             $standingsRanks = $standings['response'][0]['league']['standings'][0];
 
             // TODO : GET TEAM BY SLUG
