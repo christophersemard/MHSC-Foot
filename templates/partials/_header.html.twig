@@ -1,4 +1,4 @@
-<header class="bg-tertiary-light">
+<header class="bg-white">
 
 	<nav class="navbar navbar-expand-lg container-md justify-content-between">
 		<div class="navbar navbar-expand-lg p-0">
@@ -144,10 +144,33 @@
 				</li>
 				<li class="w-100 submenu">
 					<a href="#submenu5" data-bs-toggle="collapse" class="nav-link px-0 align-middle d-flex justify-content-between align-items-center">
+						<span>SUPPORTERS</span>
+						<i class="fa-solid fa-angle-down"></i>
+					</a>
+					<ul class="collapse nav flex-column ms-1" id="submenu5" data-bs-parent="#menu">
+						{% for page in fansPages %}
+							<li class="w-100">
+								<a href="{{ path('app_single_page', {slug : page.slug}) }}" class="nav-link px-0">
+									<span class="d-none d-sm-inline">{{page.title}}</span>
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</li>
+				<li class="w-100 submenu">
+					<a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-middle d-flex justify-content-between align-items-center">
 						<span>DIVERS</span>
 						<i class="fa-solid fa-angle-down"></i>
 					</a>
-					<ul class="collapse nav flex-column ms-1" id="submenu5" data-bs-parent="#menu"></ul>
+					<ul class="collapse nav flex-column ms-1" id="submenu6" data-bs-parent="#menu">
+						{% for page in otherPages %}
+							<li class="w-100">
+								<a href="{{ path('app_single_page', {slug : page.slug}) }}" class="nav-link px-0">
+									<span class="d-none d-sm-inline">{{page.title}}</span>
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
 				</li>
 			</ul>
 		</div>

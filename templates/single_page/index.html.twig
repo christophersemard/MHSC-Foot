@@ -4,15 +4,21 @@
 	{{singlePage.title}}
 {% endblock %}
 {% block body %}
-	<main class="w-100">
+	<main class="w-100 mb-5">
 		<div class="page-{{singlePage.slug}} ">
 			<article class="page__article">
 
-				<div class="page__article__header container-md my-4">
-					<h1>{{singlePage.title}}</h1>
+				<div class="page__article__header">
+					<img class="page__article__header__image" src="/assets/images/background-white.png" alt="Image de présentation de l'article">
+
+					<div class="page__article__header__title container-md py-4 d-flex align-items-center w-100 ">
+						<h1 class="mb-0 text-center w-100 ">{{singlePage.title}}</h1>
+					</div>
 				</div>
-				<div class="page__article__content">
-					{{singlePage.content | raw}}
+				<div class="page__article__content px-2 px-xl-0 py-4 d-flex justify-content-center align-items-center">
+					<div class="col-11 col-md-10 col-lg-9 col-xl-7">
+						{{singlePage.content | raw}}
+					</div>
 				</div>
 			</article>
 

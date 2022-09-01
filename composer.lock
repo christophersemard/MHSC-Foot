@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9348caba72d2926938ad762372ecc3db",
+    "content-hash": "bb72ace9f95ca5c20b67a4b3bb9761e3",
     "packages": [
         {
             "name": "buzzingpixel/twig-switch",

@@ -1,4 +1,7 @@
 fos_ck_editor:
     # ...
+    configs:
+        my_config:
+            toolbar: "full"
     base_path: "build/ckeditor"
     js_path: "build/ckeditor/ckeditor.js"

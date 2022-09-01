@@ -4,11 +4,13 @@ namespace App\Form;
 
 use App\Entity\SinglePage;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\File;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class SinglePageType extends AbstractType
 {
@@ -16,7 +18,10 @@ class SinglePageType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('content', CKEditorType::class)
+            ->add('content', TextareaType::class, [
+                'required'  => false,
+                'attr' => ['class' => 'tinymce'],
+            ])
             ->add('category');
     }
 

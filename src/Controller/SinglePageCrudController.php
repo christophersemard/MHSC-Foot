@@ -55,16 +55,20 @@ class SinglePageCrudController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_single_page_crud_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, SinglePage $singlePage, SinglePageRepository $singlePageRepository, SluggerInterface $slugger): Response
+    public function edit($id, Request $request, SinglePage $singlePage, SinglePageRepository $singlePageRepository, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(SinglePageType::class, $singlePage);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $singlePageRepository->add($singlePage, true);
+            $title = $form->get('title')->getData();
+            $slug = strtolower($slugger->slug($title));
+            $singlePage->setSlug($slug);
 
-            return $this->redirectToRoute('app_single_page_crud_index', [], Response::HTTP_SEE_OTHER);
+            $singlePageRepository->add($singlePage, true);
+            $this->addFlash('success', 'Page modifiée');
+            return $this->redirectToRoute('app_single_page_crud_edit', ['id' => $id], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('single_page_crud/edit.html.twig', [

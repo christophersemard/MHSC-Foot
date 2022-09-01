@@ -6,10 +6,15 @@
 {% block body %}
 	<main class="p-5 w-100">
 		<h1>Modifier page</h1>
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{ message }}
+			</div>
+		{% endfor %}
 
 		{{ include('single_page_crud/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-		<a class="btn btn-secondary" "href=" {{ path('app_single_page_crud_index') }} ">Retour à la liste</a>
+		<a class="btn btn-secondary" href=" {{ path('app_single_page_crud_index') }} ">Retour à la liste</a>
 
 	</main>
 {% endblock %}

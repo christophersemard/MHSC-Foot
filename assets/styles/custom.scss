@@ -873,27 +873,29 @@ blockquote{
                     width: 42%;
                     order:0;
                  }
-                 .next-fixture-box__fixture{
-                     &__team-box{
-                         height: 100%;
-                         width: 40%;
-                         padding: 1em;
-                         >img{
-                             max-width: 90px;
-                             max-height: 90px;
-                             object-fit: contain;
-                             @media (min-width: 768px) { 
-                                max-width: 120px;
-                                max-height: 120px;
-                              }
-                         }
+                 .next-fixture-box{
+                     &__fixture{
                          &__team-box{
-                            &__team{
-                                font-size: 1em !important;
-                                @media (min-width: 992px) { 
-                                    font-size: 1.5em !important;
-                                 }
-                            }
+                             height: 100%;
+                             width: 40%;
+                             padding: 1em;
+                             >img{
+                                 max-width: 90px;
+                                 max-height: 90px;
+                                 object-fit: contain;
+                                 @media (min-width: 768px) { 
+                                    max-width: 120px;
+                                    max-height: 120px;
+                                  }
+                             }
+                             &__team-box{
+                                &__team{
+                                    font-size: 1em !important;
+                                    @media (min-width: 992px) { 
+                                        font-size: 1.5em !important;
+                                     }
+                                }
+                             }
                          }
                      }
                  }
@@ -1122,4 +1124,132 @@ s{
     }
 
 
+}
+
+.page__article{
+    
+    &__header{
+        height: 300px;
+        position: relative;
+        &__image{
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                max-height: 300px;
+                object-fit: cover;
+                object-position: center;
+        }
+        &__title{
+            height: 100%;
+            h1{
+                font-size: 3em !important;
+                @media (min-width: 768px) { 
+                    font-size: 5em !important;
+                }
+            }
+            position: relative;
+        }
+    }
+    &__content{
+
+
+    }        
+    .normal-page{
+    }   
+    .special-page{
+
+// BLOCKQUOTE STYLE 
+blockquote{
+    width:100%;
+    padding : 3em;
+    // color: #555555;
+    padding:1em 5%;
+    border-left: none ;
+    line-height:0;
+    background:none;
+    @media (min-width: 768px) { 
+        padding:3em 20%;
+    }
+    display: flex;
+    justify-content: space-between;
+}
+
+    }
+}
+
+.page-style-block-flex{
+    > * {
+        flex: 1 1 0;
+        width: 0;
+    }
+}
+
+
+.page__article{
+    &__content{
+
+        h1,h2,h3,h4,h5{
+            border-left: 5px $secondary solid;
+            padding: 0.25em 0;
+            padding-left: 1em;
+            margin: 0.75em 0;
+            background-color: $light;
+        }
+        img{
+            
+            object-fit: cover;
+            width: 100%;
+        }
+        iframe{
+            max-width: 100%;
+        }
+    }
+    .people{
+        background-color: $light;
+        padding: 1em;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        // max-width: 300px;
+        width: 100%;
+        gap : 1em;
+        @media (min-width: 768px) { 
+            width: 50%;
+        }
+        @media (min-width: 1024px) { 
+            width: 30%;
+        }
+        &__infos{
+            text-align: right;
+            width: 100%;
+            p{
+                margin-bottom: 0;
+            }
+            h4{
+                border: none;
+                padding: 0;
+                margin-bottom: 0;
+            }
+        }
+        img{
+            max-height: 80px;
+            max-width: 80px;
+        }
+    }
+    .table-palmares{
+        border : none !important;
+        width: 100%;
+        tbody{
+            tr{
+                td{
+                    padding: 0.5em;
+                }
+                td:first-child{
+                    color: $primary;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
 }

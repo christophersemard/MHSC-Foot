@@ -26,6 +26,7 @@ class SinglePage
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
+
     public function getId(): ?int
     {
         return $this->id;
