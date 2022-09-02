@@ -44,23 +44,23 @@
 					<tbody>
 						<tr>
 							<th>Adresse</th>
-							<td>{{app.user.address.address}}</td>
+							<td>{{app.user.address ? app.user.address.address : 'Non défini'}}</td>
 						</tr>
 						<tr>
 							<th>Adresse ligne 2</th>
-							<td>{{app.user.address.address2}}</td>
+							<td>{{app.user.address ? app.user.address.address2 : 'Non défini'}}</td>
 						</tr>
 						<tr>
 							<th>Ville</th>
-							<td>{{app.user.address.city}}</td>
+							<td>{{app.user.address ? app.user.address.city : 'Non défini'}}</td>
 						</tr>
 						<tr>
 							<th>Code postal</th>
-							<td>{{app.user.address.zipcode}}</td>
+							<td>{{app.user.address ? app.user.address.zipcode : 'Non défini'}}</td>
 						</tr>
 						<tr>
 							<th>Pays</th>
-							<td>{{app.user.address.country}}</td>
+							<td>{{app.user.address ? app.user.address.country : 'Non défini'}}</td>
 						</tr>
 					</tbody>
 				</table>

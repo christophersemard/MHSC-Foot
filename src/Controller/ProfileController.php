@@ -52,6 +52,10 @@ class ProfileController extends AbstractController
     {
 
         $user = $this->getUser();
+
+        if ($user->getGoogleId()) {
+            return $this->redirectToRoute('app_profile', [], Response::HTTP_SEE_OTHER);
+        }
         $form = $this->createForm(EditPasswordProfileType::class, $user);
         $form->handleRequest($request);
 

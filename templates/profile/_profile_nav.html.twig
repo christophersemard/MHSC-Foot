@@ -5,10 +5,13 @@
 	<li class="nav-item">
 		<a class="nav-link {{ app.request.attributes.get('_route') == 'app_profile/edit_infos' ? " active" : " "}}" href="{{ path('app_profile/edit_infos') }}">Modifier informations personelles</a>
 	</li>
-	<li class="nav-item">
-		<a class="nav-link {{ app.request.attributes.get('_route') == 'app_profile/edit_password' ? " active" : " "}}" href="{{ path('app_profile/edit_password') }}">Modifier mot de passe</a>
-	</li>
+	{% if app.user.googleId == false %}
+		<li class="nav-item">
+			<a class="nav-link {{ app.request.attributes.get('_route') == 'app_profile/edit_password' ? " active" : " "}}" href="{{ path('app_profile/edit_password') }}">Modifier mot de passe</a>
+		</li>
+	{% endif %}
+
 	{# <li class="nav-item">
-																			<a class="nav-link" href="#">Disabled</a>
-																		</li> #}
+																						<a class="nav-link" href="#">Disabled</a>
+																					</li> #}
 </ul>
