@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte MHSC
+{% endblock %}
+
+{% block body %}
+	<main class="mt-4 p-lg-5 p-2 w-100 container-md">
+		<h1>Mon profil</h1>
+
+		<div class="d-flex flex-column flex-md-row gap-3 justify-content-around">
+			{% include "./profile/_profile_nav.html.twig" %}
+			<hr>
+			<div class=" w-100 p-2 p-lg-4">
+
+				{% for message in app.flashes('success') %}
+					<div class="alert alert-success mb-2">
+						{{ message }}
+					</div>
+				{% endfor %}
+				<h4>Informations personelles</h4>
+				<table class="table">
+					<tbody>
+						<tr>
+							<th>Prénom</th>
+							<td>{{app.user.firstname}}</td>
+						</tr>
+						<tr>
+							<th>Nom</th>
+							<td>{{app.user.lastname}}</td>
+						</tr>
+						<tr>
+							<th>Email</th>
+							<td>{{app.user.email}}</td>
+						</tr>
+						<tr>
+							<th>Téléphone</th>
+							<td>{{app.user.phone}}</td>
+						</tr>
+					</tbody>
+
+				</table>
+				<h4>Adresse</h4>
+				<table class="table">
+					<tbody>
+						<tr>
+							<th>Adresse</th>
+							<td>{{app.user.address.address}}</td>
+						</tr>
+						<tr>
+							<th>Adresse ligne 2</th>
+							<td>{{app.user.address.address2}}</td>
+						</tr>
+						<tr>
+							<th>Ville</th>
+							<td>{{app.user.address.city}}</td>
+						</tr>
+						<tr>
+							<th>Code postal</th>
+							<td>{{app.user.address.zipcode}}</td>
+						</tr>
+						<tr>
+							<th>Pays</th>
+							<td>{{app.user.address.country}}</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</main>
+{% endblock %}

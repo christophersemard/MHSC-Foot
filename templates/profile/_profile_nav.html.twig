@@ -1,0 +1,14 @@
+<ul class="nav nav-account justify-content-around  justify-content-md-start flex-column p-2 p-lg-4">
+	<li class="nav-item">
+		<a class="nav-link {{ app.request.attributes.get('_route') == 'app_profile' ? " active" : " "}}" href="{{ path('app_profile') }}">Profil</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link {{ app.request.attributes.get('_route') == 'app_profile/edit_infos' ? " active" : " "}}" href="{{ path('app_profile/edit_infos') }}">Modifier informations personelles</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link {{ app.request.attributes.get('_route') == 'app_profile/edit_password' ? " active" : " "}}" href="{{ path('app_profile/edit_password') }}">Modifier mot de passe</a>
+	</li>
+	{# <li class="nav-item">
+																			<a class="nav-link" href="#">Disabled</a>
+																		</li> #}
+</ul>

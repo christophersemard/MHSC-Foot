@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte MHSC
+{% endblock %}
+
+{% block body %}
+	<main class="mt-4 p-lg-5 p-2 w-100 container-md">
+		<h1>Modifier mes informations personnelles</h1>
+
+		<div class="d-flex flex-column flex-md-row gap-3 justify-content-around">
+			{% include "./profile/_profile_nav.html.twig" %}
+			<hr>
+			<div class=" w-100 p-2 p-lg-4">
+				{{ form_start(form) }}
+
+				<h4 class="text-primary">Informations personnelles</h4>
+				<div class="row">
+					<div class="form-group col-md-6">
+						{{ form_row(form.firstname) }}
+					</div>
+					<div class="form-group col-md-6">
+						{{ form_row(form.lastname) }}
+					</div>
+				</div>
+				{{ form_row(form.phone) }}
+
+
+				<h4 class="text-primary">Adresse</h4>
+				{{ form_row(form.address.address) }}
+				{{ form_row(form.address.address2) }}
+				<div class="row">
+					<div class="form-group col-md-3">
+						{{ form_row(form.address.zipcode) }}
+					</div>
+					<div class="form-group col-md-5">
+						{{ form_row(form.address.city) }}
+					</div>
+					<div class="form-group col-md-4">
+						{{ form_row(form.address.country) }}
+					</div>
+				</div>
+
+
+				<button type="submit" class="btn btn-primary">Valider</button>
+				{{ form_end(form) }}
+
+			</div>
+		</div>
+	</main>
+{% endblock %}

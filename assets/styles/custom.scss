@@ -1253,3 +1253,12 @@ blockquote{
         }
     }
 }
+
+
+.nav-account{
+    .active{
+        background-color: $primary !important;
+        color: white !important;
+        border-radius: 5px;
+    }
+}
