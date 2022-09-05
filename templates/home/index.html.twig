@@ -12,7 +12,7 @@
 				<img class="home-article__image" src="{{asset(news[0].thumbnail)}}" alt="Image de présentation de l'article">
 				<div class="home-article__gradient"></div>
 				<div class="home-article__infos d-flex flex-column justify-content-end">
-					<h1 class="title-home-article">{{news[0].title}}</h1>
+					<h1 class="title-home-article big-title">{{news[0].title}}</h1>
 					<div class="home-article__infos__details d-flex justify-content-end ">
 						<p>Publié le
 							{{news[0].getPublishDate()|date("d/m/Y")}}</p>
@@ -98,7 +98,7 @@
 		<section class="home-results d-flex">
 			<img class="home-results__background" src="/assets/images/background-orange.png" alt="Image de présentation de l'article">
 			<div class="home-results__content py-5">
-				<h1 class="title-secondary text-center">Matchs</h1>
+				<h1 class="title-secondary text-center big-title">Matchs</h1>
 				<div class="home-results__content__widgets mt-5 d-flex flex-wrap px-3 gap-4 gap-xxl-1 flex-column flex-md-row justify-content-between justify-content-xxl-around align-items-lg-center container-fluid container-md">
 					<div class="home-results__content__widgets__last-fixtures rounded bg-white shadow-sm py-4 px-2">
 						<h4 class="text-center">Derniers résultats</h3>
@@ -283,7 +283,7 @@
 			</section>
 			<section class="home-pages d-flex flex-column justify-content-center gap-5 py-5">
 
-				<h1 class="text-center">Le club</h1>
+				<h1 class="text-center big-title">Le club</h1>
 
 				<div class="home-pages__list container-md  py-2">
 					<article class="home-pages__list__item">
@@ -325,5 +325,50 @@
 				</div>
 			</section>
 
+
+			<section class="home-links d-flex">
+				<div class="home-links__content py-5">
+					<h1 class="text-center big-title">Le MHSC et vous</h1>
+					<div class="home-links__content__widgets mt-5 d-flex flex-wrap px-3 gap-4 gap-xxl-1 flex-column flex-md-row justify-content-between justify-content-xxl-around align-items-lg-center container-fluid container-md">
+
+						<article class="home-links__content__widgets__1">
+							<img class="home-links__content__widgets__1__image" src="/assets/images/maillots.png" alt="Photo maillot">
+							<h3 class="shadow-lg">Nouveaux Maillots<br>2022/2023</h3>
+							<a href="#" class="btn btn-secondary-2">Acheter</a>
+						</article>
+						<section class="home-links__content__widgets__2">
+							<article class="home-links__content__widgets__2__socials">
+
+								<h5>Suivez nous sur les réseaux sociaux</h5>
+								<nav class="navbar-nav d-flex flex-row justify-content-around mt-4 social-nav">
+									<a class="nav-link" href="#">
+										<i class="fa-brands fa-twitter"></i>
+									</a>
+									<a class="nav-link" href="#">
+										<i class="fa-brands fa-facebook-f"></i>
+									</a>
+									<a class="nav-link" href="#">
+										<i class="fa-brands fa-youtube"></i>
+									</a>
+									<a class="nav-link" href="#">
+										<i class="fa-brands fa-instagram"></i>
+									</a>
+								</nav>
+
+
+							</article>
+							<article class="home-links__content__widgets__2__sub">
+								<img class="home-links__content__widgets__2__sub__image" src="/assets/images/abonnements.png" alt="Abonnements 2022/2023">
+								<h3>Abonnements<br>2022/2023</h3>
+								<a href="#" class="btn btn-secondary-2">Acheter</a>
+							</article>
+						</section>
+						<section class="home-links__content__widgets__3">
+							<article class="home-links__content__widgets__3__newsletter"></article>
+							<article class="home-links__content__widgets__3__tickets"></article>
+						</section>
+					</div>
+				</div>
+			</section>
 		</main>
 	{% endblock %}
