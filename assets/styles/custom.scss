@@ -281,16 +281,20 @@ input[type=checkbox]{
         margin-top:1em;
     }
     div{
-        background-color: $tertiary-light;
         padding: 1em;
-        width: 100%;
-        max-width: 600px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        position: relative;
+        max-width: 200px;
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
         img{
         max-height: 100px;
         max-width: 150px;
+        }
+        a{
+            position: absolute;
+            top: 0;
+            right: 0;
         }
     }
 }
@@ -1261,4 +1265,58 @@ blockquote{
         color: white !important;
         border-radius: 5px;
     }
+}
+
+
+.home-pages{
+
+
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    position: relative;
+    
+    @media (min-width: 1400px) { 
+        height: 100vh;
+    }
+
+    &__list{
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 2em;
+        &__item{
+            padding: 1em;
+            background-color: $light;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            @media (min-width: 992px) { 
+                width: 40%;
+            }
+            &__image{
+                width: 25%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img{
+                    max-width: 100%;
+                    max-height: 100px;
+                    object-fit: contain;
+                }
+            }
+            &__infos{
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                a{
+                    align-self: flex-end;
+                }
+            }
+        }
+    }
+
 }

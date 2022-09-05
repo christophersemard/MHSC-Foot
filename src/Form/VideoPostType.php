@@ -4,11 +4,13 @@ namespace App\Form;
 
 use App\Entity\Post;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Validator\Constraints\File;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class VideoPostType extends AbstractType
 {
@@ -16,9 +18,14 @@ class VideoPostType extends AbstractType
     {
         $builder
 
-            ->add('title')
-            ->add('content', CKEditorType::class)
-
+            ->add('title', TextType::class, [
+                'label'     => 'Titre',
+            ])
+            ->add('content', TextareaType::class, [
+                'required'  => false,
+                'attr' => ['class' => 'tinymce'],
+                'label'     => 'Contenu',
+            ])
             ->add('video')
             ->add('thumbnail', FileType::class, [
                 'mapped' => false,

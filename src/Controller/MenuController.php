@@ -20,9 +20,9 @@ class MenuController extends AbstractController
 
         return $this->render('partials/_header.html.twig', [
             'controller_name' => 'MenuController',
-            'clubPages' => $clubPages->getSinglePages(),
-            'fansPages' => $fanPages->getSinglePages(),
-            'otherPages' => $otherPages->getSinglePages(),
+            'clubPages' => $clubPages ? $clubPages->getSinglePages() : '',
+            'fansPages' => $clubPages ? $fanPages->getSinglePages() : '',
+            'otherPages' => $clubPages ? $otherPages->getSinglePages() : '',
 
         ]);
     }

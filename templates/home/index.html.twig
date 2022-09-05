@@ -281,5 +281,49 @@
 				</div>
 
 			</section>
+			<section class="home-pages d-flex flex-column justify-content-center gap-5 py-5">
+
+				<h1 class="text-center">Le club</h1>
+
+				<div class="home-pages__list container-md  py-2">
+					<article class="home-pages__list__item">
+						<div class="home-pages__list__item__image">
+							<img src="{{asset('/assets/images/joueur.png')}}" alt="Photo d'un joueur du MHSC">
+						</div>
+						<div class="home-pages__list__item__infos">
+							<h3>L'équipe pro</h3>
+							<a class="btn btn-primary" href="{{path('app_team/squad', {slug : 'pro'})}}">Y aller</a>
+						</div>
+					</article>
+					<article class="home-pages__list__item">
+						<div class="home-pages__list__item__image">
+							<img src="{{asset('/assets/images/logo.png')}}" alt="Logo du Montpellier HSC">
+						</div>
+						<div class="home-pages__list__item__infos">
+							<h3>L'histoire du club</h3>
+							<a class="btn btn-primary" href="{{path('app_single_page', {slug : 'l-histoire-du-club'})}}">Y aller</a>
+						</div>
+					</article>
+					<article class="home-pages__list__item">
+						<div class="home-pages__list__item__image">
+							<img src="{{asset('/assets/images/stade.png')}}" alt="Icone de stade">
+						</div>
+						<div class="home-pages__list__item__infos">
+							<h3>Le stade</h3>
+							<a class="btn btn-primary" href="{{path('app_single_page', {slug : 'stade'})}}">Y aller</a>
+						</div>
+					</article>
+					<article class="home-pages__list__item">
+						<div class="home-pages__list__item__image">
+							<img src="{{asset('/assets/images/partenaire.png')}}" alt="Logo d'un partenaire du MHSC">
+						</div>
+						<div class="home-pages__list__item__infos">
+							<h3>Les partenaires</h3>
+							<a class="btn btn-primary" href="{{path('app_single_page', {slug : 'partenaires'})}}">Y aller</a>
+						</div>
+					</article>
+				</div>
+			</section>
+
 		</main>
 	{% endblock %}

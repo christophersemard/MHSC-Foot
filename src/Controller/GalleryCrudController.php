@@ -151,17 +151,17 @@ class GalleryCrudController extends AbstractController
     #[Route('/supprime/image/{id}', name: 'app_gallery_crud_delete_image', methods: ['DELETE'])]
     public function deleteImage(EntityManagerInterface $entityManager, Request $request, ImagePost $imagePost)
     {
-        $token = $request->request->get('_token');
+        // $token = $request->request->get('_token');
 
-        if ($this->isCsrfTokenValid('delete' . $imagePost->getId(), $token)) {
-            $nom = $imagePost->getImageUrl();
-            unlink($nom);
+        // if ($this->isCsrfTokenValid('delete' . $imagePost->getId(), $token)) {
+        $nom = $imagePost->getImageUrl();
+        unlink($nom);
 
-            $entityManager->remove($imagePost);
-            $entityManager->flush();
-            return new JsonResponse(['success' => 1]);
-        } else {
-            return new JsonResponse(['error' => 'Token Invalid'], 400);
-        }
+        $entityManager->remove($imagePost);
+        $entityManager->flush();
+        return new JsonResponse(['success' => 1]);
+        // } else {
+        //     return new JsonResponse(['error' => 'Token Invalid'], 400);
+        // }
     }
 }

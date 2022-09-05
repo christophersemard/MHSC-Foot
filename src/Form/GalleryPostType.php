@@ -4,12 +4,14 @@ namespace App\Form;
 
 use App\Entity\Post;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\All;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Validator\Constraints\File;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class GalleryPostType extends AbstractType
 {
@@ -19,7 +21,9 @@ class GalleryPostType extends AbstractType
             ->add('title', TextType::class, [
                 'label'     => 'Titre',
             ])
-            ->add('content', CKEditorType::class, [
+            ->add('content', TextareaType::class, [
+                'required'  => false,
+                'attr' => ['class' => 'tinymce'],
                 'label'     => 'Contenu',
             ])
             ->add('imagePosts', FileType::class, [

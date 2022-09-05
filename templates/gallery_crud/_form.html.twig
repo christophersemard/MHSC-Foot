@@ -9,18 +9,17 @@
 
 
 {% if app.request.attributes.get('_route') == 'app_gallery_crud_edit'  %}
-	<div class="edit-image-list">
-		<h2>Images</h2>
+	<h2>Images</h2>
+	<div class="edit-image-list d-flex flex-wrap bg-light gap-3 flex-row">
 		{% for image in post.imagePosts %}
-			<pre>
-			{{ dump(image) }}
-		</pre>
 			<div>
 				<img src="{{ asset( image.imageUrl)}}" alt=" Image">
-				<a class="text-danger nav-link" href="{{path('app_gallery_crud_delete_image', {'id':image.id})}}" data-delete data-token="{{csrf_token('delete' ~ image.id)}}">Supprimer</a>
+				<a class="text-danger nav-link" href="{{path('app_gallery_crud_delete_image', {'id':image.id})}}" data-delete data-token="{{csrf_token('delete' ~ image.id)}}">
+					<i class="fa-sharp fa-solid fa-delete-left fs-3"></i>
+				</a>
 			</div>
 		{% endfor %}
 	</div>
 {% endif %}
-<button class="btn btn-primary mb-2">{{ button_label|default('Save') }}</button>
+<button class="btn btn-primary mb-2">{{ button_label|default('Valider') }}</button>
 {{ form_end(form) }}
