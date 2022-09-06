@@ -2,12 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\PostCategory;
+use App\Entity\ProductCategory;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PostCategoryType extends AbstractType
+class ProductCategoryType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -18,7 +18,7 @@ class PostCategoryType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => PostCategory::class,
+            'data_class' => ProductCategory::class,
         ]);
     }
 }

@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/administration/categorie')]
+#[Route('/administration/categories-produit')]
 class ProductCategoryCrudController extends AbstractController
 {
     #[Route('/', name: 'app_product_category_crud_index', methods: ['GET'])]
