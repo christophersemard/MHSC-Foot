@@ -3,8 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Post;
-use App\Entity\Category;
-use App\Repository\CategoryRepository;
+use App\Entity\PostCategory;
+use App\Repository\PostCategoryRepository;
 use App\Repository\PostRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class NewsController extends AbstractController
 {
     #[Route('/', name: 'app_news')]
-    public function index(PostRepository $postRepository, PaginatorInterface $paginator, Request $request, CategoryRepository $categoryRepository): Response
+    public function index(PostRepository $postRepository, PaginatorInterface $paginator, Request $request, PostCategoryRepository $categoryRepository): Response
     {
         $news = $paginator->paginate(
             $postRepository->findAllDesc(), /* query NOT result */
@@ -42,7 +42,7 @@ class NewsController extends AbstractController
         ]);
     }
     #[Route('/categorie/{id}', name: 'app_news_category_display')]
-    public function categoryDisplay(Category $category, PaginatorInterface $paginator, Request $request, PostRepository $postRepository, CategoryRepository $categoryRepository): Response
+    public function categoryDisplay(PostCategory $category, PaginatorInterface $paginator, Request $request, PostRepository $postRepository, PostCategoryRepository $categoryRepository): Response
     {
         $news = $paginator->paginate(
             $postRepository->findAllByCategory($category),

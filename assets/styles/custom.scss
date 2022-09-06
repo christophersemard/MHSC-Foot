@@ -723,12 +723,14 @@ blockquote{
         position: relative;
         border-bottom: $secondary 0.5em solid;
         @media (min-width: 768px) { 
-            max-width: 35%;
+            width: 35%;
+            height: 120px;
+            object-fit: cover;
             border-left: $secondary 0.5em solid;
             border-bottom: none;
          }
         @media (min-width: 992px) { 
-            max-width: 25%;
+            height: 140px;
          }
     }
 }
