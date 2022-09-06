@@ -1,0 +1,64 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Joueurs
+{% endblock %}
+
+{% block body %}
+
+	<main class="p-5 w-100">
+		<h1>Joueurs</h1>
+
+		<table class=" table">
+			<thead>
+				<tr>
+					<th>Image</th>
+					<th>Nom</th>
+					<th>Description</th>
+					<th>Prix</th>
+					<th>Catégorie</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for product in products %}
+					<tr class="align-middle">
+						<td><img class="photo-admin" src="{{ asset(product.thumbnail) }}" alt="{{ product.name }}"></td>
+						<td>
+							<p class="m-0">{{ product.name }}</p>
+						</td>
+						<td>
+							<p class="m-0">{{ product.description }}</p>
+						</td>
+						<td>
+							<p class="m-0">{{ product.price }}
+								€</p>
+						</td>
+						<td>
+							<p class="m-0">{{ product.category }}</p>
+						</td>
+						<td>
+							<div class="dropdown">
+								<a class=" btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa-solid fa-pen"></i>
+								</a>
+								<div class="dropdown-menu  dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+
+									<a class="dropdown-item" href="{{ path('app_product_crud_show', {'id': product.id}) }}">Voir</a>
+									<a class="dropdown-item text-warning" href="{{ path('app_product_crud_edit', {'id': product.id}) }}">Modifier</a>
+
+									{{ include('product_crud/_delete_form.html.twig') }}
+								</div>
+							</div>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="7">Aucun produit trouvé</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<a class="btn btn-primary" href="{{ path('app_product_crud_new') }}">Nouveau produit</a>
+
+	</main>
+{% endblock %}

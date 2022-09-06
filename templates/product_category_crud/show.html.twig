@@ -20,10 +20,10 @@
 			</tbody>
 		</table>
 
-		<a href="{{ path('app_post_category_crud_index') }}">Retour à la liste</a>
+		<a href="{{ path('app_product_category_crud_index') }}">Retour à la liste</a>
 
-		<a href="{{ path('app_post_category_crud_edit', {'id': category.id}) }}">Modifier</a>
+		<a href="{{ path('app_product_category_crud_edit', {'id': category.id}) }}">Modifier</a>
 
-		{{ include('post_category_crud/_delete_form.html.twig') }}
+		{{ include('product_category_crud/_delete_form.html.twig') }}
 	</main>
 {% endblock %}

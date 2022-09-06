@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		<link
+		rel="icon" type="image/png" href="/assets/images/logo.png"/>
+		{# Normalize CSS #}
+		<link
+		rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+		{# Font Awesome #}
+		<script src="https://kit.fontawesome.com/c52cbb9b58.js" crossorigin="anonymous"></script>
+
+		{# CSS Custom #}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+
+		{% include "./partials/_header_shop.html.twig" %}
+
+
+		{% block body %}{% endblock %}
+		{% include "./partials/_footer_shop.html.twig" %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</body>
+</html>

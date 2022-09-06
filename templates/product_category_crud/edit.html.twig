@@ -1,0 +1,15 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Modifier catégorie
+{% endblock %}
+
+{% block body %}
+	<main class="p-5 w-100">
+		<h1>Modifier catégorie</h1>
+
+		{{ include('product_category_crud/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+		<a class="btn btn-secondary mb-2" href="{{ path('app_product_category_crud_index') }}">Retour à la liste</a>
+
+	</main>
+{% endblock %}

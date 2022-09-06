@@ -7,9 +7,9 @@
 	<main class="p-5 w-100">
 		<h1>Modifier catégorie</h1>
 
-		{{ include('category_crud/_form.html.twig', {'button_label': 'Modifier'}) }}
+		{{ include('post_category_crud/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-		<a class="btn btn-secondary mb-2" href="{{ path('app_category_crud_index') }}">Retour à la liste</a>
+		<a class="btn btn-secondary mb-2" href="{{ path('app_post_category_crud_index') }}">Retour à la liste</a>
 
 	</main>
 {% endblock %}
