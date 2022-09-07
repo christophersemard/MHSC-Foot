@@ -103,8 +103,8 @@ class ShopController extends AbstractController
                 ], $cartService->getProducts())
             ],
             'mode' => 'payment',
-            'success_url' => $_ENV['MY_DOMAIN'] . 'boutique/confirmation-commande',
-            'cancel_url' => $_ENV['MY_DOMAIN'] . 'mon-panier',
+            'success_url' => $_ENV['MY_DOMAIN'] . 'boutique/confirmation-commande/' . $order->getReference(),
+            'cancel_url' => $_ENV['MY_DOMAIN'] . 'boutique/mon-panier',
             'metadata'                    => [
                 'order_id' => $order->getReference()
             ]
@@ -119,14 +119,15 @@ class ShopController extends AbstractController
     }
 
 
-    #[Route('/confirmation-commande', name: 'app_shop/order_confirm')]
-    public function orderConfirm(CartService $cartService): Response
+    #[Route('/confirmation-commande/{reference}', name: 'app_shop/order_confirm')]
+    public function orderConfirm($reference, CartService $cartService, OrderRepository $orderRepository): Response
     {
-        $cart = $cartService->getCart();
+
+        $order = $orderRepository->findOneBy(array('reference' => $reference));
 
         return $this->render('shop/order_confirm.html.twig', [
             'controller_name' => 'ShopController',
-            'cart' => $cart,
+            'order' => $order,
             'total' => $cartService->getTotal(),
         ]);
     }

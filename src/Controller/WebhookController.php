@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Stripe;
+use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class WebhookController extends AbstractController
 {
     #[Route('/', name: 'app_stripe/webhook')]
-    public function index(Request $request)
+    public function index(Request $request, OrderRepository $orderRepository)
     {
         \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET_KEY_TEST']);
         $endpoint_secret = "whsec_bd3e93213d384f0dd8e50c27c1490306f8a2af25e2075089da404568bb411cc3";
@@ -46,23 +47,13 @@ class WebhookController extends AbstractController
             return new JsonResponse([['status' => 400]]);
         }
 
-
-
-        function fulfill_order($session)
-        {
-            // TODO: fill me in
-            print_log("Fulfilling order...");
-            print_log($session);
-        }
         // Handle the checkout.session.completed event
         if ($event->type == 'checkout.session.completed') {
-
             $session = $event->data->object;
-
-            // Fulfill the purchase...
-            fulfill_order($session);
+            $order = $orderRepository->findOneBy(array('stripeSessionId' => $session->id));
+            $order->setStatus('paied');
+            $orderRepository->add($order, true);
         }
-
 
         return new JsonResponse([['session' => $session, 'status' => 200]]);
     }

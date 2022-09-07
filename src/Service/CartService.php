@@ -85,4 +85,10 @@ class CartService
         }
         return $total;
     }
+
+    public function deleteCart()
+    {
+        $session = $this->requestStack->getSession();
+        $session->remove('cart');
+    }
 }
