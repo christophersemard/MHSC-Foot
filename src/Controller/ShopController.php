@@ -125,6 +125,8 @@ class ShopController extends AbstractController
 
         $order = $orderRepository->findOneBy(array('reference' => $reference));
 
+        $cartService->deleteCart();
+
         return $this->render('shop/order_confirm.html.twig', [
             'controller_name' => 'ShopController',
             'order' => $order,
