@@ -1,0 +1,50 @@
+{% extends 'shop_base.html.twig' %}
+
+{% block title %}Boutique MHSC
+{% endblock %}
+
+{% block body %}
+
+	<main class="w-100 mb-5 py-5 container-md px-2">
+
+		<h1>Votre panier</h1>
+		{% if items | length > 0 %}
+			<div class="news-page__list__news">
+				{% for item in items %}
+					<article class="cart-page__list__news__new d-flex justify-content-between gap-3">
+						<div class="cart-page__list__news__new__image mb-2 mb-md-0">
+							<img class="cart-page__item__image" src="{{asset(item.product.thumbnail)}}" alt="miniature">
+						</div>
+						<div class="cart-page__list__news__new__infos d-flex flex-column">
+							<h4 class="mb-0 h-100 fs-4">
+								{{item.product.name}}</h4>
+
+							<div class="cart-page__list__news__new__infos__quantity d-flex justify-content-end align-items-center gap-2 mb-2">
+
+								<p class="mb-0">Quantité :
+									{{item.quantity}}
+								</p>
+								<a class="btn btn-danger btn-sm" href="{{path('app_cart/remove', {id: item.product.id})}}">
+									<i class="fas fa-trash"></i>
+								</a>
+							</div>
+							<div class="cart-page__list__news__new__infos__total d-flex justify-content-end align-items-center">
+
+								<p class="mb-0 fw-bold fs-4">Total :
+									{{item.quantity * item.product.price}}€</p>
+							</div>
+						</div>
+
+					</article>
+				{% endfor %}
+			</div>
+			<p class="my-2 py-3 fw-bold fs-3 text-end border-top">Total à payer :
+				{{total}}€</p>
+
+			<a class="btn btn-primary" href="{{path('app_shop/order')}}">Valider le panier</a>
+		{% else %}
+			<p class="alert alert-warning">Votre panier est vide</p>
+		{% endif %}
+
+	</main>
+{% endblock %}

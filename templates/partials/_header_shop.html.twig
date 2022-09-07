@@ -16,26 +16,33 @@
 				</ul>
 			</div>
 		</div>
-		<div class="dropdown">
-			<a class="" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-
-				<i class="fa-solid fa-circle-user text-primary"></i>
+		<div class="d-flex align-items-center gap-4 text-primary">
+			<a href="{{path('app_cart')}}">
+				<i class="fa-solid fa-cart-shopping"></i>
 			</a>
-			<div class="dropdown-menu  dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+			<div class="dropdown">
+				<a class="" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 
-				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-					<a class="dropdown-item" href="{{path('app_profile')}}">Mon profil</a>
-					{% if is_granted('ROLE_ADMIN') %}
-						<a class="dropdown-item" href="/administration">Administration</a>
+					<i class="fa-solid fa-circle-user text-primary"></i>
+				</a>
+				<div class="dropdown-menu  dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+
+					{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+						<a class="dropdown-item" href="{{path('app_profile')}}">Mon profil</a>
+						{% if is_granted('ROLE_ADMIN') %}
+							<a class="dropdown-item" href="/administration">Administration</a>
+						{% endif %}
+						<a class="dropdown-item text-danger" href="/deconnexion">Deconnexion</a>
+					{% else %}
+						<a class="dropdown-item" href="/connexion">Connexion</a>
+						<a class="dropdown-item" href="/inscription">Inscription</a>
 					{% endif %}
-					<a class="dropdown-item text-danger" href="/deconnexion">Deconnexion</a>
-				{% else %}
-					<a class="dropdown-item" href="/connexion">Connexion</a>
-					<a class="dropdown-item" href="/inscription">Inscription</a>
-				{% endif %}
 
+				</div>
 			</div>
+
 		</div>
+
 
 	</nav>
 
