@@ -46,7 +46,17 @@ class ShopController extends AbstractController
             $minPrice = $data['minPrice'] ? $data['minPrice'] : 0;
             $maxPrice = $data['maxPrice'] ? $data['maxPrice'] : 1000000;
 
-            $products = $productRepository->findBySearchCriteria($selectedCategories, $minPrice, $maxPrice);
+
+            $selectedSizes = [];
+            if (count($data['sizes']) > 0) {
+                foreach ($form->getData('sizes')['sizes'] as $size) {
+                    $selectedSizes[] = $size;
+                }
+            }
+
+            $products = $productRepository->findBySearchCriteria($selectedCategories, $minPrice, $maxPrice, $selectedSizes);
+
+            dd($products[0]->getSizes());
         }
 
         return $this->render('shop/index.html.twig', [
@@ -57,16 +67,16 @@ class ShopController extends AbstractController
         ]);
     }
 
-    #[Route('/categorie/{slug}', name: 'app_shop/category')]
-    public function category($slug, ProductCategoryRepository $productCategoryRepository): Response
-    {
-        $product =  $productCategoryRepository->findBySlug($slug)[0];;
+    // #[Route('/categorie/{slug}', name: 'app_shop/category')]
+    // public function category($slug, ProductCategoryRepository $productCategoryRepository): Response
+    // {
+    //     $product =  $productCategoryRepository->findBySlug($slug)[0];;
 
-        return $this->render('shop/product.html.twig', [
-            'controller_name' => 'ShopController',
-            'product' => $product,
-        ]);
-    }
+    //     return $this->render('shop/product.html.twig', [
+    //         'controller_name' => 'ShopController',
+    //         'product' => $product,
+    //     ]);
+    // }
 
     #[Route('/produit/{slug}', name: 'app_shop/product')]
     public function product($slug, ProductRepository $productRepository): Response
@@ -117,7 +127,13 @@ class ShopController extends AbstractController
         $cart = [];
         foreach ($cartService->getCart() as $item) {
             $cart[] = [
-                'product' => $serializer->normalize($item['product'], null),
+                'product' => $serializer->normalize(
+                    $item['product'],
+                    null,
+                    [
+                        'groups' => ['cart_product']
+                    ]
+                ),
                 'quantity' => $item['quantity']
             ];
         }

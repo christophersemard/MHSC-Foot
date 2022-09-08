@@ -91,4 +91,13 @@ class CartService
         $session = $this->requestStack->getSession();
         $session->remove('cart');
     }
+
+    public function updateProduct($product)
+    {
+        $id = $product['product'];
+        $session = $this->requestStack->getSession();
+        $cart = $session->get('cart', []);
+        $cart[$id] = $product['quantity'];
+        $session->set('cart', $cart);
+    }
 }

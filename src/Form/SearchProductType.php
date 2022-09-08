@@ -3,11 +3,12 @@
 namespace App\Form;
 
 use App\Entity\Product;
-use App\Entity\ProductCategory;
+use App\Entity\ProductSize;
 use PhpParser\Parser\Multiple;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\ProductCategory;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -41,7 +42,16 @@ class SearchProductType extends AbstractType
                     'placeholder' => "Maximum"
                 ]
             ])
-            // ->add('size')
+            ->add('sizes', EntityType::class, [
+                'label'     => false,
+                'required' => false,
+                'class' => ProductSize::class,
+                'multiple' => true,
+                'expanded' => true,
+                'attr' => [
+                    'class' => "d-flex flex-wrap input-sizes-two-column"
+                ]
+            ]);
             // ->add('color')
         ;
     }

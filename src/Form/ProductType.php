@@ -3,8 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Product;
+use App\Entity\ProductSize;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -43,7 +45,19 @@ class ProductType extends AbstractType
             ->add('price', NumberType::class, [
                 'label'     => 'Prix de l\'article',
             ])
-            ->add('category');
+            ->add('category')
+
+            // ->add('sizes', EntityType::class, [
+            //     'label'     => "Tailles disponibles",
+            //     'required' => false,
+            //     'class' => ProductSize::class,
+            //     'multiple' => true,
+            //     'expanded' => true,
+            //     'attr' => [
+            //         'class' => "d-flex flex-wrap gap-4"
+            //     ]
+            // ])
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

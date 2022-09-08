@@ -5,43 +5,64 @@
 
 {% block body %}
 
-	<main class="w-100 mb-5 py-2 py-md-5 container-md px-2">
+	<main class="w-100 mb-5">
 
-		<h1 class="mb-4">Votre panier</h1>
-		{% if items | length > 0 %}
-			<div class="cart-page">
-				{% for item in items %}
-					<article class="cart-page__item d-flex justify-content-between gap-3">
-						<div class="cart-page__item__image-box mb-2 mb-md-0 d-flex justify-content-center align-items-center">
-							<img class="cart-page__item__image-box__image" src="{{asset("/uploads/products/" ~ item.product.thumbnail)}}" alt="miniature">
-						</div>
-						<div class="cart-page__item__infos-box d-flex flex-column">
-							<h4 class="mb-0 h-100 fs-4">
-								{{item.product.name}}</h4>
+		<header class="shop-page__header mb-5">
+			<img class="shop-page__header__image" src="/assets/images/background-bleu.png" alt="Image de présentation de l'article">
 
-							<div class="cart-page__item__infos-box__quantity d-flex justify-content-end align-items-center gap-2 mb-2">
-
-								<p class="mb-0">Quantité :
-									{{item.quantity}}
-								</p>
-								<a class="btn btn-danger btn-sm" href="{{path('app_cart/remove', {id: item.product.id})}}">
-									<i class="fas fa-trash"></i>
-								</a>
-							</div>
-							<div class="cart-page__item__infos-box__total d-flex justify-content-end align-items-center">
-
-								<p class="mb-0 fw-bold fs-4">Total :
-									{{item.quantity * item.product.price}}€</p>
-							</div>
-						</div>
-
-					</article>
-				{% endfor %}
+			<div class="shop-page__header__title container-md py-4 d-flex align-items-center w-100 ">
+				<h1 class="mb-0 text-center w-100 title-primary">VOTRE PANIER</h1>
 			</div>
-			<p class="my-2 py-3 fw-bold fs-3 text-end border-top">Total à payer :
-				{{total}}€</p>
+		</header>
 
-			<a class="btn btn-primary" href="{{path('app_shop/order')}}">Valider le panier</a>
+		{% if items | length > 0 %}
+			<section class="py-2 py-md-3 px-2 container-md">
+				<div class="cart-page">
+					{% for item in items %}
+						<article class="cart-page__item d-flex justify-content-between gap-3">
+							<div class="cart-page__item__image-box mb-2 mb-md-0 d-flex justify-content-center align-items-center">
+								<img class="cart-page__item__image-box__image" src="{{asset("/uploads/products/" ~ item.product.thumbnail)}}" alt="miniature">
+							</div>
+							<div class="cart-page__item__infos-box d-flex flex-column">
+								<h4 class="mb-0 h-100 fs-4">
+									{{item.product.name}}</h4>
+
+								<div class="cart-page__item__infos-box__quantity d-flex justify-content-end align-items-center gap-2 mb-2">
+
+									<p class="mb-0">Quantité :
+									</p>
+									<form method="post">
+										<input type="hidden" name="action" value="update_product">
+										<input type="hidden" name="product" value="{{item.product.id}}">
+										{% if item.product.size is defined %}
+											<input type="hidden" name="size" value="{{item.product.size}}">
+										{% else %}
+											<input type="hidden" name="size" value="null">
+										{% endif %}
+										<input type="number" onchange="submit()" name="quantity" min="1" max="100" value="{{item.quantity}}">
+
+									</form>
+									<a class="btn btn-danger btn-sm" href="{{path('app_cart/remove', {id: item.product.id})}}">
+										<i class="fas fa-trash"></i>
+									</a>
+								</div>
+								<div class="cart-page__item__infos-box__total d-flex justify-content-end align-items-center">
+
+									<p class="mb-0 fw-bold fs-4">Total :
+										{{item.quantity * item.product.price}}€</p>
+								</div>
+							</div>
+
+						</article>
+					{% endfor %}
+				</div>
+
+				<div class="d-flex flex-wrap justify-content-end gap-3 align-items-center my-0 py-3">
+					<p class="my-0 fw-bold fs-3 text-end">Total à payer :
+						{{total}}€</p>
+					<a class="btn btn-primary" href="{{path('app_shop/order')}}">Valider le panier</a>
+				</div>
+			</section>
 		{% else %}
 			<p class="alert alert-warning">Votre panier est vide</p>
 		{% endif %}

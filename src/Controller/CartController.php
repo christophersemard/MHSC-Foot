@@ -15,6 +15,11 @@ class CartController extends AbstractController
     #[Route('/boutique/mon-panier', name: 'app_cart')]
     public function cart(CartService $cartService): Response
     {
+
+        if ($_POST  && $_POST['action'] == "update_product" && $_POST['quantity'] > 0) {
+            $cartService->updateProduct($_POST);
+        }
+
         return $this->render('shop/cart.html.twig', [
             'controller_name' => 'ShopController',
             'items' => $cartService->getCart(),
