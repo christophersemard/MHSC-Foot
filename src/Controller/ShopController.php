@@ -6,15 +6,17 @@ use Stripe;
 use App\Entity\Order;
 use App\Entity\Address;
 use App\Service\CartService;
+use App\Form\SearchProductType;
+use App\Repository\OrderRepository;
 use App\Form\RegistrationAddressType;
 use App\Repository\AddressRepository;
-use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
+use App\Repository\ProductCategoryRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
@@ -23,11 +25,46 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ShopController extends AbstractController
 {
     #[Route('/', name: 'app_shop/home')]
-    public function index(ProductRepository $productRepository): Response
+    public function index(ProductRepository $productRepository, ProductCategoryRepository $productCategoriesRepository, Request $request): Response
     {
+        $form = $this->createForm(SearchProductType::class);
+        $form->handleRequest($request);
+
+        $products = $productRepository->findAll();
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $data = $form->getData();
+
+            $selectedCategories = [];
+            if (count($data['category']) > 0) {
+                foreach ($form->getData('category')['category'] as $category) {
+                    $selectedCategories[] = $category;
+                }
+            }
+
+            $minPrice = $data['minPrice'] ? $data['minPrice'] : 0;
+            $maxPrice = $data['maxPrice'] ? $data['maxPrice'] : 1000000;
+
+            $products = $productRepository->findBySearchCriteria($selectedCategories, $minPrice, $maxPrice);
+        }
+
         return $this->render('shop/index.html.twig', [
             'controller_name' => 'ShopController',
-            'products' => $productRepository->findAll(),
+            'form' => $form->createView(),
+            'products' => $products,
+            'categories' => $productCategoriesRepository->findAll(),
+        ]);
+    }
+
+    #[Route('/categorie/{slug}', name: 'app_shop/category')]
+    public function category($slug, ProductCategoryRepository $productCategoryRepository): Response
+    {
+        $product =  $productCategoryRepository->findBySlug($slug)[0];;
+
+        return $this->render('shop/product.html.twig', [
+            'controller_name' => 'ShopController',
+            'product' => $product,
         ]);
     }
 

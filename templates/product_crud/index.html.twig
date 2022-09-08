@@ -13,7 +13,6 @@
 				<tr>
 					<th>Image</th>
 					<th>Nom</th>
-					<th>Description</th>
 					<th>Prix</th>
 					<th>Catégorie</th>
 				</tr>
@@ -21,12 +20,9 @@
 			<tbody>
 				{% for product in products %}
 					<tr class="align-middle">
-						<td><img class="photo-admin" src="{{ asset(product.thumbnail) }}" alt="{{ product.name }}"></td>
+						<td><img class="photo-admin" src="{{asset("/uploads/products/" ~ product.thumbnail)}}" alt="{{ product.name }}"></td>
 						<td>
 							<p class="m-0">{{ product.name }}</p>
-						</td>
-						<td>
-							<p class="m-0">{{ product.description }}</p>
 						</td>
 						<td>
 							<p class="m-0">{{ product.price }}

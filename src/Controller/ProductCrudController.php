@@ -31,13 +31,16 @@ class ProductCrudController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $productName = $form->get('name')->getData();
+            $productSlug = strtolower($slugger->slug($productName));
+            $product->setSlug($productSlug);
 
             $thumbnail = $form->get('thumbnail')->getData();
             $originalFilename = pathinfo($thumbnail->getClientOriginalName(), PATHINFO_FILENAME);
             $safeFilename = $slugger->slug($originalFilename);
-            $newFilename = '../uploads/products/' . $safeFilename . '-' . uniqid() . '.' . $thumbnail->guessExtension();
+            $newFilename =  $safeFilename . '-' . uniqid() . '.' . $thumbnail->guessExtension();
             $thumbnail->move(
-                $this->getParameter('photos_directory'),
+                $this->getParameter('products_directory'),
                 $newFilename
             );
             $product->setThumbnail($newFilename);
@@ -68,16 +71,21 @@ class ProductCrudController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $productName = $form->get('name')->getData();
+            $productSlug = strtolower($slugger->slug($productName));
+            $product->setSlug($productSlug);
 
             $thumbnail = $form->get('thumbnail')->getData();
-            $originalFilename = pathinfo($thumbnail->getClientOriginalName(), PATHINFO_FILENAME);
-            $safeFilename = $slugger->slug($originalFilename);
-            $newFilename = '../uploads/products/' . $safeFilename . '-' . uniqid() . '.' . $thumbnail->guessExtension();
-            $thumbnail->move(
-                $this->getParameter('photos_directory'),
-                $newFilename
-            );
-            $product->setThumbnail($newFilename);
+            if ($thumbnail) {
+                $originalFilename = pathinfo($thumbnail->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $thumbnail->guessExtension();
+                $thumbnail->move(
+                    $this->getParameter('products_directory'),
+                    $newFilename
+                );
+                $product->setThumbnail($newFilename);
+            }
 
             $productRepository->add($product, true);
 

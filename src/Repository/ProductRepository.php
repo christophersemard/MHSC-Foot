@@ -50,6 +50,26 @@ class ProductRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findBySearchCriteria($categories, $minPrice, $maxPrice): array
+    {
+        $qb =  $this->createQueryBuilder('p');
+        foreach ($categories as $key => $category) {
+            if ($key == 0) {
+                $qb->andWhere('p.category = :category' . $key)
+                    ->setParameter('category' . $key, $category);
+            } else {
+                $qb->orWhere('p.category = :category' . $key)
+                    ->setParameter('category' . $key, $category);
+            }
+        }
+        $qb->andWhere('p.price >= :minPrice')
+            ->setParameter('minPrice', $minPrice)
+            ->andWhere('p.price <= :maxPrice')
+            ->setParameter('maxPrice', $maxPrice);
+
+        return $qb->getQuery()->getResult();
+    }
+
 
     //    /**
     //     * @return Product[] Returns an array of Product objects
