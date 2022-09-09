@@ -56,7 +56,7 @@ class ShopController extends AbstractController
 
             $products = $productRepository->findBySearchCriteria($selectedCategories, $minPrice, $maxPrice, $selectedSizes);
 
-            dd($products[0]->getSizes());
+            // dd($products[0]->getSizes());
         }
 
         return $this->render('shop/index.html.twig', [
