@@ -15,8 +15,8 @@
 			</div>
 		</header>
 
-		{% if items | length > 0 %}
-			<section class="py-2 py-md-3 px-2 container-md">
+		<section class="py-2 py-md-3 px-2 container-md">
+			{% if items | length > 0 %}
 				<div class="cart-page">
 					{% for item in items %}
 						<article class="cart-page__item d-flex justify-content-between gap-3">
@@ -62,10 +62,10 @@
 						{{total}}€</p>
 					<a class="btn btn-primary" href="{{path('app_shop/order')}}">Valider le panier</a>
 				</div>
-			</section>
-		{% else %}
-			<p class="alert alert-warning">Votre panier est vide</p>
-		{% endif %}
+			{% else %}
+				<p class="alert alert-warning">Votre panier est vide</p>
+			{% endif %}
+		</section>
 
 	</main>
 {% endblock %}

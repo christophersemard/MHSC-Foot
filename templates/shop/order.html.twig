@@ -58,38 +58,38 @@
 						<p class="mb-0">
 							<b>Nom :
 							</b>
-							{{order.user.firstname}}
-							{{order.user.lastname}}
+							{{user.firstname}}
+							{{user.lastname}}
 						</p>
 						<p class="mb-0">
 							<b>Adresse ligne 1 :
 							</b>
-							{{order.address.address}}
+							{{user.address.address}}
 						</p>
 						<p class="mb-0">
 							<b>Adresse ligne 2 :
 							</b>
-							{{order.address.address2}}
+							{{user.address.address2}}
 						</p>
 						<p class="mb-0">
 							<b>Code postal :
 							</b>
-							{{order.address.zipcode}}
+							{{user.address.zipcode}}
 							<b>
 								| Ville :
 							</b>
-							{{order.address.city}}
+							{{user.address.city}}
 						</p>
 						<p class="mb-0">
 							<b>Pays :
 							</b>
-							{{order.address.country}}
+							{{user.address.country}}
 						</p>
 						<p class="mb-0">
 
 							<b>Téléphone :
 							</b>
-							{{order.user.phone}}
+							{{user.phone}}
 						</p>
 						<!-- Button trigger modal -->
 						<button type="button" class="btn btn-primary align-self-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -112,7 +112,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+						<h5 class="modal-title" id="exampleModalLabel">Modifier l'adresse de livraison</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body d-flex flex-column">
