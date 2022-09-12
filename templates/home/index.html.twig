@@ -326,6 +326,42 @@
 			</section>
 
 
+			<section class="home-mhsctv d-flex">
+				<img class="home-mhsctv__background" src="/assets/images/background-stripes.png" alt="Image de présentation de l'article">
+				<div class="home-mhsctv__content py-5 d-flex flex-column justify-content-center gap-3">
+					<h1 class="text-center big-title title-primary">MHSC TV</h1>
+					<div class="home-mhsctv__content__widgets mt-xl-5 d-flex flex-wrap px-3 px-sm-5 px-lg-0  gap-4 gap-xxl-1 flex-column flex-md-row justify-content-between justify-content-xxl-around align-items-lg-center container-fluid container-sm">
+
+						<section class="home-mhsctv__content__widgets__1 d-flex flex-column justify-content-between  gap-3">
+							<article class="home-mhsctv__content__widgets__1__highlight">
+								<iframe class="youtube-video mt-4" height="389" width="1070" src="{{last4Videos[0].video|replace({'watch?v=': "embed/"}) }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</article>
+							<aside class="mhsctv__content__widgets__1__videos d-flex flex-wrap justify-content-between">
+								{% for video in last4Videos %}
+									{% if loop.index > 1 %}
+										<article class="home-mhsctv__content__widgets__1__videos__item color-primary">
+											<a href="{{ path('app_news_display', {'id': video.id} ) }}"><img class="img-fluid" src="{{video.thumbnail}}" alt="Miniature {{video.title}}"><i class="fa-solid fa-play"></i>
+											</a>
+										</article>
+									{% endif %}
+								{% endfor %}
+							</aside>
+
+						</section>
+						<section class="home-mhsctv__content__widgets__2 d-flex flex-column justify-content-between">
+							<h4 class="text-center text-white mt-3">Galerie photos</h4>
+							<section class="home-mhsctv__content__widgets__2__list d-flex flex-wrap justify-content-between align-items-center">
+								{% for gallery in last6Galleries %}
+									<article class="home-mhsctv__content__widgets__2__list__item d-flex justify-content-center  align-items-center">
+										<a href="{{ path('app_news_display', {'id': gallery.id} ) }}"><img class="img-fluid" src="{{gallery.thumbnail}}" alt="Miniature {{gallery.title}}"></a>
+									</article>
+								{% endfor %}
+							</section>
+						</section>
+					</div>
+				</div>
+			</section>
+
 			<section class="home-links d-flex">
 				<div class="home-links__content py-5 d-flex flex-column justify-content-center gap-3">
 					<h1 class="text-center big-title">Le MHSC et vous</h1>

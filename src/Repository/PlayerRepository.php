@@ -50,7 +50,6 @@ class PlayerRepository extends ServiceEntityRepository
             ->andWhere('p.role = :role')
             ->setParameter('role',  $role)
             ->orderBy('p.id', 'ASC')
-            ->setMaxResults(20)
             ->getQuery()
             ->getResult();
     }

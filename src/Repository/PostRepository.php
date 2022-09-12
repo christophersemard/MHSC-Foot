@@ -110,6 +110,30 @@ class PostRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findLast4Videos(): array
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.type = :val')
+            ->setParameter('val', 'video')
+            ->orderBy('p.id', 'DESC')
+            ->setMaxResults(4)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findLast6Galleries(): array
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.type = :val')
+            ->setParameter('val', 'gallery')
+            ->orderBy('p.id', 'DESC')
+            ->setMaxResults(6)
+            ->getQuery()
+            ->getResult();
+    }
+
+
+
     //    /**
     //     * @return Post[] Returns an array of Post objects
     //     */

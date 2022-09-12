@@ -101,6 +101,8 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
             'mainPost' => $postRepository->findLast()[0],
             'news' => $postRepository->findLast10(),
+            'last4Videos' => $postRepository->findLast4Videos(),
+            'last6Galleries' => $postRepository->findLast6Galleries(),
             'mainTeam' => $mainTeam,
             'standings' => $sevenStandings,
             'league' => $standings['response'][0]['league']['name'],
