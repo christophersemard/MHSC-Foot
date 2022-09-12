@@ -1739,3 +1739,17 @@ blockquote{
     }
 
 }
+
+
+.carousel-inner{
+
+}
+.carousel-item{
+    max-height: 400px;
+    img{
+        
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+    }
+}
