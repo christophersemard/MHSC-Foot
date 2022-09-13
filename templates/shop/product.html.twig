@@ -31,17 +31,17 @@
 							<input type="number" class="form-control" id="quantity" value="1">
 						{# <label for="" class="mt-2">Taille</label> #}
 							{# {% if product.sizes %}
-																						<div class="d-flex flex-wrap gap-4">
-																							{% for size in product.sizes %}
-																								<div class="form-check">
-																									<input type="radio" name="product[sizes]" id="product_size_{{loop.index}}" class="form-check-input" value="{{size.name}}">
-																									<label for="product_size_{{loop.index}}" class="form-check-label">{{size.name}}</label>
-																								</div>
-																							{% endfor %}
-																						</div>
-																					{% endif %} #}
+																																											<div class="d-flex flex-wrap gap-4">
+																																												{% for size in product.sizes %}
+																																													<div class="form-check">
+																																														<input type="radio" name="product[sizes]" id="product_size_{{loop.index}}" class="form-check-input" value="{{size.name}}">
+																																														<label for="product_size_{{loop.index}}" class="form-check-label">{{size.name}}</label>
+																																													</div>
+																																												{% endfor %}
+																																											</div>
+																																										{% endif %} #}
 						</div>
-						<a href="{{path('app_cart/add', {id: product.id})}}" class="btn btn-warning">Add to Cart</a>
+						<a href="{{path('app_cart/add', {id: product.id})}}" class="btn btn-warning">Ajouter au panier</a>
 					</form>
 				</div>
 			</div>
