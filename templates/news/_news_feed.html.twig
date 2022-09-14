@@ -3,15 +3,10 @@
 
 	{% for new in news %}
 		<a href="{{ path('app_news_display', {'id': new.id}) }}">
-			<div class="last-news-item d-flex flex-column justify-content-between">
+			<div class="last-news-item d-flex justify-content-between">
 
-				<div class="d-flex justify-content-between">
-					<p class="m-0 fw-bold">{{news[0].getPublishDate()|date("d/m")}}</p>
-					<p class="category category-mini m-0">{{new.category}}</p>
-				</div>
-				<div>
-					<h5 style="font-size: 1em;">{{new.title}}</h5>
-				</div>
+				<h5 style="font-size: 1em;">{{new.title}}</h5>
+				<p class="category category-mini m-0">{{new.category}}</p>
 
 			</div>
 		</a>

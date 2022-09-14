@@ -35,9 +35,8 @@ security:
     access_control:
         - { path: ^/administration, roles: ROLE_ADMIN }
         - { path: ^/mon-compte, roles: ROLE_USER }
-        - { path: ^/mon-panier, roles: ROLE_USER }
-        # - { path: ^/efconnect, role: ROLE_USER }
-        # - { path: ^/elfinder, role: ROLE_USER }
+        # - { path: ^/boutique/mon-panier, roles: ROLE_USER }
+        - { path: ^/boutique/commande, roles: ROLE_USER }
     role_hierarchy:
         ROLE_EDITOR: ROLE_USER
         ROLE_ADMIN: ROLE_EDITOR
