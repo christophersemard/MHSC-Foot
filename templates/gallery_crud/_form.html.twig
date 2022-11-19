@@ -1,22 +1,17 @@
 {{ form_start(form) }}
 {{ form_errors(form) }}
-
 {{ form_row(form.title) }}
 {{ form_row(form.thumbnail) }}
 {{ form_row(form.category) }}
 {{ form_row(form.content) }}
 {{ form_row(form.imagePosts) }}
-
-
 {% if app.request.attributes.get('_route') == 'app_gallery_crud_edit'  %}
 	<h2>Images</h2>
 	<div class="edit-image-list d-flex flex-wrap bg-light gap-3 flex-row">
 		{% for image in post.imagePosts %}
 			<div>
-				<img src="{{ asset( image.imageUrl)}}" alt=" Image">
-				<a class="text-danger nav-link" href="{{path('app_gallery_crud_delete_image', {'id':image.id})}}" data-delete data-token="{{csrf_token('delete' ~ image.id)}}">
-					<i class="fa-sharp fa-solid fa-delete-left fs-3"></i>
-				</a>
+				<img src="{{ asset( image.imageUrl)}}" alt="Image">
+				<a class="text-danger nav-link" href="{{path('app_gallery_crud_delete_image', {'id':image.id})}}" data-delete data-token="{{csrf_token('delete' ~ image.id)}}"><i class="fa-sharp fa-solid fa-delete-left fs-3"></i></a>
 			</div>
 		{% endfor %}
 	</div>

@@ -5,8 +5,6 @@
 
 {% block body %}
 	<main class="container my-5 col-lg-6">
-
-
 		{% if app.user %}
 			<div class="alert-success p-3 mb-4 d-flex align-items-center justify-content-between">
 				Vous êtes connecté en tant que
@@ -15,21 +13,19 @@
 			</div>
 		{% endif %}
 		<h1 class="text-primary">Inscription</h1>
-
 		<div class='my-4 d-flex flex-column gap-2'>
-			<a class="btn btn-light bg-primary text-white fw-bold" href="{{ path('app_login') }}" role="button" style="text-transform:none">
-				Déjà inscrit ? Connectez vous !
-			</a>
-			<a class="btn btn-light" href="{{ path('app_google/connect') }}" role="button" style="text-transform:none">
-				<img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>
-				S'inscrire avec Google
-			</a>
+			<a class="btn btn-light bg-primary text-white fw-bold" href="{{ path('app_login') }}" role="button" style="text-transform:none">Déjà inscrit ? Connectez vous !</a>
+			<a class="btn btn-light" href="{{ path('app_google/connect') }}" role="button" style="text-transform:none"><img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>S'inscrire avec Google</a>
 		</div>
 		{{ form_start(registrationForm) }}
 		{{ form_row(registrationForm.email) }}
-		{{ form_row(registrationForm.plainPassword, {
-            label: 'Mot de passe'
-        }) }}
+		<div class="row">
+			<div class="form-group col-md-6">
+				{{ form_row(registrationForm.plainPassword.first, {label: 'Mot de passe'}) }}
+			</div>
+			<div class="form-group col-md-6">{{ form_row(registrationForm.plainPassword.second, {label: 'Confirmation du mot de passe'}) }}
+			</div>
+		</div>
 		<h4 class="text-primary">Informations personnelles</h4>
 		<div class="row">
 			<div class="form-group col-md-6">
@@ -40,11 +36,15 @@
 			</div>
 		</div>
 		{{ form_row(registrationForm.phone) }}
-
-
 		<h4 class="text-primary">Adresse</h4>
-		{{ form_row(registrationForm.address.address) }}
-		{{ form_row(registrationForm.address.address2) }}
+		<div class="row">
+			<div class="form-group col-md-8">
+				{{ form_row(registrationForm.address.address) }}
+			</div>
+			<div class="form-group col-md-4">
+				{{ form_row(registrationForm.address.address2) }}
+			</div>
+		</div>
 		<div class="row">
 			<div class="form-group col-md-3">
 				{{ form_row(registrationForm.address.zipcode) }}
@@ -56,12 +56,8 @@
 				{{ form_row(registrationForm.address.country) }}
 			</div>
 		</div>
-
 		{{ form_row(registrationForm.agreeTerms) }}
-
 		<button type="submit" class="btn btn-primary">S'inscrire</button>
 		{{ form_end(registrationForm) }}
-
-
 	</main>
 {% endblock %}

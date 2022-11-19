@@ -1,9 +1,7 @@
 <header class="bg-white">
-
 	<nav class="navbar navbar-expand-lg container-md justify-content-between">
 		<div class="navbar navbar-expand-lg p-0">
-			<a class="navbar-brand" href="/"><img src="/assets/images/logo.png" alt=""></a>
-
+			<a class="navbar-brand" href="{{path('app_home')}}"><img src="/assets/images/logo.png" alt=""></a>
 			<a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" aria-controls="offcanvasExample">
 				<i class="fa-solid fa-bars"></i>
 				MENU
@@ -11,55 +9,47 @@
 			<div class="navbar d-none d-lg-flex">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" href="/boutique">BOUTIQUE</a>
+						<a class="nav-link" href="{{path('app_shop/home')}}">BOUTIQUE</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/billetterie">BILLETTERIE</a>
+						<a class="nav-link" href="#">BILLETTERIE</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/actualites">ACTUALITES</a>
+						<a class="nav-link" href="{{path('app_news')}}">ACTUALITES</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<div class="dropdown">
-			<a class="" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-
+			<a type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 				<i class="fa-solid fa-circle-user text-primary"></i>
 			</a>
 			<div class="dropdown-menu  dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-
 				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 					<a class="dropdown-item" href="{{path('app_profile')}}">Mon profil</a>
 					{% if is_granted('ROLE_ADMIN') %}
-						<a class="dropdown-item" href="/administration">Administration</a>
+						<a class="dropdown-item" href="{{path('app_admin')}}">Administration</a>
 					{% endif %}
-					<a class="dropdown-item text-danger" href="/deconnexion">Deconnexion</a>
+					<a class="dropdown-item text-danger" href="{{path('app_logout')}}">Deconnexion</a>
 				{% else %}
-					<a class="dropdown-item" href="/connexion">Connexion</a>
-					<a class="dropdown-item" href="/inscription">Inscription</a>
+					<a class="dropdown-item" href="{{path('app_login')}}">Connexion</a>
+					<a class="dropdown-item" href="{{path('app_register')}}">Inscription</a>
 				{% endif %}
-
 			</div>
 		</div>
-
 	</nav>
-
-
 </header>
 
 
 <nav class="offcanvas offcanvas-start text-white bg-secondary" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
 	<div class="offcanvas-header  p-5">
 		<h5 class="offcanvas-title  text-white" id="offcanvasExampleLabel">
-
 			<button type="button" class="btn fs-3  text-white" data-bs-dismiss="offcanvas" aria-label="Close">
 				<i class="fa-solid fa-xmark"></i>
 			</button>
 			MENU</h5>
 	</div>
 	<div class="d-flex flex-column h-100">
-
 		<div class="container px-5 pb-5">
 			<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
 				<li class="w-100 submenu">
@@ -68,7 +58,6 @@
 						<i class="fa-solid fa-angle-down"></i>
 					</a>
 					<ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-
 						{% for page in clubPages %}
 							<li class="w-100">
 								<a href="{{ path('app_single_page', {slug : page.slug}) }}" class="nav-link px-0">
@@ -186,8 +175,6 @@
 					<a class="nav-link" href="/actualites">ACTUALITES</a>
 				</li>
 			</ul>
-
-
 			<ul class="navbar-nav d-flex flex-row justify-content-around mt-4 social-nav">
 				<li class="nav-item">
 					<a class="nav-link" href="#">

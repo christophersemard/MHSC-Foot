@@ -38,18 +38,15 @@ class GalleryCrudController extends AbstractController
 
             $images = $form->get('imagePosts')->getData();
             foreach ($images as $image) {
-
                 $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = '../uploads/gallery/' . $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
-
                 $image->move(
                     $this->getParameter('gallery_directory'),
                     $newFilename
                 );
                 $img = new ImagePost();
                 $img->setImageUrl($newFilename);
-
                 $post->addImagePost($img);
             }
 
@@ -148,20 +145,20 @@ class GalleryCrudController extends AbstractController
     }
 
 
-    #[Route('/supprime/image/{id}', name: 'app_gallery_crud_delete_image', methods: ['DELETE'])]
+    #[Route('/supprime/image/{id}', name: 'app_gallery_crud_delete_image')]
     public function deleteImage(EntityManagerInterface $entityManager, Request $request, ImagePost $imagePost)
     {
-        // $token = $request->request->get('_token');
-
-        // if ($this->isCsrfTokenValid('delete' . $imagePost->getId(), $token)) {
-        $nom = $imagePost->getImageUrl();
-        unlink($nom);
-
-        $entityManager->remove($imagePost);
-        $entityManager->flush();
-        return new JsonResponse(['success' => 1]);
-        // } else {
-        //     return new JsonResponse(['error' => 'Token Invalid'], 400);
-        // }
+        $parameters = json_decode($request->getContent(), true);
+        $token = $parameters['_token'];
+        if ($this->isCsrfTokenValid('delete' . $imagePost->getId(), $token)) {
+            $nom = $imagePost->getImageUrl();
+            $nom = str_replace("../uploads/gallery/", "", $nom);
+            unlink($this->getParameter('gallery_directory').'/'.$nom);
+            $entityManager->remove($imagePost);
+            $entityManager->flush();
+            return new JsonResponse(['success' => 1]);
+        } else {
+            return new JsonResponse(['error' => 'Token Invalid'], 400);
+        }
     }
 }

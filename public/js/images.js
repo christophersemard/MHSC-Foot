@@ -9,7 +9,7 @@ window.onload = () => {
             e.preventDefault();
             if (confirm("Voulez-vous supprimer cette image ?")) {
                 fetch(this.getAttribute("href"), {
-                    method: "delete",
+                    method: "post",
                     headers: {
                         "X-Requested-With": "XMLHttpRequest",
                         "Content-Type": "application/x-www-form-urlencoded",
@@ -18,10 +18,13 @@ window.onload = () => {
                 })
                     .then((response) => response.json())
                     .then((data) => {
-                        console.log(data);
-                        this.parentElement.remove();
-                        // if (data.success) this.parentElement.remove();
-                        // else alert(data.error);
+                        console.log(data)
+                        if (data.success){
+                            this.parentElement.remove()
+                        } 
+                        else {
+                            alert(data.error)
+                        };
                     })
                     .catch((e) => alert(e));
             }

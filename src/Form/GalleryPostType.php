@@ -31,24 +31,23 @@ class GalleryPostType extends AbstractType
                 'multiple' => true,
                 'label'     => 'Ajouter des photos',
                 'required'     => is_null($builder->getData()->getId()),
-                // 'constraints' => [
-                //     new All([
-                //         'constraints' => [
-                //             new File([
-                //                 'maxSize' => '2048k',
-                //                 'mimeTypes' => [
-                //                     "image/png",
-                //                     "image/jpg",
-                //                     "image/jpeg",
-                //                     "image/gif",
-                //                     "image/webp"
-                //                 ],
-                //                 'mimeTypesMessage' => 'Merci de selectionner des images valides. (JPG, PNG, JPEG, GIF, WEBP) de moins de 5Mo.',
-                //             ])
-                //         ],
-                //     ]),
-                // ]
-
+                'constraints' => [
+                    new All([
+                        'constraints' => [
+                            new File([
+                                'maxSize' => '2048k',
+                                'mimeTypes' => [
+                                    "image/png",
+                                    "image/jpg",
+                                    "image/jpeg",
+                                    "image/gif",
+                                    "image/webp"
+                                ],
+                                'mimeTypesMessage' => 'Merci de selectionner des images valides. (JPG, PNG, JPEG, GIF, WEBP) de moins de 5Mo.',
+                            ])
+                        ],
+                    ]),
+                ]
             ])
             ->add('thumbnail', FileType::class, [
                 'label'     => 'Image de présentation',

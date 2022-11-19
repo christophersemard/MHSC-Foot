@@ -49,19 +49,18 @@ class GoogleAuthenticator extends OAuth2Authenticator
                 $email = $googleUser->getEmail();
 
                 $arrayGoogleUser = $googleUser->toArray();
-                // 1) have they logged in with google before? Easy!
+                // Utilisateur google existant ?
                 $existingUser = $this->entityManager->getRepository(User::class)->findOneBy(['googleId' => $googleUser->getId()]);
                 if ($existingUser) {
                     return $existingUser;
                 }
-                // 2) do we have a matching user by email?
+                // Email déjà utilisé ?
                 $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
                 if ($user) {
                     return $user;
                 } else {
+                    // Inscription
                     $user = new User();
-                    // 3) Maybe you just want to "register" them by creating
-                    // a User object
                     $user->setEmail($arrayGoogleUser['email']);
                     $user->setFirstname($arrayGoogleUser['given_name']);
                     $user->setLastname($arrayGoogleUser['family_name']);
@@ -69,7 +68,6 @@ class GoogleAuthenticator extends OAuth2Authenticator
                     $this->entityManager->persist($user);
                     $this->entityManager->flush();
                 }
-
                 return $user;
             })
         );
