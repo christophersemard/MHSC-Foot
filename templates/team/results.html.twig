@@ -15,15 +15,10 @@
 
 
 			{% for fixture in fixtures %}
-
 				<div class="col-10 col-md-11 col-xl-7 result-score-row d-flex justify-content-between flex-nowrap align-items-center gap-2 my-1 bg-white p-1">
-
 					<img class="result-logo-icon" src="{{fixture.teams.home.logo}}" alt="Logo {{fixture.teams.home.name}}">
-
 					<div class="score-box d-flex flex-column justify-content-center">
-
 						<div class="score-box__infos d-flex gap-2 justify-content-center align-items-center my-2">
-
 							<p class="score-box__infos__match-infos mb-0 text-center">
 								<img class="comp-icon" src="{{fixture.league.logo}}" alt="Logo {{fixture.league.name}}">
 								{{fixture.league.name}}

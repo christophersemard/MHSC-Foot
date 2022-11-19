@@ -17,14 +17,7 @@
 
 		<section class="container-md d-flex flex-column flex-md-row px-5">
 
-			<aside
-				class="product-filter mb-5">
-				{# <nav class="mb-3">
-																																																																																																																																																																																																																																							{% for category in categories %}
-																																																																																																																																																																																																																																								<a class="nav-link" href="">{{category.name}}</a>
-																																																																																																																																																																																																																																							{% endfor %}
-																																																																																																																																																																																																																																						</nav> #}
-
+			<aside class="product-filter mb-5">
 				{{ form_start(form) }}
 				<h4>Catégories</h4>
 				{{ form_row(form.category) }}
@@ -32,10 +25,6 @@
 				<h6 class="text-secondary">Prix</h6>
 				{{ form_row(form.minPrice) }}
 				{{ form_row(form.maxPrice) }}
-				<h6 class="text-secondary">Taille</h6>
-				{{ form_row(form.sizes) }}
-				{# <h6 class="text-secondary">Couleur</h6>
-																																																																																																																																																																																																																																			{{ form_row(form.colors) }} #}
 				<button type="submit" class="btn btn-primary">Filtrer</button>
 				{{ form_end(form) }}
 

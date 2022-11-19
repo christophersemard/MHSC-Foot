@@ -42,16 +42,16 @@ class SearchProductType extends AbstractType
                     'placeholder' => "Maximum"
                 ]
             ])
-            ->add('sizes', EntityType::class, [
-                'label'     => false,
-                'required' => false,
-                'class' => ProductSize::class,
-                'multiple' => true,
-                'expanded' => true,
-                'attr' => [
-                    'class' => "d-flex flex-wrap input-sizes-two-column"
-                ]
-            ]);
+            // ->add('sizes', EntityType::class, [
+            //     'label'     => false,
+            //     'required' => false,
+            //     'class' => ProductSize::class,
+            //     'multiple' => true,
+            //     'expanded' => true,
+            //     'attr' => [
+            //         'class' => "d-flex flex-wrap input-sizes-two-column"
+            //     ]
+            // ]);
             // ->add('color')
         ;
     }

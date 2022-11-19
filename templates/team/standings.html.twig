@@ -33,7 +33,7 @@
 						{% for team in standings %}
 
 
-							{% if team.team.id == mainTeam.parameters.team %}
+							{% if team.team.id == mainTeam %}
 								<tr class="bg-secondary text-white">
 								{% elseif team.description == 'Promotion - Champions League (Group Stage)' %}
 									<tr class="table-success">

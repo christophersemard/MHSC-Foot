@@ -26,10 +26,12 @@
 		{{ render(controller('App\\Controller\\MenuController::pages')) }}
 
 		{% block body %}{% endblock %}
+
 		{% include "./partials/_footer.html.twig" %}
 
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
+
 	</body>
 </html>

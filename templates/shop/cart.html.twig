@@ -34,13 +34,7 @@
 									<form method="post">
 										<input type="hidden" name="action" value="update_product">
 										<input type="hidden" name="product" value="{{item.product.id}}">
-										{% if item.product.size is defined %}
-											<input type="hidden" name="size" value="{{item.product.size}}">
-										{% else %}
-											<input type="hidden" name="size" value="null">
-										{% endif %}
 										<input type="number" onchange="submit()" name="quantity" min="1" max="100" value="{{item.quantity}}">
-
 									</form>
 									<a class="btn btn-danger btn-sm" href="{{path('app_cart/remove', {id: item.product.id})}}">
 										<i class="fas fa-trash"></i>

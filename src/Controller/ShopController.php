@@ -27,36 +27,23 @@ class ShopController extends AbstractController
     #[Route('/', name: 'app_shop/home')]
     public function index(ProductRepository $productRepository, ProductCategoryRepository $productCategoriesRepository, Request $request): Response
     {
+        $products = $productRepository->findAll();
+
         $form = $this->createForm(SearchProductType::class);
         $form->handleRequest($request);
 
-        $products = $productRepository->findAll();
-
         if ($form->isSubmitted() && $form->isValid()) {
-
             $data = $form->getData();
-
             $selectedCategories = [];
             if (count($data['category']) > 0) {
                 foreach ($form->getData('category')['category'] as $category) {
                     $selectedCategories[] = $category;
                 }
             }
-
             $minPrice = $data['minPrice'] ? $data['minPrice'] : 0;
             $maxPrice = $data['maxPrice'] ? $data['maxPrice'] : 1000000;
 
-
-            $selectedSizes = [];
-            if (count($data['sizes']) > 0) {
-                foreach ($form->getData('sizes')['sizes'] as $size) {
-                    $selectedSizes[] = $size;
-                }
-            }
-
-            $products = $productRepository->findBySearchCriteria($selectedCategories, $minPrice, $maxPrice, $selectedSizes);
-
-            // dd($products[0]->getSizes());
+            $products = $productRepository->findBySearchCriteria($selectedCategories, $minPrice, $maxPrice);
         }
 
         return $this->render('shop/index.html.twig', [
@@ -94,11 +81,10 @@ class ShopController extends AbstractController
     {
         $user = $this->getUser();
         $address = $user->getAddress();
-        $form = $this->createForm(RegistrationAddressType::class, $address);
-        $form->handleRequest($request);
-
         $cart = $cartService->getCart();
 
+        $form = $this->createForm(RegistrationAddressType::class, $address);
+        $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
             $addressRepository->add($address, true);
@@ -163,9 +149,7 @@ class ShopController extends AbstractController
             ]
         ]);
 
-
         $order->setStripeSessionId($checkout_session->id);
-
         $orderRepository->add($order, true);
 
         return $this->redirect($checkout_session->url);
