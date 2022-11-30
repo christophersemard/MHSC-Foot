@@ -21,8 +21,13 @@
 			</div>
 		</div>
 		<div class="dropdown">
-			<a type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-				<i class="fa-solid fa-circle-user text-primary"></i>
+			<a type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" class="text-primary gap-2 fw-bold d-flex align-items-center">
+				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+					<p class="p-0 m-0">{{app.user.firstName}}</p>
+					<i class="fa-solid fa-circle-user text-primary"></i>
+				{% else %}
+					<i class="fa-solid fa-circle-user text-dark"></i>
+				{% endif %}
 			</a>
 			<div class="dropdown-menu  dropdown-menu-end" aria-labelledby="dropdownMenuButton">
 				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
