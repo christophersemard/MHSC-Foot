@@ -57,7 +57,7 @@ class GoogleAuthenticator extends OAuth2Authenticator
                 // Email déjà utilisé ?
                 $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
                 if ($user) {
-                    return $user;
+                    throw new EmailAlreadyUsedException();
                 } else {
                     // Inscription
                     $user = new User();
